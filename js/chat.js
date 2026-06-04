@@ -88,8 +88,11 @@
     return s.replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   }
 
-  /* ---------- Intent matching ---------- */
-  function reply(text) {
+  /* ---------- n8n webhook ---------- */
+  const N8N_WEBHOOK = "/api/chat";
+
+  /* ---------- Local intent fallback ---------- */
+  function localReply(text) {
     const q = (" " + text.toLowerCase() + " ");
     const intents = C().intents;
     for (const it of intents) {
@@ -98,17 +101,37 @@
     return { r: C().fallback };
   }
 
-  function handleUser(text) {
+  async function handleUser(text) {
     text = text.trim();
     if (!text) return;
     addUser(text);
     input.value = "";
     const t = typing();
-    const ans = reply(text);
-    setTimeout(() => {
+
+    try {
+      const res = await fetch(N8N_WEBHOOK, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: text, lang: ZB.lang })
+      });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      const data = await res.json();
       t.remove();
+      const d = Array.isArray(data) ? data[0] : data;
+      const botReply =
+        d.output   ||
+        d.response ||
+        d.messages ||
+        d.message  ||
+        d.text     ||
+        d.answer   ||
+        C().fallback;
+      addBot(String(botReply));
+    } catch (_) {
+      t.remove();
+      const ans = localReply(text);
       addBot(ans.r, ans.cta);
-    }, 700 + Math.random() * 500);
+    }
   }
 
   /* ---------- Open / close ---------- */

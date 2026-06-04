@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/api/chat"
+  to = "https://n8nsinclair.scompany.com.pt/webhook/assistente-sdr"
+  status = 200
+  force = true
