@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Zillion Business — Crescimento previsível com IA | Diagnóstico gratuito</title>
+<meta name="description" content="Estratégia, automação e IA para transformar a sua operação numa máquina de vendas previsível. Resultado em até 3 meses ou 100% de volta. Diagnóstico gratuito." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body id="top">
+<div class="grain"></div>
+
+<!-- ============ MINIMAL HEADER ============ -->
+<header id="header">
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="Zillion Business">
+      <svg class="mark" viewBox="0 0 100 100" fill="none" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+        <path class="accent" d="M83 27 L57 66"/><path class="peak" d="M20 73 L48 27 L76 73"/>
+      </svg>
+      <span class="brand-name">ZILLION<small>BUSINESS</small></span>
+    </a>
+    <div class="nav-tools">
+      <div class="lang">
+        <button class="lang-btn" id="langBtn" aria-haspopup="true">
+          <span class="flag" id="langFlag">🇵🇹</span><span id="langCode">PT</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="lang-menu" id="langMenu" role="menu">
+          <button data-lang="pt"><span class="flag">🇵🇹</span> Português</button>
+          <button data-lang="en"><span class="flag">🇬🇧</span> English</button>
+          <button data-lang="it"><span class="flag">🇮🇹</span> Italiano</button>
+        </div>
+      </div>
+      <button class="icon-btn" id="themeBtn" aria-label="Tema">
+        <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"></svg>
+      </button>
+      <a href="#lead" class="btn btn-primary btn-sm" data-i18n="land_hero_cta1">Quero meu diagnóstico gratuito</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO + LEAD FORM ============ -->
+<section class="lp-hero" id="lead">
+  <div class="wrap lp-hero-grid">
+    <div class="reveal">
+      <span class="ai-badge"><span class="spark"></span><span data-i18n="land_badge">Powered by Nexus AI</span></span>
+      <span class="kicker" data-i18n="land_hero_kicker">Consultoria de Negócios & Inteligência Artificial</span>
+      <h1 data-i18n-html="land_hero_title">Mais vendas, menos esforço: <span class="gradient-text">crescimento previsível com IA</span></h1>
+      <p class="lead" data-i18n="land_hero_sub">A Zillion une estratégia, automação e IA para transformar a sua operação numa máquina de vendas previsível.</p>
+      <div class="lp-ctas">
+        <a href="#lead-form" class="btn btn-primary"><span data-i18n="land_hero_cta1">Quero meu diagnóstico gratuito</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#" class="btn btn-ghost" data-open-chat data-i18n="land_hero_cta2">Qualificar com a Nexus IA</a>
+      </div>
+      <div class="trust-row">
+        <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="land_trust1">Resultado em até 3 meses ou 100% de volta</span></div>
+        <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="land_trust2">+800 campanhas gerenciadas</span></div>
+        <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="land_trust3">R$8,2M em ROI gerado</span></div>
+      </div>
+    </div>
+
+    <div class="lead-card reveal d2" id="lead-form">
+      <h3 data-i18n="lf_title">Receba um diagnóstico gratuito</h3>
+      <p class="sub" data-i18n="lf_sub">Preencha e um especialista entra em contacto em até 24h.</p>
+      <div class="field"><label data-i18n="lf_name">Nome</label><input type="text" id="lfName" autocomplete="name"></div>
+      <div class="field-row">
+        <div class="field"><label data-i18n="lf_email">E-mail</label><input type="email" id="lfEmail" autocomplete="email"></div>
+        <div class="field"><label data-i18n="lf_phone">WhatsApp</label><input type="tel" id="lfPhone" autocomplete="tel"></div>
+      </div>
+      <div class="field"><label data-i18n="lf_segment">Segmento da empresa</label><input type="text" id="lfSegment"></div>
+      <button class="btn btn-primary" id="lfBtn" data-i18n="lf_btn">Quero meu diagnóstico</button>
+      <p class="note" data-i18n="lf_note">Os seus dados estão seguros. Sem spam.</p>
+      <p class="lf-msg" id="lfMsg"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROOF BAR ============ -->
+<section class="proof-bar" style="padding:0">
+  <div class="wrap">
+    <div class="lbl" data-i18n="land_proof">Marcas que já cresceram com a Zillion</div>
+    <div class="metrics">
+      <div class="metric"><div class="v" data-i18n="m1_v">+800</div><div class="l" data-i18n="m1_l">campanhas gerenciadas</div></div>
+      <div class="metric"><div class="v" data-i18n="m2_v">R$2M</div><div class="l" data-i18n="m2_l">investidos em tráfego</div></div>
+      <div class="metric"><div class="v" data-i18n="m3_v">R$8,2M</div><div class="l" data-i18n="m3_l">de ROI médio gerado</div></div>
+      <div class="metric"><div class="v" data-count="856" data-prefix="+">+0</div><div class="l" data-i18n="m4_l">operações otimizadas</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AI SECTION ============ -->
+<section class="ai-wrap" id="ai">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker center" data-i18n="ai_kicker">Nexus AI</span>
+      <h2 data-i18n-html="ai_title">Inteligência artificial que <span class="gradient-text">trabalha pela sua operação</span></h2>
+      <p data-i18n="ai_sub">A Nexus é o cérebro de IA da Zillion: qualifica leads, responde em segundos e automatiza rotinas — 24 horas por dia.</p>
+    </div>
+    <div class="ai-grid">
+      <article class="ai-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 00-3 3 3 3 0 00-3 3 3 3 0 00-1 5.83V17a3 3 0 003 3 3 3 0 003 2 3 3 0 003-2 3 3 0 003-3v-3.17A3 3 0 0015 8a3 3 0 00-3-3 3 3 0 000-3z"/><path d="M9 13a3 3 0 006 0"/></svg></div>
+        <h3 data-i18n="ai1_t">Qualificação de leads com IA</h3>
+        <p data-i18n="ai1_d">A Nexus conversa, entende a intenção e prioriza os leads quentes antes do seu time atender.</p>
+      </article>
+      <article class="ai-card reveal d2">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3 data-i18n="ai2_t">Atendimento 24/7</h3>
+        <p data-i18n="ai2_d">Respostas em segundos no WhatsApp e outros canais, mesmo fora do horário comercial.</p>
+      </article>
+      <article class="ai-card reveal d3">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></svg></div>
+        <h3 data-i18n="ai3_t">Automação por eventos</h3>
+        <p data-i18n="ai3_d">Cada ação dispara o próximo passo: nada de lead esquecido ou follow-up perdido.</p>
+      </article>
+      <article class="ai-card reveal d4">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l3-3 4 4 5-6"/></svg></div>
+        <h3 data-i18n="ai4_t">Decisões com dados</h3>
+        <p data-i18n="ai4_d">Dashboards e IA apontam gargalos e oportunidades em tempo real.</p>
+      </article>
+    </div>
+    <div class="ai-cta-row reveal">
+      <a href="#" class="btn btn-primary" data-open-chat><span data-i18n="ai_cta">Ver a Nexus IA em ação</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============ BENEFITS ============ -->
+<section id="benefits">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker center" data-i18n="ben_kicker">Por que a Zillion</span>
+      <h2 data-i18n="ben_title">O que você ganha na prática</h2>
+    </div>
+    <div class="feat-grid">
+      <article class="feat-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+        <h3 data-i18n="ben1_t">Receita previsível</h3><p data-i18n="ben1_d">Um funil estruturado e uma máquina de vendas que gera caixa todos os meses.</p>
+      </article>
+      <article class="feat-card reveal d2">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-2.82 1.17V21a2 2 0 11-4 0v-.09A1.65 1.65 0 008 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 003.6 14a1.65 1.65 0 00-1.51-1H2a2 2 0 110-4h.09A1.65 1.65 0 003.6 8a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 008 3.6a1.65 1.65 0 001-1.51V2a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0020.4 8a1.65 1.65 0 001.51 1H22a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div>
+        <h3 data-i18n="ben2_t">Menos esforço manual</h3><p data-i18n="ben2_d">Automação e IA assumem as tarefas repetitivas e liberam o seu time.</p>
+      </article>
+      <article class="feat-card reveal d3">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div>
+        <h3 data-i18n="ben3_t">Clareza total</h3><p data-i18n="ben3_d">Indicadores em tempo real para decidir com dados, não com achismo.</p>
+      </article>
+      <article class="feat-card reveal d4">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09zM12 15l-3-3a22 22 0 012-3.95A12.88 12.88 0 0122 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 01-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/></svg></div>
+        <h3 data-i18n="ben4_t">Escala sem caos</h3><p data-i18n="ben4_d">Estrutura modular que cresce com a empresa, dentro e fora do país.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============ HOW ============ -->
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker center" data-i18n="how_kicker">Como funciona</span>
+      <h2 data-i18n="how_title">3 passos para destravar o crescimento</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="n">1</div><h3 data-i18n="hw1_t">Diagnóstico gratuito</h3><p data-i18n="hw1_d">Entendemos a sua operação, metas e gargalos em 30 minutos.</p></div>
+      <div class="step reveal d2"><div class="n">2</div><h3 data-i18n="hw2_t">Plano + IA</h3><p data-i18n="hw2_d">Desenhamos a estratégia e ativamos a automação com a Nexus IA.</p></div>
+      <div class="step reveal d3"><div class="n">3</div><h3 data-i18n="hw3_t">Execução e resultado</h3><p data-i18n="hw3_d">Colocamos em prática e acompanhamos os números até o resultado.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============ RESULTS ============ -->
+<section id="results">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker center" data-i18n="res_kicker">Resultados reais</span>
+      <h2 data-i18n="res_title">Números que falam por nós</h2>
+    </div>
+    <div class="proof-grid">
+      <article class="proof-card reveal"><div class="num" data-count="85" data-suffix="%">0%</div><p data-i18n="r1_d">de aumento na geração de leads</p></article>
+      <article class="proof-card reveal d2"><div class="num" data-count="47" data-suffix="%">0%</div><p data-i18n="r2_d">de aumento na conversão de novos clientes</p></article>
+      <article class="proof-card reveal d3"><div class="num" data-count="51" data-suffix="%">0%</div><p data-i18n="r3_d">de aumento no reconhecimento de marca</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GUARANTEE ============ -->
+<section id="guarantee">
+  <div class="wrap">
+    <div class="gar-band reveal">
+      <div class="wrap-in">
+        <span class="kicker center" data-i18n="gar_kicker">Garantia</span>
+        <h2 data-i18n="gar_title">Resultado garantido — ou o seu dinheiro de volta</h2>
+        <p class="gar-sub" data-i18n="gar_sub">Foco total em performance. Resultados reais em até 3 meses ou devolvemos 100% do seu investimento.</p>
+        <div class="gar-items">
+          <div class="gar-item"><div class="v" data-i18n="gar1_t">3 meses</div><div class="d" data-i18n="gar1_d">de garantia de resultados comprovados</div></div>
+          <div class="gar-item"><div class="v" data-i18n="gar2_t">100%</div><div class="d" data-i18n="gar2_d">foco no processo: planejamento, execução e análise</div></div>
+          <div class="gar-item"><div class="v" data-i18n="gar3_t">Performance</div><div class="d" data-i18n="gar3_d">compromisso real acima de promessas</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section id="testimonials">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker center" data-i18n="tst_kicker">Quem cresce com a Zillion</span>
+      <h2 data-i18n="tst_title">O que dizem os nossos parceiros</h2>
+    </div>
+    <div class="tst-grid">
+      <article class="tst-card reveal"><div class="stars">★★★★★</div><p class="q" data-i18n="tst1_q">Em poucas semanas a operação ficou previsível.</p><div class="a" data-i18n="tst1_a">Diretor, empresa de serviços</div></article>
+      <article class="tst-card reveal d2"><div class="stars">★★★★★</div><p class="q" data-i18n="tst2_q">Saímos do caos para um funil organizado.</p><div class="a" data-i18n="tst2_a">Fundadora, e-commerce</div></article>
+      <article class="tst-card reveal d3"><div class="stars">★★★★★</div><p class="q" data-i18n="tst3_q">O acompanhamento por dados nos deu clareza.</p><div class="a" data-i18n="tst3_a">CEO, grupo empresarial</div></article>
+    </div>
+    <p class="tst-note" data-i18n="tst_note">Depoimentos ilustrativos — substitua pelos seus cases reais.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker center" data-i18n="faq_kicker">Dúvidas frequentes</span>
+      <h2 data-i18n="faq_title">Perguntas frequentes</h2>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item"><summary data-i18n="faq1_q">Em quanto tempo vejo resultado?</summary><div class="fa" data-i18n="faq1_a">O foco é gerar resultados reais em até 3 meses.</div></details>
+      <details class="faq-item"><summary data-i18n="faq2_q">Como funciona a garantia?</summary><div class="fa" data-i18n="faq2_a">Trabalhamos com prazo de garantia de 3 meses.</div></details>
+      <details class="faq-item"><summary data-i18n="faq3_q">Preciso entender de tecnologia?</summary><div class="fa" data-i18n="faq3_a">Não. A Nexus IA é pensada para o empresário entender tudo.</div></details>
+      <details class="faq-item"><summary data-i18n="faq4_q">A Zillion atende a minha empresa?</summary><div class="fa" data-i18n="faq4_a">Atendemos empresas em crescimento, grupos e investidores.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section id="final">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <h2 data-i18n="fin_title">Pronto para crescer com previsibilidade?</h2>
+      <p data-i18n="fin_sub">Fale com um especialista ou deixe a Nexus IA qualificar o seu caso agora. O diagnóstico é gratuito.</p>
+      <div class="hero-ctas">
+        <a href="#lead-form" class="btn btn-primary"><span data-i18n="fin_cta1">Quero meu diagnóstico gratuito</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#" class="btn btn-ghost" data-open-chat data-i18n="fin_cta2">Qualificar com a Nexus IA</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="lp-footer">
+  <div class="wrap">
+    <a href="#top" class="brand">
+      <svg class="mark" viewBox="0 0 100 100" fill="none" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" style="font-size:30px">
+        <path class="accent" d="M83 27 L57 66"/><path class="peak" d="M20 73 L48 27 L76 73"/>
+      </svg>
+      <span class="brand-name">ZILLION<small>BUSINESS</small></span>
+    </a>
+    <div class="tag-line">GROW TO INSPIRE</div>
+    <p class="lp-foot-rights">© <span id="year">2025</span> Zillion Business · <span data-i18n="foot_rights">Todos os direitos reservados.</span></p>
+  </div>
+</footer>
+
+<!-- ============ NEXUS LEAD CHAT ============ -->
+<div id="nexusChat">
+  <button class="nexus-fab" id="nexusFab" aria-label="Nexus IA">
+    <span class="nx-fab-ic">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+      <span class="ping"></span>
+    </span>
+    <span class="fab-text" id="nexusFabLabel">Qualificar com a Nexus IA</span>
+  </button>
+
+  <div class="nexus-panel" id="nexusPanel" role="dialog" aria-label="Nexus IA">
+    <div class="nx-head">
+      <span class="av">
+        <svg viewBox="0 0 100 100" fill="none" stroke-width="11" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M83 27 L57 66" stroke="#9aa0b4"/><path d="M20 73 L48 27 L76 73" stroke="#fff"/>
+        </svg><span class="on"></span>
+      </span>
+      <div class="meta">
+        <div class="nm" id="nexusTitle">Nexus IA</div>
+        <div class="st" id="nexusSub">Qualificação inteligente · online</div>
+      </div>
+      <button class="x" id="nexusClose" aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    </div>
+    <div class="nx-body" id="nexusBody"></div>
+    <div class="nx-quick" id="nexusQuick"></div>
+    <div class="nx-foot">
+      <input class="nx-input" id="nexusInput" type="text" placeholder="Escreva aqui...">
+      <button class="nx-send" id="nexusSend" aria-label="Enviar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></button>
+    </div>
+  </div>
+</div>
+
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+<script src="js/lead.js"></script>
+</body>
+</html>

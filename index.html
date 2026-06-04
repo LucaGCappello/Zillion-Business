@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Zillion Business — Arquitetura de Negócios, Tecnologia e Investimento</title>
+<meta name="description" content="A Zillion Business desenha, automatiza e escala operações. Estratégia, tecnologia Nexus e investimento num único ecossistema. Grow to Inspire." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body id="top">
+<div class="grain"></div>
+
+<!-- ============ HEADER ============ -->
+<header id="header">
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="Zillion Business">
+      <svg class="mark" viewBox="0 0 100 100" fill="none" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+        <path class="accent" d="M83 27 L57 66"/>
+        <path class="peak" d="M20 73 L48 27 L76 73"/>
+      </svg>
+      <span class="brand-name">ZILLION<small>BUSINESS</small></span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#top" data-i18n="nav_home">Início</a>
+      <a href="#concept" data-i18n="nav_concept">Conceito</a>
+      <a href="#ecosystem" data-i18n="nav_ecosystem">Ecossistema</a>
+      <a href="#how" data-i18n="nav_method">Metodologia</a>
+      <a href="#nexus" data-i18n="nav_nexus">Nexus Tech</a>
+      <a href="bolsa.html" data-i18n="nav_bolsa">Bolsa Privada</a>
+      <a href="blog.html" data-i18n="nav_blog">Blog</a>
+      <a href="#podcast" data-i18n="nav_podcast">Podcast</a>
+    </nav>
+
+    <div class="nav-tools">
+      <a href="#" class="login-link" data-i18n="nav_login">Login</a>
+      <div class="lang">
+        <button class="lang-btn" id="langBtn" aria-haspopup="true">
+          <span class="flag" id="langFlag">🇵🇹</span><span id="langCode">PT</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="lang-menu" id="langMenu" role="menu">
+          <button data-lang="pt"><span class="flag">🇵🇹</span> Português</button>
+          <button data-lang="en"><span class="flag">🇬🇧</span> English</button>
+          <button data-lang="it"><span class="flag">🇮🇹</span> Italiano</button>
+        </div>
+      </div>
+      <button class="icon-btn" id="themeBtn" aria-label="Tema">
+        <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"></svg>
+      </button>
+      <a href="#cta" class="btn btn-primary btn-sm" data-i18n="cta_specialist">Falar com especialista</a>
+      <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="#top" data-i18n="nav_home">Início</a>
+    <a href="#concept" data-i18n="nav_concept">Conceito</a>
+    <a href="#ecosystem" data-i18n="nav_ecosystem">Ecossistema</a>
+    <a href="#how" data-i18n="nav_method">Metodologia</a>
+    <a href="#nexus" data-i18n="nav_nexus">Nexus Tech</a>
+    <a href="bolsa.html" data-i18n="nav_bolsa">Bolsa Privada</a>
+    <a href="blog.html" data-i18n="nav_blog">Blog</a>
+    <a href="#podcast" data-i18n="nav_podcast">Podcast</a>
+    <a href="#" data-i18n="nav_login">Login</a>
+    <a href="#cta" class="btn btn-primary" data-i18n="cta_specialist">Falar com especialista</a>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal">
+      <span class="kicker" data-i18n="hero_kicker">Business Architect · Automation · Intelligence</span>
+      <h1 data-i18n-html="hero_title">A arquitetura de negócios que conecta <span class="gradient-text">estratégia, tecnologia e investimento</span>.</h1>
+      <p class="lead" data-i18n="hero_lead">A Zillion Business é o parceiro estratégico que desenha, automatiza e escala operações.</p>
+      <div class="hero-ctas">
+        <a href="#cta" class="btn btn-primary"><span data-i18n="hero_cta1">Quero vender mais</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#nexus" class="btn btn-ghost" data-i18n="hero_cta2">Entrar na fila do Nexus</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat">
+          <div class="num"><span class="gradient-text" data-count="856" data-prefix="+">+0</span></div>
+          <div class="lbl" data-i18n="hero_stat1">operações mapeadas e otimizadas em diferentes mercados</div>
+        </div>
+        <div class="hstat">
+          <div class="num"><span class="gradient-text" data-count="5" data-suffix="x">0x</span></div>
+          <div class="lbl" data-i18n="hero_stat2">mais velocidade no fluxo de respostas e decisões estratégicas</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-panel reveal d2">
+      <div class="dash">
+        <div class="dash-top">
+          <span class="dash-dots"><i></i><i></i><i></i></span>
+          <span class="dash-title">vista_executiva.zillion</span>
+          <span class="dash-live"><span class="pulse"></span><span data-i18n="dash_live">AO VIVO</span></span>
+        </div>
+        <div class="dash-body">
+          <div class="dash-tiles">
+            <div class="dtile"><div class="k" data-i18n="dash_revenue">Receita</div><div class="v">€1.24M</div></div>
+            <div class="dtile"><div class="k" data-i18n="dash_conv">Conversão</div><div class="v up">+18%</div></div>
+            <div class="dtile"><div class="k" data-i18n="dash_resp">Resposta</div><div class="v accent">2m</div></div>
+          </div>
+          <div class="dash-chart">
+            <div class="clabel"><span data-i18n="dash_growth">Crescimento · 12 meses</span><b>+42%</b></div>
+            <svg viewBox="0 0 320 78" preserveAspectRatio="none">
+              <polyline class="spark-line" points="0,64 28,58 56,60 84,46 112,50 140,34 168,38 196,24 224,28 252,16 280,18 320,6"/>
+            </svg>
+          </div>
+          <div class="dash-foot" id="dashFoot"></div>
+        </div>
+      </div>
+      <div class="float-card">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <span class="ft">
+          <span class="t" data-i18n="float_t">automação ativa</span>
+          <span class="v" data-i18n="float_v">24/7 monitorado</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============ CONCEPT ============ -->
+<section id="concept">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker" data-i18n="concept_kicker">Conceito</span>
+      <h2 data-i18n-html="concept_title">Zillion como <span class="gradient-text">Business Architect</span></h2>
+      <p data-i18n="concept_sub">Mais do que uma agência ou consultoria, a Zillion nasce para desenhar, construir, otimizar e internacionalizar negócios.</p>
+    </div>
+    <div class="concept-grid">
+      <div class="reveal">
+        <p class="concept-lead" data-i18n="concept_lead">A Zillion acompanha o ciclo completo, da ideia ao negócio pronto para crescer em diferentes países.</p>
+      </div>
+      <div class="entry-card reveal d2">
+        <h3 data-i18n="entry_title">Porta de entrada para o mundo empresarial</h3>
+        <ul class="entry-list">
+          <li><span class="arr">▸</span><span data-i18n-html="entry1"><b>Criação de projetos do zero:</b> conceito, registro, posicionamento e go-to-market.</span></li>
+          <li><span class="arr">▸</span><span data-i18n-html="entry2"><b>Escala assistida:</b> automações, IA, processos, time e governança.</span></li>
+          <li><span class="arr">▸</span><span data-i18n-html="entry3"><b>Visão global:</b> estrutura preparada para atuar em diferentes mercados e moedas.</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pillars-block reveal">
+      <span class="eyebrow" data-i18n="pillars_eyebrow">Pilares que sustentam o ecossistema</span>
+      <div class="pillars">
+        <div class="pill"><span class="n">01</span> <span data-i18n="pillar1">Arquitetura de Negócios</span></div>
+        <div class="pill"><span class="n">02</span> <span data-i18n="pillar2">Marketing &amp; Growth</span></div>
+        <div class="pill"><span class="n">03</span> <span data-i18n="pillar3">Tecnologia &amp; Automação</span></div>
+        <div class="pill"><span class="n">04</span> <span data-i18n="pillar4">Internacionalização</span></div>
+        <div class="pill"><span class="n">05</span> <span data-i18n="pillar5">Planos de Investimentos</span></div>
+        <div class="pill"><span class="n">06</span> <span data-i18n="pillar6">Estrutura Comercial</span></div>
+      </div>
+      <p class="concept-note" data-i18n="concept_note">Cada projeto é desenhado para ser sustentável no longo prazo.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============ ECOSYSTEM ============ -->
+<section id="ecosystem">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker" data-i18n="eco_kicker">Ecossistema Zillion</span>
+      <h2 data-i18n-html="eco_title">Tudo que um negócio precisa para crescer <span class="gradient-text">em um só lugar</span></h2>
+      <p data-i18n="eco_sub">Você opera com um parceiro que conecta todas essas frentes numa mesma arquitetura.</p>
+    </div>
+    <div class="eco-grid">
+      <article class="eco-card reveal"><div class="eco-tag" data-i18n="eco1_tag">01 · Arquitetura de Negócios</div><h3 data-i18n="eco1_t">Desenho estratégico completo</h3><p data-i18n="eco1_d">Modelagem de negócios, posicionamento e roadmap de crescimento.</p></article>
+      <article class="eco-card reveal d2"><div class="eco-tag" data-i18n="eco2_tag">02 · Growth &amp; Operação</div><h3 data-i18n="eco2_t">Marketing que conversa com o negócio</h3><p data-i18n="eco2_d">Planejamento de funis, campanhas e times comerciais.</p></article>
+      <article class="eco-card reveal d3"><div class="eco-tag" data-i18n="eco3_tag">03 · Tecnologia Nexus</div><h3 data-i18n="eco3_t">Automação como vantagem competitiva</h3><p data-i18n="eco3_d">Nexus integra WhatsApp, CRMs, ERPs e rotinas de automação.</p></article>
+      <article class="eco-card reveal"><div class="eco-tag" data-i18n="eco4_tag">04 · Internacionalização</div><h3 data-i18n="eco4_t">Da operação local ao mapa global</h3><p data-i18n="eco4_d">Estrutura e parceiros para operar em Portugal, Brasil e Dubai.</p></article>
+      <article class="eco-card reveal d2"><div class="eco-tag" data-i18n="eco5_tag">05 · Investimento &amp; Negócios prontos</div><h3 data-i18n="eco5_t">Catálogo de negócios e Trades Financeiros</h3><p data-i18n="eco5_d">Estruturação de negócios e execução de trades financeiros estratégicos.</p></article>
+      <article class="eco-card reveal d3"><div class="eco-tag" data-i18n="eco6_tag">06 · Estrutura Comercial</div><h3 data-i18n="eco6_t">Performance e crescimento escalável</h3><p data-i18n="eco6_d">Construímos a Máquina de Vendas da sua empresa.</p></article>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============ WHO ============ -->
+<section id="who">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker" data-i18n="who_kicker">Para quem é</span>
+      <h2 data-i18n="who_title">Quem mais se beneficia da Zillion</h2>
+      <p data-i18n="who_sub">Empresários e equipes que querem consistência, escala e visão de futuro.</p>
+    </div>
+    <div class="who-grid">
+      <article class="who-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l3-3 4 4 5-6"/></svg></div>
+        <div class="tag" data-i18n="who1_tag">Empresas em crescimento</div>
+        <h3 data-i18n="who1_t">Negócios que já validaram o produto</h3>
+        <p data-i18n="who1_d">Empresas que precisam organizar operação, marketing e vendas para o próximo salto.</p>
+      </article>
+      <article class="who-card reveal d2">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+        <div class="tag" data-i18n="who2_tag">Grupos &amp; Holdings</div>
+        <h3 data-i18n="who2_t">Quem lida com várias unidades</h3>
+        <p data-i18n="who2_d">Centralização de dados e padronização de processos em múltiplas operações.</p>
+      </article>
+      <article class="who-card reveal d3">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+        <div class="tag" data-i18n="who3_tag">Investidores &amp; Novos negócios</div>
+        <h3 data-i18n="who3_t">Quem quer entrar em negócios prontos</h3>
+        <p data-i18n="who3_d">Oportunidades em empresas já estruturadas, com tese clara e plano de expansão.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============ FEATURES ============ -->
+<section id="features">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker" data-i18n="feat_kicker">Entrega</span>
+      <h2 data-i18n="feat_title">O que a Zillion faz acontecer no dia a dia</h2>
+      <p data-i18n="feat_sub">A base é transformar visão em rotina — com processos claros e tecnologia conectando tudo.</p>
+    </div>
+    <div class="feat-grid">
+      <article class="feat-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-2.82 1.17V21a2 2 0 11-4 0v-.09A1.65 1.65 0 008 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 003.6 14a1.65 1.65 0 00-1.51-1H2a2 2 0 110-4h.09A1.65 1.65 0 003.6 8a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 008 3.6a1.65 1.65 0 001-1.51V2a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0020.4 8a1.65 1.65 0 001.51 1H22a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div>
+        <h3 data-i18n="feat1_t">Automação de processos</h3>
+        <p data-i18n="feat1_d">Fluxos que tiram tarefas repetitivas da mão do time e reduzem erros.</p>
+      </article>
+      <article class="feat-card reveal d2">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <h3 data-i18n="feat2_t">Central de atendimento integrada</h3>
+        <p data-i18n="feat2_d">Canais conectados numa experiência única, com histórico centralizado.</p>
+      </article>
+      <article class="feat-card reveal d3">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div>
+        <h3 data-i18n="feat3_t">Visão em tempo real</h3>
+        <p data-i18n="feat3_d">Dashboards que mostram gargalos, oportunidades e a saúde do negócio.</p>
+      </article>
+      <article class="feat-card reveal d4">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09zM12 15l-3-3a22 22 0 012-3.95A12.88 12.88 0 0122 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 01-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div>
+        <h3 data-i18n="feat4_t">Escalabilidade inteligente</h3>
+        <p data-i18n="feat4_d">Soluções modulares que permitem crescer sem travar a operação.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============ METHOD ============ -->
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker" data-i18n="method_kicker">Metodologia</span>
+      <h2 data-i18n="method_title">Como funciona a parceria com a Zillion</h2>
+      <p data-i18n="method_sub">Do diagnóstico profundo à otimização contínua.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="n">1</div><h3 data-i18n="step1_t">Diagnóstico guiado</h3><p data-i18n="step1_d">Mapeamos operação, canais, metas e contexto de mercado.</p></div>
+      <div class="step reveal d2"><div class="n">2</div><h3 data-i18n="step2_t">Arquitetura da solução</h3><p data-i18n="step2_d">Desenhamos o fluxo ideal: integrações, automações e governança.</p></div>
+      <div class="step reveal d3"><div class="n">3</div><h3 data-i18n="step3_t">Implantação assistida</h3><p data-i18n="step3_d">Colocamos a arquitetura em operação, garantindo estabilidade.</p></div>
+      <div class="step reveal d4"><div class="n">4</div><h3 data-i18n="step4_t">Otimização contínua</h3><p data-i18n="step4_d">Monitoramos dados e evoluímos o ecossistema conforme a empresa cresce.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============ NEXUS ============ -->
+<section id="nexus">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker" data-i18n="nexus_kicker">Nexus Tech</span>
+      <h2 data-i18n-html="nexus_title">Tecnologia própria como <span class="gradient-text">motor da operação</span></h2>
+      <p data-i18n="nexus_sub">É o coração tecnológico da Zillion, preparado para conectar canais, automações, IA e gestão num único fluxo.</p>
+    </div>
+    <div class="nexus-grid">
+      <div class="nexus-copy reveal">
+        <h3 data-i18n="nexus_h3">Hub de conexão entre atendimento, automação, IA e dados</h3>
+        <p data-i18n="nexus_p">Centralizamos instâncias, filas, regras, tags, bots e integrações críticas da operação.</p>
+        <div class="chips">
+          <span class="chip"><span class="dot"></span><span data-i18n="chip1">Múltiplas instâncias de WhatsApp</span></span>
+          <span class="chip"><span class="dot"></span><span data-i18n="chip2">Automação por eventos</span></span>
+          <span class="chip"><span class="dot"></span><span data-i18n="chip3">Monitoramento em tempo real</span></span>
+          <span class="chip"><span class="dot"></span><span data-i18n="chip4">Inteligência Artificial</span></span>
+          <span class="chip"><span class="dot"></span><span data-i18n="chip5">Conexão com CRMs &amp; ERPs</span></span>
+          <span class="chip"><span class="dot"></span><span data-i18n="chip6">Otimização de Vendas</span></span>
+        </div>
+        <p class="nexus-note" data-i18n="nexus_note">Interfaces pensadas para que o empresário entenda o que está acontecendo sem precisar ser técnico.</p>
+        <a href="#cta" class="btn btn-primary nexus-cta" data-i18n="nexus_cta">Ativar Nexus Tech por 7 dias grátis</a>
+      </div>
+      <div class="reveal d2">
+        <div class="log-panel">
+          <div class="log-head">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="ttl">nexus_events.log</span>
+            <span class="badge">LIVE</span>
+          </div>
+          <div class="log-body" id="logBody"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============ PODCAST ============ -->
+<section id="podcast" class="podcast">
+  <div class="wrap">
+    <div class="pod-card reveal">
+      <div class="pod-grid">
+        <div>
+          <span class="pod-badge" data-i18n="pod_badge">🎧 Grow to Inspire · Podcast</span>
+          <h3 data-i18n="pod_title">Bastidores reais de quem constrói negócios de verdade</h3>
+          <p data-i18n="pod_p">Entrevistas com empresários, investidores e equipes que estão no campo de batalha.</p>
+          <div class="pod-tags">
+            <span data-i18n="pod_tag1">Empresários &amp; investidores</span>
+            <span data-i18n="pod_tag2">Bastidores de negócios reais</span>
+            <span data-i18n="pod_tag3">Nada de motivação vazia</span>
+          </div>
+          <a href="#cta" class="btn btn-ghost" data-i18n="pod_cta">Quero ser convidado / parceiro</a>
+        </div>
+        <div class="pod-visual"><div class="wave" id="wave"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============ PROOF ============ -->
+<section id="proof">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker" data-i18n="proof_kicker">Resultados</span>
+      <h2 data-i18n="proof_title">Indicadores que buscamos em cada projeto</h2>
+      <p data-i18n="proof_sub">Mais clareza, mais controle, mais resultado — com menos ruído operacional.</p>
+    </div>
+    <div class="proof-grid">
+      <article class="proof-card reveal"><div class="num" data-count="40" data-prefix="+" data-suffix="%">+0%</div><p data-i18n="proof1_d">média de aumento na taxa de resposta em operações com atendimento distribuído.</p></article>
+      <article class="proof-card reveal d2"><div class="num" data-count="60" data-prefix="−" data-suffix="%">−0%</div><p data-i18n="proof2_d">redução de tarefas manuais em rotinas repetitivas com automações simples.</p></article>
+      <article class="proof-card reveal d3"><div class="num">24/7</div><p data-i18n="proof3_d">operações rodando com estabilidade e monitoramento constante de instâncias e fluxos.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section id="cta">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <h2 data-i18n="cta_title">Quer ver a Zillion aplicada dentro da sua operação?</h2>
+      <p data-i18n="cta_p">Receba o planejamento dos próximos 6 meses do seu negócio com o nosso especialista.</p>
+      <div class="hero-ctas">
+        <a href="#" class="btn btn-primary"><span data-i18n="cta_btn1">Falar com um especialista</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#nexus" class="btn btn-ghost" data-i18n="cta_btn2">Entrar na fila do Nexus</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="brand">
+          <svg class="mark" viewBox="0 0 100 100" fill="none" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" style="font-size:32px">
+            <path class="accent" d="M83 27 L57 66"/>
+            <path class="peak" d="M20 73 L48 27 L76 73"/>
+          </svg>
+          <span class="brand-name">ZILLION<small>BUSINESS</small></span>
+        </a>
+        <p data-i18n="foot_desc">Arquitetura de negócios, tecnologia e investimento para empresas que querem inspirar pelo crescimento.</p>
+        <div class="tag-line">GROW TO INSPIRE</div>
+      </div>
+      <div class="foot-col">
+        <h5 data-i18n="foot_nav">Navegação</h5>
+        <a href="#concept" data-i18n="nav_concept">Conceito</a>
+        <a href="#ecosystem" data-i18n="nav_ecosystem">Ecossistema</a>
+        <a href="#how" data-i18n="nav_method">Metodologia</a>
+        <a href="#nexus" data-i18n="nav_nexus">Nexus Tech</a>
+        <a href="bolsa.html" data-i18n="nav_bolsa">Bolsa Privada</a>
+        <a href="blog.html" data-i18n="nav_blog">Blog</a>
+      </div>
+      <div class="foot-col">
+        <h5 data-i18n="foot_hubs">Polos</h5>
+        <span>🇵🇹 Lisboa, Portugal</span>
+        <span>🇧🇷 São Paulo, Brasil</span>
+        <span>🇦🇪 Dubai, UAE</span>
+      </div>
+      <div class="foot-col">
+        <h5 data-i18n="foot_connect">Conecte-se</h5>
+        <div class="socials">
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 102.5 6 2.5 2.5 0 004.98 3.5zM3 8.98h4v12H3zM10 8.98h3.8v1.64h.05a4.17 4.17 0 013.75-2.06c4 0 4.75 2.64 4.75 6.07v6.35h-4v-5.63c0-1.34 0-3.07-1.87-3.07s-2.16 1.46-2.16 2.97v5.73H10z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.4-.43-5a2.78 2.78 0 00-1.95-2C18.88 4.5 12 4.5 12 4.5s-6.88 0-8.62.5A2.78 2.78 0 001.43 7C1 8.6 1 12 1 12s0 3.4.43 5a2.78 2.78 0 001.95 2c1.74.5 8.62.5 8.62.5s6.88 0 8.62-.5a2.78 2.78 0 001.95-2c.43-1.6.43-5 .43-5zM9.75 15.5v-7l6 3.5z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      © <span id="year">2025</span> Zillion Business — <span data-i18n="foot_desc">Arquitetura de negócios, tecnologia e investimento para empresas que querem inspirar pelo crescimento.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ NEXUS CHAT ============ -->
+<div id="nexusChat">
+  <button class="nexus-fab" id="nexusFab" aria-label="Abrir chat Nexus">
+    <span class="nx-fab-ic">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+      <span class="ping"></span>
+    </span>
+    <span class="fab-text" id="nexusFabLabel">Falar com a Nexus</span>
+  </button>
+
+  <div class="nexus-panel" id="nexusPanel" role="dialog" aria-label="Chat Nexus">
+    <div class="nx-head">
+      <span class="av">
+        <svg viewBox="0 0 100 100" fill="none" stroke-width="11" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M83 27 L57 66" stroke="#9aa0b4"/><path d="M20 73 L48 27 L76 73" stroke="#fff"/>
+        </svg>
+        <span class="on"></span>
+      </span>
+      <div class="meta">
+        <div class="nm" id="nexusTitle">Nexus</div>
+        <div class="st" id="nexusSub">Assistente Zillion · online</div>
+      </div>
+      <button class="x" id="nexusClose" aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    </div>
+    <div class="nx-body" id="nexusBody"></div>
+    <div class="nx-quick" id="nexusQuick"></div>
+    <div class="nx-foot">
+      <input class="nx-input" id="nexusInput" type="text" placeholder="Escreva a sua mensagem...">
+      <button class="nx-send" id="nexusSend" aria-label="Enviar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></button>
+    </div>
+  </div>
+</div>
+
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+<script src="js/chat.js"></script>
+</body>
+</html>

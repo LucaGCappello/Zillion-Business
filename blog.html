@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Blog — Zillion Business | Insights de estratégia, automação e investimento</title>
+<meta name="description" content="Blog da Zillion Business: estratégia, automação, growth e internacionalização. Conteúdo prático de quem constrói empresas de verdade. Grow to Inspire." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body id="top">
+<div class="grain"></div>
+
+<!-- ============ HEADER ============ -->
+<header id="header">
+  <div class="wrap nav">
+    <a href="index.html" class="brand" aria-label="Zillion Business">
+      <svg class="mark" viewBox="0 0 100 100" fill="none" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+        <path class="accent" d="M83 27 L57 66"/>
+        <path class="peak" d="M20 73 L48 27 L76 73"/>
+      </svg>
+      <span class="brand-name">ZILLION<small>BUSINESS</small></span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="index.html" data-i18n="nav_home">Início</a>
+      <a href="index.html#concept" data-i18n="nav_concept">Conceito</a>
+      <a href="index.html#ecosystem" data-i18n="nav_ecosystem">Ecossistema</a>
+      <a href="index.html#nexus" data-i18n="nav_nexus">Nexus Tech</a>
+      <a href="bolsa.html" data-i18n="nav_bolsa">Bolsa Privada</a>
+      <a href="blog.html" class="active" aria-current="page" data-i18n="nav_blog">Blog</a>
+    </nav>
+
+    <div class="nav-tools">
+      <a href="#" class="login-link" data-i18n="nav_login">Login</a>
+      <div class="lang">
+        <button class="lang-btn" id="langBtn" aria-haspopup="true">
+          <span class="flag" id="langFlag">🇵🇹</span><span id="langCode">PT</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="lang-menu" id="langMenu" role="menu">
+          <button data-lang="pt"><span class="flag">🇵🇹</span> Português</button>
+          <button data-lang="en"><span class="flag">🇬🇧</span> English</button>
+          <button data-lang="it"><span class="flag">🇮🇹</span> Italiano</button>
+        </div>
+      </div>
+      <button class="icon-btn" id="themeBtn" aria-label="Tema">
+        <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"></svg>
+      </button>
+      <a href="index.html#cta" class="btn btn-primary btn-sm" data-i18n="cta_specialist">Falar com especialista</a>
+      <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="index.html" data-i18n="nav_home">Início</a>
+    <a href="index.html#concept" data-i18n="nav_concept">Conceito</a>
+    <a href="index.html#ecosystem" data-i18n="nav_ecosystem">Ecossistema</a>
+    <a href="index.html#nexus" data-i18n="nav_nexus">Nexus Tech</a>
+    <a href="bolsa.html" data-i18n="nav_bolsa">Bolsa Privada</a>
+    <a href="blog.html" data-i18n="nav_blog">Blog</a>
+    <a href="#" data-i18n="nav_login">Login</a>
+    <a href="index.html#cta" class="btn btn-primary" data-i18n="cta_specialist">Falar com especialista</a>
+  </nav>
+</header>
+
+<!-- ============ BLOG HERO ============ -->
+<section class="blog-top">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker" data-i18n="blog_kicker">Blog · Insights</span>
+      <h1 data-i18n-html="blog_title">Ideias para <span class="gradient-text">estruturar e escalar</span> o seu negócio</h1>
+      <p data-i18n="blog_sub">Estratégia, automação, growth e internacionalização — sem fórmulas prontas.</p>
+      <div class="blog-search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="text" id="blogSearch" data-i18n-ph="blog_search_ph" placeholder="Buscar artigos...">
+      </div>
+      <div class="cat-bar" id="catBar"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BLOG LIST ============ -->
+<section class="blog-list">
+  <div class="wrap">
+    <div class="featured" id="featuredWrap"></div>
+    <div class="post-grid" id="postGrid"></div>
+    <div class="blog-empty" id="blogEmpty" data-i18n="blog_empty">Nenhum artigo encontrado para a sua busca.</div>
+  </div>
+</section>
+
+<!-- ============ NEWSLETTER ============ -->
+<section id="newsletter">
+  <div class="wrap">
+    <div class="news-band reveal">
+      <span class="kicker center" data-i18n="news_kicker">Newsletter</span>
+      <h2 data-i18n="news_title">Receba os bastidores do crescimento</h2>
+      <p data-i18n="news_sub">Insights práticos sobre estratégia, automação e investimento direto no seu e-mail. Sem spam.</p>
+      <div class="news-form">
+        <input type="email" id="newsInput" data-i18n-ph="news_ph" placeholder="O seu melhor e-mail">
+        <button class="btn btn-primary" id="newsBtn" data-i18n="news_btn">Inscrever-se</button>
+      </div>
+      <p class="news-note" data-i18n="news_note">Ao inscrever-se, concorda em receber comunicações da Zillion Business.</p>
+      <p class="news-ok" id="newsOk"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="brand">
+          <svg class="mark" viewBox="0 0 100 100" fill="none" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" style="font-size:32px">
+            <path class="accent" d="M83 27 L57 66"/>
+            <path class="peak" d="M20 73 L48 27 L76 73"/>
+          </svg>
+          <span class="brand-name">ZILLION<small>BUSINESS</small></span>
+        </a>
+        <p data-i18n="foot_desc">Arquitetura de negócios, tecnologia e investimento para empresas que querem inspirar pelo crescimento.</p>
+        <div class="tag-line">GROW TO INSPIRE</div>
+      </div>
+      <div class="foot-col">
+        <h5 data-i18n="foot_nav">Navegação</h5>
+        <a href="index.html#concept" data-i18n="nav_concept">Conceito</a>
+        <a href="index.html#ecosystem" data-i18n="nav_ecosystem">Ecossistema</a>
+        <a href="index.html#nexus" data-i18n="nav_nexus">Nexus Tech</a>
+        <a href="bolsa.html" data-i18n="nav_bolsa">Bolsa Privada</a>
+        <a href="blog.html" data-i18n="nav_blog">Blog</a>
+      </div>
+      <div class="foot-col">
+        <h5 data-i18n="foot_hubs">Polos</h5>
+        <span>🇵🇹 Lisboa, Portugal</span>
+        <span>🇧🇷 São Paulo, Brasil</span>
+        <span>🇦🇪 Dubai, UAE</span>
+      </div>
+      <div class="foot-col">
+        <h5 data-i18n="foot_connect">Conecte-se</h5>
+        <div class="socials">
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 102.5 6 2.5 2.5 0 004.98 3.5zM3 8.98h4v12H3zM10 8.98h3.8v1.64h.05a4.17 4.17 0 013.75-2.06c4 0 4.75 2.64 4.75 6.07v6.35h-4v-5.63c0-1.34 0-3.07-1.87-3.07s-2.16 1.46-2.16 2.97v5.73H10z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.4-.43-5a2.78 2.78 0 00-1.95-2C18.88 4.5 12 4.5 12 4.5s-6.88 0-8.62.5A2.78 2.78 0 001.43 7C1 8.6 1 12 1 12s0 3.4.43 5a2.78 2.78 0 001.95 2c1.74.5 8.62.5 8.62.5s6.88 0 8.62-.5a2.78 2.78 0 001.95-2c.43-1.6.43-5 .43-5zM9.75 15.5v-7l6 3.5z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      © <span id="year">2025</span> Zillion Business — <span data-i18n="foot_desc">Arquitetura de negócios, tecnologia e investimento para empresas que querem inspirar pelo crescimento.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ READER MODAL ============ -->
+<div class="reader" id="reader" aria-modal="true" role="dialog">
+  <div class="reader-card" id="readerCard"></div>
+</div>
+
+<!-- ============ NEXUS CHAT ============ -->
+<div id="nexusChat">
+  <button class="nexus-fab" id="nexusFab" aria-label="Abrir chat Nexus">
+    <span class="nx-fab-ic">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+      <span class="ping"></span>
+    </span>
+    <span class="fab-text" id="nexusFabLabel">Falar com a Nexus</span>
+  </button>
+
+  <div class="nexus-panel" id="nexusPanel" role="dialog" aria-label="Chat Nexus">
+    <div class="nx-head">
+      <span class="av">
+        <svg viewBox="0 0 100 100" fill="none" stroke-width="11" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M83 27 L57 66" stroke="#9aa0b4"/><path d="M20 73 L48 27 L76 73" stroke="#fff"/>
+        </svg>
+        <span class="on"></span>
+      </span>
+      <div class="meta">
+        <div class="nm" id="nexusTitle">Nexus</div>
+        <div class="st" id="nexusSub">Assistente Zillion · online</div>
+      </div>
+      <button class="x" id="nexusClose" aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    </div>
+    <div class="nx-body" id="nexusBody"></div>
+    <div class="nx-quick" id="nexusQuick"></div>
+    <div class="nx-foot">
+      <input class="nx-input" id="nexusInput" type="text" placeholder="Escreva a sua mensagem...">
+      <button class="nx-send" id="nexusSend" aria-label="Enviar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></button>
+    </div>
+  </div>
+</div>
+
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+<script src="js/chat.js"></script>
+<script src="js/blog.js"></script>
+</body>
+</html>
