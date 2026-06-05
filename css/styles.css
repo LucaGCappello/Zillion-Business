@@ -225,7 +225,7 @@ header.scrolled{
 @keyframes grow{from{transform:scaleY(.05)}}
 
 /* float badge over dash */
-.float-card{
+/* .float-card{
   position:absolute;left:-22px;bottom:30px;z-index:3;background:var(--elevated);border:1px solid var(--border-strong);
   border-radius:var(--r-md);padding:11px 15px;box-shadow:var(--shadow);display:flex;align-items:center;gap:.65rem;
   animation:floaty 5s ease-in-out infinite;max-width:78%;
@@ -235,7 +235,7 @@ header.scrolled{
 .float-card .ic svg{width:16px;height:16px}
 .float-card .ft{display:flex;flex-direction:column;line-height:1.25;min-width:0}
 .float-card .t{font-size:.66rem;color:var(--faint);font-family:var(--font-mono);letter-spacing:.03em;white-space:nowrap}
-.float-card .v{font-weight:700;font-size:.9rem;white-space:nowrap}
+.float-card .v{font-weight:700;font-size:.9rem;white-space:nowrap} */
 
 /* ---------- CONCEPT / PILLARS ---------- */
 .concept-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
