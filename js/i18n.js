@@ -13,7 +13,7 @@ ZB.I18N = {
 
     hero_kicker:"Business Architect · Automation · Intelligence",
     hero_title:'A arquitetura de negócios que conecta <span class="gradient-text">estratégia, tecnologia e investimento</span>.',
-    hero_lead:"A Zillion Business é o parceiro estratégico que desenha, automatiza e escala operações — de empresas que estão nascendo a grupos empresariais prontos para jogar em outro nível.",
+    hero_lead:"A Zillion Business é o parceiro estratégico que desenha, automatiza e escala operações de empresas que estão nascendo a grupos empresariais prontos para jogar em outro nível.",
     hero_cta1:"Quero vender mais", hero_cta2:"Entrar na fila do Nexus",
     hero_stat1:"operações mapeadas e otimizadas em diferentes mercados",
     hero_stat2:"mais velocidade no fluxo de respostas e decisões estratégicas",
@@ -22,7 +22,7 @@ ZB.I18N = {
 
     concept_kicker:"Conceito",
     concept_title:'Zillion como <span class="gradient-text">Business Architect</span>',
-    concept_sub:"Mais do que uma agência ou consultoria, a Zillion nasce para desenhar, construir, otimizar e internacionalizar negócios — unindo estratégia, tecnologia e capital num mesmo ecossistema.",
+    concept_sub:"Mais do que uma agência ou consultoria, a Zillion nasce para desenhar, construir, otimizar e internacionalizar negócios, unindo estratégia, tecnologia e capital num mesmo ecossistema.",
     concept_lead:"A Zillion acompanha o ciclo completo, da ideia ao negócio pronto para crescer em diferentes países. Combinamos visão estratégica, operação enxuta e inteligência de dados para que cada decisão seja sustentada por contexto real.",
     entry_title:"Porta de entrada para o mundo empresarial",
     entry1:"<b>Criação de projetos do zero:</b> conceito, registro, posicionamento e go-to-market.",
@@ -35,7 +35,7 @@ ZB.I18N = {
 
     eco_kicker:"Ecossistema Zillion",
     eco_title:'Tudo que um negócio precisa para crescer <span class="gradient-text">em um só lugar</span>',
-    eco_sub:"Em vez de juntar peças soltas — agência, consultoria, tecnologia, jurídico, investimento — você opera com um parceiro que conecta todas essas frentes numa mesma arquitetura.",
+    eco_sub:"Em vez de juntar peças soltas — agência, consultoria, tecnologia, jurídico, investimento, você opera com um parceiro que conecta todas essas frentes numa mesma arquitetura.",
     eco1_tag:"01 · Arquitetura de Negócios", eco1_t:"Desenho estratégico completo",
     eco1_d:"Modelagem de negócios, posicionamento, proposta de valor, precificação, estrutura societária e roadmap de crescimento alinhados ao contexto real da empresa.",
     eco2_tag:"02 · Growth & Operação", eco2_t:"Marketing que conversa com o negócio",
@@ -50,7 +50,7 @@ ZB.I18N = {
     eco6_d:"Construímos a Máquina de Vendas da sua empresa. Da estratégia à execução, otimizamos processos e tecnologia para garantir fluxo de clientes constante e receita previsível.",
 
     who_kicker:"Para quem é", who_title:"Quem mais se beneficia da Zillion",
-    who_sub:"A proposta é global, mas o foco é sempre o mesmo: empresários e equipes que querem consistência, escala e visão de futuro — sem perder o controle do dia a dia.",
+    who_sub:"A proposta é global, mas o foco é sempre o mesmo: empresários e equipes que querem consistência, escala e visão de futuro, sem perder o controle do dia a dia.",
     who1_tag:"Empresas em crescimento", who1_t:"Negócios que já validaram o produto",
     who1_d:"Empresas que saíram da fase de sobrevivência e precisam organizar operação, marketing e vendas para dar o próximo salto.",
     who2_tag:"Grupos & Holdings", who2_t:"Quem lida com várias unidades",
@@ -59,7 +59,7 @@ ZB.I18N = {
     who3_d:"Pessoas e fundos que buscam oportunidades em empresas já estruturadas, com tese clara, indicadores e plano de expansão.",
 
     feat_kicker:"Entrega", feat_title:"O que a Zillion faz acontecer no dia a dia",
-    feat_sub:"Estratégia bonita em slide não basta. A base é transformar visão em rotina — com processos claros, pessoas certas e tecnologia conectando tudo.",
+    feat_sub:"Estratégia bonita em slide não basta. A base é transformar visão em rotina, com processos claros, pessoas certas e tecnologia conectando tudo.",
     feat1_t:"Automação de processos", feat1_d:"Fluxos que tiram tarefas repetitivas da mão do time, reduzem erros e liberam energia para decisões estratégicas.",
     feat2_t:"Central de atendimento integrada", feat2_d:"Nexus e outros canais conectados numa experiência única, com histórico centralizado, regras claras e prioridade por operação.",
     feat3_t:"Visão em tempo real", feat3_d:"Dashboards e relatórios que mostram gargalos, oportunidades e a saúde do negócio — sem caçar informação em dez sistemas.",
@@ -76,7 +76,7 @@ ZB.I18N = {
     nexus_title:'Tecnologia própria como <span class="gradient-text">motor da operação</span>',
     nexus_sub:"Nexus não é “mais uma ferramenta de WhatsApp”. É o coração tecnológico da Zillion, preparado para conectar canais, automações, IA e gestão num único fluxo.",
     nexus_h3:"Hub de conexão entre atendimento, automação, IA e dados",
-    nexus_p:"Através das tecnologias Nexus, centralizamos instâncias, filas, regras, tags, bots e integrações críticas da operação — sempre com espaço para evoluir junto com o negócio.",
+    nexus_p:"Através das tecnologias Nexus, centralizamos instâncias, filas, regras, tags, bots e integrações críticas da operação, sempre com espaço para evoluir junto com o negócio.",
     chip1:"Múltiplas instâncias de WhatsApp", chip2:"Automação por eventos", chip3:"Monitoramento em tempo real",
     chip4:"Inteligência Artificial", chip5:"Conexão com CRMs & ERPs", chip6:"Otimização de Vendas",
     nexus_note:"Interfaces pensadas para que o empresário entenda o que está acontecendo sem precisar ser técnico. Conexão via QR Code, fila de espera e painel de status são extensões diretas dessa camada tecnológica.",
@@ -84,12 +84,12 @@ ZB.I18N = {
 
     pod_badge:"🎧 Grow to Inspire · Podcast",
     pod_title:"Bastidores reais de quem constrói negócios de verdade",
-    pod_p:"Entrevistas com empresários, investidores e equipes que estão no campo de batalha. Sem frases prontas — só contexto, processo e decisões que mudaram o jogo.",
+    pod_p:"Entrevistas com empresários, investidores e equipes que estão no campo de batalha. Sem frases prontas, só contexto, processo e decisões que mudaram o jogo.",
     pod_tag1:"Empresários & investidores", pod_tag2:"Bastidores de negócios reais", pod_tag3:"Nada de motivação vazia",
     pod_cta:"Quero ser convidado / parceiro",
 
     proof_kicker:"Resultados", proof_title:"Indicadores que buscamos em cada projeto",
-    proof_sub:"Cada operação tem sua realidade, mas a lógica é a mesma: mais clareza, mais controle, mais resultado — com menos ruído operacional.",
+    proof_sub:"Cada operação tem sua realidade, mas a lógica é a mesma: mais clareza, mais controle, mais resultado, com menos ruído operacional.",
     proof1_d:"média de aumento na taxa de resposta em operações com atendimento distribuído.",
     proof2_d:"redução de tarefas manuais em rotinas repetitivas com automações simples.",
     proof3_d:"operações rodando com estabilidade e monitoramento constante de instâncias e fluxos.",
