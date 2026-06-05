@@ -1,402 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt" data-theme="dark">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Zillion Business — Private Business Exchange</title>
-<meta name="description" content="Bolsa de empresas privada Zillion Business. Compra e venda de empresas com curadoria, confidencialidade e assessoria internacional. Grow to Inspire." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-/* ============ TOKENS ============ */
-:root{
-  --font-display:'Bricolage Grotesque', system-ui, sans-serif;
-  --font-body:'Manrope', system-ui, sans-serif;
-  --font-mono:'JetBrains Mono', ui-monospace, monospace;
-
-  --accent:#3169ff;
-  --accent-2:#6f9bff;
-  --accent-deep:#1b3fb8;
-  --positive:#37d39b;
-  --gold:#d6b25c;
-
-  --r-lg:22px; --r-md:14px; --r-sm:10px;
-  --maxw:1240px;
-  --ease:cubic-bezier(.22,.61,.36,1);
-}
-html[data-theme="dark"]{
-  --bg:#06051a;
-  --bg-a:#0a0726;
-  --bg-b:#120c3a;
-  --bg-c:#06051a;
-  --surface:rgba(255,255,255,.035);
-  --surface-solid:#0d0a2b;
-  --surface-2:rgba(255,255,255,.06);
-  --elevated:#100c30;
-  --text:#f3f4ff;
-  --muted:#a7aacb;
-  --faint:#6a6d96;
-  --border:rgba(150,160,225,.14);
-  --border-strong:rgba(150,160,225,.26);
-  --shadow:0 28px 70px -28px rgba(0,0,0,.85);
-  --glow:0 0 40px -8px rgba(49,105,255,.55);
-  --grid-line:rgba(150,160,225,.05);
-  --logo-grey:#9698ad;
-}
-html[data-theme="light"]{
-  --bg:#eef0f9;
-  --bg-a:#ffffff;
-  --bg-b:#eaecf8;
-  --bg-c:#f4f5fc;
-  --surface:#ffffff;
-  --surface-solid:#ffffff;
-  --surface-2:#f5f6fc;
-  --elevated:#ffffff;
-  --text:#0c0a2c;
-  --muted:#4d5072;
-  --faint:#8a8da9;
-  --border:rgba(20,18,70,.10);
-  --border-strong:rgba(20,18,70,.18);
-  --shadow:0 24px 55px -26px rgba(30,40,90,.30);
-  --glow:0 0 36px -10px rgba(49,105,255,.45);
-  --grid-line:rgba(20,18,70,.04);
-  --logo-grey:#9aa0b4;
-  --accent:#1f4fe0;
-  --accent-deep:#163bb0;
-}
-
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  font-family:var(--font-body);
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.5;
-  overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
-  transition:background .5s var(--ease), color .4s var(--ease);
-}
-body::before{
-  content:"";position:fixed;inset:0;z-index:-2;
-  background:
-    radial-gradient(1100px 700px at 78% -8%, rgba(49,105,255,.22), transparent 60%),
-    radial-gradient(900px 650px at 8% 12%, rgba(111,155,255,.14), transparent 60%),
-    linear-gradient(160deg, var(--bg-a), var(--bg-b) 48%, var(--bg-c));
-  transition:opacity .5s var(--ease);
-}
-body::after{
-  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
-  background-image:linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);
-  background-size:54px 54px;
-  mask-image:radial-gradient(circle at 50% 30%, #000 0%, transparent 78%);
-}
-a{color:inherit;text-decoration:none}
-button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
-
-/* ============ LOGO MARK ============ */
-.mark{width:1em;height:1em;display:block;flex:none}
-.mark .peak{stroke:var(--text)}
-.mark .accent{stroke:var(--logo-grey)}
-
-/* ============ TICKER ============ */
-.ticker{
-  position:relative;z-index:60;
-  border-bottom:1px solid var(--border);
-  background:color-mix(in srgb, var(--bg-a) 70%, transparent);
-  backdrop-filter:blur(10px);
-  overflow:hidden;font-family:var(--font-mono);font-size:.72rem;letter-spacing:.04em;
-}
-.ticker-inner{display:flex;align-items:center;height:38px}
-.ticker-label{
-  flex:none;display:flex;align-items:center;gap:.5rem;padding:0 16px;height:100%;
-  background:var(--accent);color:#fff;font-weight:700;letter-spacing:.12em;font-size:.64rem;
-  text-transform:uppercase;white-space:nowrap;
-}
-.ticker-label .dot{width:6px;height:6px;border-radius:50%;background:#fff;animation:pulse 1.6s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
-.ticker-track{display:flex;gap:34px;white-space:nowrap;padding-left:30px;animation:scroll 38s linear infinite}
-.ticker:hover .ticker-track{animation-play-state:paused}
-@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.tick{display:inline-flex;align-items:center;gap:9px;color:var(--muted)}
-.tick b{color:var(--text);font-weight:700}
-.tick .up{color:var(--positive);font-weight:700}
-
-/* ============ HEADER ============ */
-header{
-  position:sticky;top:0;z-index:50;
-  background:color-mix(in srgb, var(--bg-a) 82%, transparent);
-  backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--border);
-}
-.nav{display:flex;align-items:center;justify-content:space-between;height:70px;gap:1rem}
-.brand{display:flex;align-items:center;gap:.65rem}
-.brand .mark{font-size:34px}
-.brand-name{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.04em;line-height:1}
-.brand-name small{display:block;font-family:var(--font-mono);font-weight:400;font-size:.56rem;letter-spacing:.34em;color:var(--faint);margin-top:3px}
-.nav-links{display:flex;gap:6px;align-items:center}
-.nav-links a{padding:.5rem .85rem;border-radius:var(--r-sm);font-size:.86rem;font-weight:600;color:var(--muted);transition:.25s var(--ease)}
-.nav-links a:hover{color:var(--text);background:var(--surface-2)}
-.nav-tools{display:flex;align-items:center;gap:.5rem}
-.icon-btn{
-  width:38px;height:38px;border-radius:var(--r-sm);display:grid;place-items:center;
-  border:1px solid var(--border);background:var(--surface);color:var(--text);transition:.25s var(--ease);
-}
-.icon-btn:hover{border-color:var(--border-strong);transform:translateY(-1px)}
-.icon-btn svg{width:18px;height:18px}
-.lang{position:relative}
-.lang-btn{display:flex;align-items:center;gap:.4rem;height:38px;padding:0 .7rem;border-radius:var(--r-sm);border:1px solid var(--border);background:var(--surface);font-weight:700;font-size:.78rem;letter-spacing:.06em}
-.lang-btn:hover{border-color:var(--border-strong)}
-.lang-menu{
-  position:absolute;right:0;top:46px;min-width:168px;background:var(--elevated);
-  border:1px solid var(--border-strong);border-radius:var(--r-md);box-shadow:var(--shadow);
-  padding:6px;display:none;flex-direction:column;gap:2px;z-index:80;
-}
-.lang-menu.open{display:flex;animation:pop .2s var(--ease)}
-@keyframes pop{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
-.lang-menu button{display:flex;align-items:center;gap:.6rem;padding:.55rem .6rem;border-radius:var(--r-sm);font-size:.85rem;font-weight:600;text-align:left}
-.lang-menu button:hover{background:var(--surface-2)}
-.lang-menu button.active{background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--text)}
-.flag{font-size:1.05rem;line-height:1}
-.btn{
-  display:inline-flex;align-items:center;gap:.5rem;font-weight:700;font-size:.86rem;
-  padding:.7rem 1.15rem;border-radius:var(--r-sm);transition:.25s var(--ease);white-space:nowrap;
-}
-.btn-primary{background:linear-gradient(180deg,var(--accent-2),var(--accent));color:#fff;box-shadow:var(--glow)}
-.btn-primary:hover{transform:translateY(-2px);filter:brightness(1.06)}
-.btn-ghost{border:1px solid var(--border-strong);background:var(--surface);color:var(--text)}
-.btn-ghost:hover{border-color:var(--accent);color:var(--text)}
-.menu-toggle{display:none}
-
-/* ============ HERO ============ */
-.hero{padding:78px 0 54px;position:relative}
-.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
-.kicker{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.26em;text-transform:uppercase;color:var(--accent-2);font-weight:700;margin-bottom:1.3rem}
-.kicker::before{content:"";width:26px;height:1px;background:var(--accent-2)}
-.hero h1{font-family:var(--font-display);font-weight:700;font-size:clamp(2.5rem,5vw,4.05rem);line-height:1.02;letter-spacing:-.02em}
-.hero h1 .em{background:linear-gradient(120deg,var(--accent-2),var(--accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.hero p.lead{font-size:1.08rem;color:var(--muted);max-width:540px;margin:1.5rem 0 2rem;line-height:1.65}
-.hero-ctas{display:flex;gap:.85rem;flex-wrap:wrap}
-.hero-ctas .btn{padding:.95rem 1.5rem;font-size:.95rem}
-.hero-note{margin-top:1.5rem;display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:var(--faint);font-family:var(--font-mono);letter-spacing:.02em}
-.hero-note svg{width:15px;height:15px;color:var(--accent-2)}
-
-.hero-stats{display:flex;gap:34px;margin-top:2.6rem;flex-wrap:wrap}
-.hstat .num{font-family:var(--font-display);font-weight:700;font-size:2rem;letter-spacing:-.02em;line-height:1}
-.hstat .lbl{font-size:.74rem;color:var(--muted);margin-top:.35rem;font-weight:600}
-
-/* hero deal card */
-.deal-preview{
-  background:var(--surface);border:1px solid var(--border-strong);border-radius:var(--r-lg);
-  padding:24px;box-shadow:var(--shadow);position:relative;overflow:hidden;backdrop-filter:blur(6px);
-}
-.deal-preview::before{content:"";position:absolute;inset:0;background:radial-gradient(420px 220px at 90% -10%,rgba(49,105,255,.22),transparent 60%);pointer-events:none}
-.dp-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;position:relative}
-.dp-code{font-family:var(--font-display);font-weight:700;font-size:1.35rem}
-.dp-sector{font-size:.8rem;color:var(--muted);margin-top:2px}
-.dp-rows{margin-top:18px;display:flex;flex-direction:column;gap:1px;border-radius:var(--r-md);overflow:hidden;border:1px solid var(--border)}
-.dp-row{display:flex;justify-content:space-between;align-items:center;padding:.7rem .9rem;background:var(--surface-2);font-size:.85rem}
-.dp-row span:first-child{color:var(--muted)}
-.dp-row b{font-family:var(--font-mono);font-weight:700;font-size:.9rem}
-.dp-bars{margin-top:16px;display:flex;align-items:flex-end;gap:6px;height:54px}
-.dp-bars i{flex:1;background:linear-gradient(180deg,var(--accent-2),var(--accent));border-radius:4px 4px 0 0;opacity:.5;animation:rise 1.2s var(--ease) both}
-@keyframes rise{from{height:6%;opacity:.2}}
-.dp-foot{margin-top:16px;display:flex;justify-content:space-between;align-items:center}
-.dp-foot .ask{font-family:var(--font-mono);font-weight:700;font-size:1.25rem;color:var(--accent-2)}
-
-/* ============ SECTION SHELL ============ */
-section{position:relative}
-.sec-head{margin-bottom:34px;max-width:620px}
-.sec-head h2{font-family:var(--font-display);font-weight:700;font-size:clamp(1.8rem,3.4vw,2.6rem);letter-spacing:-.02em;line-height:1.06}
-.sec-head p{color:var(--muted);margin-top:.7rem;font-size:1rem}
-
-/* ============ MARKETPLACE ============ */
-#market{padding:56px 0}
-.toolbar{
-  background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);
-  padding:16px;display:grid;grid-template-columns:1.6fr repeat(3,1fr) 1.1fr;gap:12px;align-items:end;
-  box-shadow:var(--shadow);backdrop-filter:blur(6px);
-}
-.field{display:flex;flex-direction:column;gap:6px}
-.field label{font-size:.66rem;text-transform:uppercase;letter-spacing:.12em;color:var(--faint);font-weight:700;font-family:var(--font-mono)}
-.field .ctrl{
-  height:46px;border:1px solid var(--border-strong);background:var(--surface-2);border-radius:var(--r-sm);
-  padding:0 .85rem;color:var(--text);font-family:var(--font-body);font-size:.9rem;font-weight:500;width:100%;
-  transition:.2s var(--ease);appearance:none;
-}
-.field .ctrl:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 22%,transparent)}
-.field.search{position:relative}
-.field.search .ctrl{padding-left:2.5rem}
-.field.search svg{position:absolute;left:.85rem;bottom:13px;width:18px;height:18px;color:var(--faint)}
-select.ctrl{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237b7ea0' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.2rem}
-
-.market-meta{display:flex;justify-content:space-between;align-items:center;margin:24px 2px 18px;flex-wrap:wrap;gap:10px}
-.market-meta .count{font-size:.88rem;color:var(--muted);font-weight:600}
-.market-meta .count b{color:var(--text);font-family:var(--font-mono)}
-.market-meta .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.74rem;color:var(--faint)}
-.market-meta .legend span{display:inline-flex;align-items:center;gap:.4rem}
-.dotk{width:8px;height:8px;border-radius:50%}
-
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card{
-  background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);
-  padding:22px;position:relative;overflow:hidden;transition:.32s var(--ease);
-  display:flex;flex-direction:column;cursor:pointer;backdrop-filter:blur(4px);
-}
-.card::after{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-2));transform:scaleX(0);transform-origin:left;transition:.4s var(--ease)}
-.card:hover{transform:translateY(-6px);border-color:var(--border-strong);box-shadow:var(--shadow)}
-.card:hover::after{transform:scaleX(1)}
-.card.featured{grid-column:span 3;flex-direction:row;gap:34px;align-items:stretch}
-.card.featured .card-main{flex:1.3}
-.card.featured .card-side{flex:1;border-left:1px solid var(--border);padding-left:34px;display:flex;flex-direction:column;justify-content:center}
-.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:14px}
-.badge{font-family:var(--font-mono);font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.34rem .55rem;border-radius:6px;white-space:nowrap}
-.badge.new{background:color-mix(in srgb,var(--accent) 18%,transparent);color:var(--accent-2);border:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
-.badge.available{background:color-mix(in srgb,var(--positive) 16%,transparent);color:var(--positive);border:1px solid color-mix(in srgb,var(--positive) 35%,transparent)}
-.badge.under_offer{background:color-mix(in srgb,var(--gold) 18%,transparent);color:var(--gold);border:1px solid color-mix(in srgb,var(--gold) 38%,transparent)}
-.badge.exclusive{background:linear-gradient(120deg,var(--accent),var(--accent-deep));color:#fff}
-.card-code{font-family:var(--font-display);font-weight:700;font-size:1.3rem;letter-spacing:-.01em}
-.featured .card-code{font-size:1.9rem}
-.card-sector{display:flex;align-items:center;gap:.45rem;font-size:.82rem;color:var(--muted);margin-top:4px}
-.card-sector .geo{display:inline-flex;align-items:center;gap:.3rem;color:var(--faint)}
-.card-teaser{font-size:.88rem;color:var(--muted);line-height:1.55;margin:6px 0 16px;flex:1}
-.featured .card-teaser{font-size:.98rem;max-width:520px}
-.metrics{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border-radius:var(--r-md);overflow:hidden;border:1px solid var(--border)}
-.featured .metrics{grid-template-columns:1fr 1fr}
-.metric{background:var(--surface-2);padding:.7rem .8rem}
-.metric .k{font-size:.64rem;text-transform:uppercase;letter-spacing:.08em;color:var(--faint);font-weight:700;font-family:var(--font-mono)}
-.metric .v{font-family:var(--font-mono);font-weight:700;font-size:1rem;margin-top:3px}
-.metric .v.accent{color:var(--accent-2)}
-.card-foot{display:flex;justify-content:space-between;align-items:center;margin-top:16px;gap:1rem}
-.card-foot .ask{display:flex;flex-direction:column}
-.card-foot .ask .k{font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:var(--faint);font-weight:700;font-family:var(--font-mono)}
-.card-foot .ask .v{font-family:var(--font-mono);font-weight:700;font-size:1.32rem;color:var(--text)}
-.card-foot .btn{padding:.62rem 1rem;font-size:.8rem}
-.empty{grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--faint);border:1px dashed var(--border-strong);border-radius:var(--r-lg)}
-
-/* ============ SELL ============ */
-#sell{padding:72px 0}
-.sell-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:46px;align-items:start}
-.sell-points{display:flex;flex-direction:column;gap:14px;margin-top:26px}
-.spoint{display:flex;gap:14px;align-items:flex-start;padding:16px;border:1px solid var(--border);border-radius:var(--r-md);background:var(--surface);transition:.25s var(--ease)}
-.spoint:hover{border-color:var(--border-strong);transform:translateX(4px)}
-.spoint .ic{width:42px;height:42px;flex:none;border-radius:11px;display:grid;place-items:center;background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--accent-2)}
-.spoint .ic svg{width:21px;height:21px}
-.spoint h4{font-size:.98rem;font-weight:700;font-family:var(--font-display)}
-.spoint p{font-size:.85rem;color:var(--muted);margin-top:3px}
-.sell-form{background:var(--surface);border:1px solid var(--border-strong);border-radius:var(--r-lg);padding:28px;box-shadow:var(--shadow);backdrop-filter:blur(6px)}
-.sell-form h3{font-family:var(--font-display);font-weight:700;font-size:1.25rem;margin-bottom:4px}
-.sell-form .sub{font-size:.85rem;color:var(--muted);margin-bottom:20px}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.form-grid .full{grid-column:1/-1}
-.in-label{font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:var(--faint);font-weight:700;font-family:var(--font-mono);margin-bottom:6px;display:block}
-.form-grid .ctrl,textarea.ctrl{
-  width:100%;border:1px solid var(--border-strong);background:var(--surface-2);border-radius:var(--r-sm);
-  padding:.75rem .85rem;color:var(--text);font-family:var(--font-body);font-size:.9rem;transition:.2s var(--ease);appearance:none;
-}
-select.ctrl{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237b7ea0' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center}
-.form-grid .ctrl:focus,textarea.ctrl:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 22%,transparent)}
-textarea.ctrl{resize:vertical;min-height:84px}
-.sell-form .btn-primary{width:100%;justify-content:center;margin-top:18px;padding:.9rem}
-.privacy{display:flex;gap:.5rem;align-items:flex-start;font-size:.74rem;color:var(--faint);margin-top:12px;font-family:var(--font-mono);line-height:1.5}
-.privacy svg{width:15px;height:15px;flex:none;margin-top:1px;color:var(--accent-2)}
-.form-ok{display:none;text-align:center;padding:34px 14px}
-.form-ok.show{display:block;animation:pop .3s var(--ease)}
-.form-ok .ring{width:62px;height:62px;border-radius:50%;background:color-mix(in srgb,var(--positive) 16%,transparent);display:grid;place-items:center;margin:0 auto 16px}
-.form-ok .ring svg{width:30px;height:30px;color:var(--positive)}
-.form-ok h3{font-family:var(--font-display);font-size:1.3rem;margin-bottom:6px}
-.form-ok p{color:var(--muted);font-size:.9rem;max-width:340px;margin:0 auto}
-
-/* ============ PROCESS ============ */
-#how{padding:64px 0}
-.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;counter-reset:s;position:relative}
-.steps::before{content:"";position:absolute;top:26px;left:8%;right:8%;height:1px;background:linear-gradient(90deg,transparent,var(--border-strong),transparent)}
-.step{position:relative;text-align:left}
-.step .n{width:52px;height:52px;border-radius:50%;border:1px solid var(--border-strong);background:var(--surface-solid);display:grid;place-items:center;font-family:var(--font-mono);font-weight:700;color:var(--accent-2);margin-bottom:16px;position:relative;z-index:1;transition:.3s var(--ease)}
-.step:hover .n{border-color:var(--accent);box-shadow:var(--glow);transform:translateY(-3px)}
-.step .et{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.14em;color:var(--faint);font-weight:700;text-transform:uppercase}
-.step h4{font-family:var(--font-display);font-weight:700;font-size:1.02rem;margin:4px 0 6px}
-.step p{font-size:.82rem;color:var(--muted);line-height:1.5}
-
-/* ============ AUTHORITY ============ */
-#why{padding:56px 0 72px}
-.metrics-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.mstat{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:26px;position:relative;overflow:hidden}
-.mstat::before{content:"";position:absolute;left:0;top:0;width:40px;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:0 0 3px 0}
-.mstat .num{font-family:var(--font-display);font-weight:800;font-size:2.5rem;letter-spacing:-.02em;line-height:1;background:linear-gradient(120deg,var(--text),var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.mstat .lbl{font-size:.82rem;color:var(--muted);margin-top:8px;font-weight:600}
-
-/* ============ FOOTER ============ */
-footer{border-top:1px solid var(--border);padding:54px 0 34px;background:color-mix(in srgb,var(--bg-a) 60%,transparent)}
-.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px;align-items:start}
-.foot-brand .brand{margin-bottom:14px}
-.foot-brand p{color:var(--muted);font-size:.88rem;max-width:330px;line-height:1.6}
-.tag{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.34em;color:var(--accent-2);margin-top:16px;font-weight:700}
-.foot-col h5{font-size:.68rem;text-transform:uppercase;letter-spacing:.14em;color:var(--faint);font-weight:700;font-family:var(--font-mono);margin-bottom:14px}
-.foot-col a,.foot-col span{display:block;color:var(--muted);font-size:.88rem;margin-bottom:9px;transition:.2s}
-.foot-col a:hover{color:var(--text)}
-.socials{display:flex;gap:10px;margin-top:6px}
-.socials a{width:36px;height:36px;border-radius:9px;border:1px solid var(--border);display:grid;place-items:center;transition:.25s var(--ease)}
-.socials a:hover{border-color:var(--accent);color:var(--accent-2);transform:translateY(-2px)}
-.socials svg{width:17px;height:17px}
-.foot-bottom{border-top:1px solid var(--border);margin-top:38px;padding-top:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.76rem;color:var(--faint)}
-.foot-bottom .disc{max-width:640px;line-height:1.5}
-
-/* ============ MODAL ============ */
-.overlay{position:fixed;inset:0;background:rgba(4,3,18,.7);backdrop-filter:blur(6px);z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
-.overlay.open{display:flex;animation:fade .25s var(--ease)}
-@keyframes fade{from{opacity:0}to{opacity:1}}
-.modal{background:var(--elevated);border:1px solid var(--border-strong);border-radius:var(--r-lg);max-width:540px;width:100%;box-shadow:var(--shadow);overflow:hidden;animation:slideup .32s var(--ease);max-height:92vh;overflow-y:auto}
-@keyframes slideup{from{opacity:0;transform:translateY(24px) scale(.98)}to{opacity:1;transform:none}}
-.modal-head{padding:24px 26px;border-bottom:1px solid var(--border);position:relative;background:radial-gradient(400px 160px at 100% 0,color-mix(in srgb,var(--accent) 14%,transparent),transparent 70%)}
-.modal-head .mclose{position:absolute;top:18px;right:18px;width:34px;height:34px;border-radius:9px;border:1px solid var(--border);display:grid;place-items:center;color:var(--muted)}
-.modal-head .mclose:hover{color:var(--text);border-color:var(--border-strong)}
-.modal-code{font-family:var(--font-display);font-weight:700;font-size:1.55rem}
-.modal-sec{font-size:.86rem;color:var(--muted);margin-top:3px;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
-.modal-body{padding:24px 26px}
-.modal-metrics{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r-md);overflow:hidden;margin-bottom:20px}
-.modal-teaser{font-size:.9rem;color:var(--muted);line-height:1.6;margin-bottom:20px}
-.modal-form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.modal-form .full{grid-column:1/-1}
-.modal-form .btn-primary{justify-content:center;width:100%}
-
-/* ============ REVEAL ============ */
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
-.reveal.in{opacity:1;transform:none}
-
-/* ============ RESPONSIVE ============ */
-@media(max-width:980px){
-  .hero-grid{grid-template-columns:1fr;gap:36px}
-  .deal-preview{max-width:440px}
-  .grid{grid-template-columns:repeat(2,1fr)}
-  .card.featured{flex-direction:column;gap:22px}
-  .card.featured .card-side{border-left:none;border-top:1px solid var(--border);padding-left:0;padding-top:22px}
-  .sell-grid{grid-template-columns:1fr;gap:30px}
-  .steps{grid-template-columns:1fr 1fr;gap:26px}
-  .steps::before{display:none}
-  .metrics-strip{grid-template-columns:1fr 1fr}
-  .toolbar{grid-template-columns:1fr 1fr}
-  .foot-grid{grid-template-columns:1fr;gap:30px}
-}
-@media(max-width:680px){
-  .nav-links{display:none}
-  .menu-toggle{display:grid}
-  .nav-tools .label-hide{display:none}
-  .grid{grid-template-columns:1fr}
-  .form-grid,.modal-form{grid-template-columns:1fr}
-  .metrics-strip{grid-template-columns:1fr}
-  .steps{grid-template-columns:1fr}
-  .hero-stats{gap:24px}
-  .modal-metrics{grid-template-columns:1fr 1fr}
-  .ticker-label span:not(.dot){display:none}
-}
-.mobile-nav{display:none;flex-direction:column;gap:4px;padding:0 26px 18px}
-.mobile-nav.open{display:flex}
-.mobile-nav a{padding:.7rem .8rem;border-radius:var(--r-sm);font-weight:600;color:var(--muted)}
-.mobile-nav a:hover{background:var(--surface-2);color:var(--text)}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zillion Business — Private Business Exchange</title>
+  <meta name="description" content="Bolsa de empresas privada Zillion Business. Compra e venda de empresas com segurança, confidencialidade e assessoria internacional. Grow to Inspire." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/bolsa.css">
 </head>
 <body>
 
@@ -404,56 +16,52 @@ footer{border-top:1px solid var(--border);padding:54px 0 34px;background:color-m
 <div class="ticker">
   <div class="ticker-inner">
     <div class="ticker-label"><span class="dot"></span><span data-i18n="ticker_label">Transações recentes</span></div>
-    <div class="ticker-track" id="tickerTrack"></div>
+    <div class="ticker-track-container">
+      <div class="ticker-track" id="tickerTrack"></div>
+    </div>
   </div>
 </div>
 
 <!-- ====== HEADER ====== -->
 <header>
   <div class="wrap nav">
-    <a href="index.html" class="brand" title="Voltar ao site principal">
-      <svg class="mark" viewBox="0 0 100 100" fill="none" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
-        <path class="accent" d="M83 27 L57 66"/>
-        <path class="peak" d="M20 73 L48 27 L76 73"/>
-      </svg>
+    <a href="#top" class="brand">
+      <div class="mark" style="font-size:38px">
+        <img src="assets/logo.webp" alt="Zillion Logo" class="logo-img">
+      </div>
       <div class="brand-name">ZILLION<small>BUSINESS EXCHANGE</small></div>
     </a>
+
     <nav class="nav-links">
-      <a href="index.html" style="color:var(--accent-2);font-weight:700">&larr; Zillion Business</a>
       <a href="#market" data-i18n="nav_opportunities">Oportunidades</a>
       <a href="#sell" data-i18n="nav_sell">Vender empresa</a>
       <a href="#how" data-i18n="nav_how">Como funciona</a>
-      <a href="blog.html">Blog</a>
       <a href="#why" data-i18n="nav_about">Autoridade</a>
     </nav>
+
     <div class="nav-tools">
       <div class="lang">
-        <button class="lang-btn" id="langBtn" aria-haspopup="true">
-          <span class="flag" id="langFlag">🇵🇹</span><span id="langCode">PT</span>
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="lang-menu" id="langMenu" role="menu">
+        <button class="lang-btn" id="langBtn"><span class="flag" id="langFlag">🇵🇹</span> <span id="langCode">PT</span></button>
+        <div class="lang-menu" id="langMenu">
           <button data-lang="pt"><span class="flag">🇵🇹</span> Português</button>
           <button data-lang="en"><span class="flag">🇬🇧</span> English</button>
           <button data-lang="it"><span class="flag">🇮🇹</span> Italiano</button>
         </div>
       </div>
-      <button class="icon-btn" id="themeBtn" aria-label="theme">
-        <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"></svg>
+      <button class="icon-btn" id="themeBtn" aria-label="Mudar tema">
+        <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
       </button>
-      <a href="#sell" class="btn btn-primary"><span data-i18n="cta_sell">Vender empresa</span></a>
-      <button class="icon-btn menu-toggle" id="menuToggle" aria-label="menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <a href="#sell" class="btn btn-primary label-hide" data-i18n="cta_sell">Vender empresa</a>
+      <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
       </button>
     </div>
   </div>
   <nav class="mobile-nav" id="mobileNav">
-    <a href="index.html" style="color:var(--accent-2);font-weight:700">&larr; Zillion Business</a>
     <a href="#market" data-i18n="nav_opportunities">Oportunidades</a>
     <a href="#sell" data-i18n="nav_sell">Vender empresa</a>
     <a href="#how" data-i18n="nav_how">Como funciona</a>
     <a href="#why" data-i18n="nav_about">Autoridade</a>
-    <a href="blog.html">Blog</a>
   </nav>
 </header>
 
@@ -462,8 +70,8 @@ footer{border-top:1px solid var(--border);padding:54px 0 34px;background:color-m
   <div class="wrap hero-grid">
     <div class="hero-copy reveal">
       <span class="kicker" data-i18n="hero_kicker">Bolsa de empresas privada</span>
-      <h1 data-i18n-html="hero_title">Compre e venda empresas com <span class="em">curadoria e confidencialidade</span>.</h1>
-      <p class="lead" data-i18n="hero_sub">Conectamos empresários e investidores qualificados num ambiente fechado de M&A. Oportunidades reais, avaliadas e estruturadas pela Zillion Business em Portugal, Brasil e Dubai.</p>
+      <h1 data-i18n-html="hero_title">Compre e venda empresas com <span class="em">segurança e confidencialidade</span>.</h1>
+      <p class="lead" data-i18n="hero_sub">Conectamos empresários e investidores qualificados num ambiente fechado de M&A. Oportunidades reais, avaliadas e estruturadas pela Zillion Business em Portugal, Italia, Brasil e Dubai.</p>
       <div class="hero-ctas">
         <a href="#market" class="btn btn-primary" data-i18n="cta_explore">Explorar oportunidades</a>
         <a href="#sell" class="btn btn-ghost" data-i18n="cta_sell_company">Vender minha empresa</a>
@@ -482,8 +90,8 @@ footer{border-top:1px solid var(--border);padding:54px 0 34px;background:color-m
       <div class="deal-preview">
         <div class="dp-head">
           <div>
-            <div class="dp-code">Project Aurora</div>
-            <div class="dp-sector" data-i18n="sector_tech">Tecnologia &amp; SaaS · Portugal</div>
+            <div class="dp-code">WM Barbershop</div>
+            <div class="dp-sector" data-i18n="sector_tech">Barbershop &amp; Studio Tattoo · Portugal</div>
           </div>
           <span class="badge exclusive" data-i18n="status_exclusive">Exclusiva</span>
         </div>
@@ -510,7 +118,7 @@ footer{border-top:1px solid var(--border);padding:54px 0 34px;background:color-m
   <div class="wrap">
     <div class="sec-head reveal">
       <h2 data-i18n="market_title">Oportunidades em destaque</h2>
-      <p data-i18n="market_sub">Empresas com caixa real, disponíveis para aquisição total ou parcial de quotas. Cada operação é validada pelo time da Zillion.</p>
+      <p data-i18n="market_sub">Empresas com caixa real, disponíveis para aquisição total ou parcial de quotas. Cada operação é validada pelo time da Zillion Business.</p>
     </div>
 
     <div class="toolbar reveal">
@@ -543,8 +151,8 @@ footer{border-top:1px solid var(--border);padding:54px 0 34px;background:color-m
   <div class="wrap sell-grid">
     <div class="sell-info reveal">
       <span class="kicker" data-i18n="sell_kicker">Para empresários</span>
-      <h2 style="font-family:var(--font-display);font-weight:700;font-size:clamp(1.8rem,3.4vw,2.6rem);letter-spacing:-.02em;line-height:1.06" data-i18n="sell_title">Venda sua empresa pela Zillion</h2>
-      <p style="color:var(--muted);margin-top:.8rem;font-size:1rem" data-i18n="sell_sub">Estruturamos a venda do seu negócio com discrição total: avaliação justa, preparação dos números e acesso direto a uma rede de investidores qualificados.</p>
+      <h2 data-i18n="sell_title">Venda sua empresa pela Zillion</h2>
+      <p data-i18n="sell_sub">Estruturamos a venda do seu negócio com discrição total: avaliação justa, preparação dos números e acesso direto a uma rede de investidores qualificados.</p>
       <div class="sell-points">
         <div class="spoint">
           <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l3-3 4 4 5-6"/></svg></div>
@@ -552,7 +160,7 @@ footer{border-top:1px solid var(--border);padding:54px 0 34px;background:color-m
         </div>
         <div class="spoint">
           <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/><path d="M16 3.13a4 4 0 010 7.75M21 21v-2a4 4 0 00-3-3.87"/></svg></div>
-          <div><h4 data-i18n="sell_p2_t">Rede de investidores</h4><p data-i18n="sell_p2_d">Conexão com compradores qualificados em Portugal, Brasil e Dubai.</p></div>
+          <div><h4 data-i18n="sell_p2_t">Rede de investidores</h4><p data-i18n="sell_p2_d">Conexão com compradores qualificados em Portugal, Italia, Brasil e Dubai.</p></div>
         </div>
         <div class="spoint">
           <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
@@ -568,7 +176,7 @@ footer{border-top:1px solid var(--border);padding:54px 0 34px;background:color-m
     <div class="sell-form reveal">
       <div id="sellFormInner">
         <h3 data-i18n="sell_form_title">Submeta sua empresa para avaliação</h3>
-        <p class="sub" data-i18n="sell_form_sub">Preenchimento em 2 minutos. Nossa equipe responde em até 48h úteis.</p>
+        <p class="sub" data-i18n="sell_form_sub">Preenchimento em 2 minutos. Nossa equipe responde em até 24h úteis.</p>
         <div class="form-grid">
           <div class="full"><label class="in-label" data-i18n="form_company">Nome da empresa</label><input class="ctrl" id="sCompany"></div>
           <div><label class="in-label" data-i18n="filter_sector">Setor</label><select class="ctrl" id="sSector"></select></div>
@@ -589,7 +197,7 @@ footer{border-top:1px solid var(--border);padding:54px 0 34px;background:color-m
       <div class="form-ok" id="sellOk">
         <div class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></div>
         <h3 data-i18n="ok_title">Recebemos sua empresa</h3>
-        <p data-i18n="ok_sub">Um especialista da Zillion entrará em contato em até 48h úteis para iniciar a avaliação confidencial.</p>
+        <p data-i18n="ok_sub">Um especialista da Zillion Business entrará em contato em até 24h úteis para iniciar a avaliação confidencial.</p>
       </div>
     </div>
   </div>
@@ -600,7 +208,7 @@ footer{border-top:1px solid var(--border);padding:54px 0 34px;background:color-m
   <div class="wrap">
     <div class="sec-head reveal" style="max-width:680px">
       <span class="kicker" data-i18n="how_kicker">O processo</span>
-      <h2 data-i18n="how_title">Como funciona uma operação na Zillion</h2>
+      <h2 data-i18n="how_title">Como funciona uma operação na Zillion Business</h2>
       <p data-i18n="how_sub">Um método claro, do primeiro contato ao fechamento — desenhado para proteger ambos os lados.</p>
     </div>
     <div class="steps" id="steps"></div>
@@ -626,10 +234,9 @@ footer{border-top:1px solid var(--border);padding:54px 0 34px;background:color-m
     <div class="foot-grid">
       <div class="foot-brand">
         <div class="brand">
-          <svg class="mark" viewBox="0 0 100 100" fill="none" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" style="font-size:34px">
-            <path class="accent" d="M83 27 L57 66"/>
-            <path class="peak" d="M20 73 L48 27 L76 73"/>
-          </svg>
+          <div class="mark" style="font-size:38px">
+            <img src="assets/logo.webp" alt="Zillion Logo" class="logo-img">
+          </div>
           <div class="brand-name">ZILLION<small>BUSINESS EXCHANGE</small></div>
         </div>
         <p data-i18n="foot_desc">Consultoria de negócios e investimentos. Estruturamos, compramos e vendemos empresas com método, dados e visão internacional.</p>
@@ -645,7 +252,7 @@ footer{border-top:1px solid var(--border);padding:54px 0 34px;background:color-m
       <div class="foot-col">
         <h5 data-i18n="foot_hubs">Polos</h5>
         <span>🇵🇹 Lisboa, Portugal</span>
-        <span>🇧🇷 São Paulo, Brasil</span>
+        <span>🇧🇷 Santa Cruz Cabrália, Brasil</span>
         <span>🇦🇪 Dubai, UAE</span>
         <div class="socials">
           <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 102.5 6 2.5 2.5 0 004.98 3.5zM3 8.98h4v12H3zM10 8.98h3.8v1.64h.05a4.17 4.17 0 013.75-2.06c4 0 4.75 2.64 4.75 6.07v6.35h-4v-5.63c0-1.34 0-3.07-1.87-3.07s-2.16 1.46-2.16 2.97v5.73H10z"/></svg></a>
@@ -691,457 +298,6 @@ footer{border-top:1px solid var(--border);padding:54px 0 34px;background:color-m
   </div>
 </div>
 
-<script>
-/* ===================== I18N ===================== */
-const I18N = {
-  pt:{
-    ticker_label:"Transações recentes", status_closed:"FECHADO",
-    nav_opportunities:"Oportunidades", nav_sell:"Vender empresa", nav_how:"Como funciona", nav_about:"Autoridade",
-    cta_sell:"Vender empresa", cta_explore:"Explorar oportunidades", cta_sell_company:"Vender minha empresa",
-    hero_kicker:"Bolsa de empresas privada",
-    hero_title:'Compre e venda empresas com <span class="em">curadoria e confidencialidade</span>.',
-    hero_sub:"Conectamos empresários e investidores qualificados num ambiente fechado de M&A. Oportunidades reais, avaliadas e estruturadas pela Zillion Business em Portugal, Brasil e Dubai.",
-    hero_note:"Acesso a dados detalhados mediante NDA",
-    stat_listed:"Empresas avaliadas", stat_volume:"Volume negociado", stat_hubs:"Polos internacionais",
-    market_title:"Oportunidades em destaque",
-    market_sub:"Empresas com caixa real, disponíveis para aquisição total ou parcial de quotas. Cada operação é validada pelo time da Zillion.",
-    filter_search:"Buscar", search_ph:"Código, setor...", filter_sector:"Setor", filter_country:"País", filter_price:"Faixa de valor", filter_sort:"Ordenar",
-    all_sectors:"Todos os setores", all_countries:"Todos os países", all_prices:"Qualquer valor",
-    sort_relevance:"Relevância", sort_price_desc:"Maior valor", sort_price_asc:"Menor valor", sort_revenue:"Maior faturamento", sort_new:"Mais recentes",
-    results:"oportunidades disponíveis",
-    label_revenue:"Faturamento anual", label_ebitda:"EBITDA", label_multiple:"Múltiplo", label_employees:"Colaboradores", label_founded:"Fundada em", label_asking:"Valor pedido",
-    status_new:"Nova", status_available:"Disponível", status_under_offer:"Em negociação", status_exclusive:"Exclusiva",
-    card_request:"Solicitar acesso", confidential:"Sob NDA",
-    sector_tech:"Tecnologia & SaaS", sector_ecommerce:"E-commerce & Retail", sector_health:"Saúde & Bem-estar", sector_food:"Alimentação & F&B",
-    sector_realestate:"Imobiliário", sector_industry:"Indústria", sector_services:"Serviços B2B", sector_finance:"Finanças & Fintech",
-    country_pt:"Portugal", country_br:"Brasil", country_ae:"Emirados Árabes Unidos", country_it:"Itália", country_es:"Espanha",
-    sell_kicker:"Para empresários", sell_title:"Venda sua empresa pela Zillion",
-    sell_sub:"Estruturamos a venda do seu negócio com discrição total: avaliação justa, preparação dos números e acesso direto a uma rede de investidores qualificados.",
-    sell_p1_t:"Avaliação confidencial", sell_p1_d:"Análise de valuation baseada em dados reais de caixa, margem e potencial.",
-    sell_p2_t:"Rede de investidores", sell_p2_d:"Conexão com compradores qualificados em Portugal, Brasil e Dubai.",
-    sell_p3_t:"Sigilo garantido por NDA", sell_p3_d:"Sua identidade só é revelada após acordo de confidencialidade assinado.",
-    sell_p4_t:"Assessoria até o fechamento", sell_p4_d:"Acompanhamento jurídico e estratégico em todas as etapas da negociação.",
-    sell_form_title:"Submeta sua empresa para avaliação", sell_form_sub:"Preenchimento em 2 minutos. Nossa equipe responde em até 48h úteis.",
-    form_company:"Nome da empresa", form_revenue:"Faturamento anual", form_reason:"Motivo da venda", form_name:"Seu nome", form_email:"E-mail", form_phone:"Telefone / WhatsApp", form_message:"Conte um pouco sobre o negócio",
-    rev_r1:"Até €500K", rev_r2:"€500K – €2M", rev_r3:"€2M – €10M", rev_r4:"Acima de €10M",
-    reason_1:"Nova fase / aposentadoria", reason_2:"Foco em outro negócio", reason_3:"Captação de sócio", reason_4:"Venda estratégica", reason_5:"Outro",
-    sell_submit:"Enviar para avaliação", sell_privacy:"Seus dados são tratados com confidencialidade e usados apenas para a avaliação da operação.",
-    ok_title:"Recebemos sua empresa", ok_sub:"Um especialista da Zillion entrará em contato em até 48h úteis para iniciar a avaliação confidencial.",
-    how_kicker:"O processo", how_title:"Como funciona uma operação na Zillion", how_sub:"Um método claro, do primeiro contato ao fechamento — desenhado para proteger ambos os lados.",
-    step:"Etapa",
-    s1_t:"Cadastro & avaliação", s1_d:"Recebemos o negócio e fazemos uma avaliação confidencial dos números.",
-    s2_t:"Curadoria & matching", s2_d:"Estruturamos o dossiê e conectamos com investidores compatíveis.",
-    s3_t:"NDA & due diligence", s3_d:"Assinatura de confidencialidade e abertura segura dos dados.",
-    s4_t:"Negociação assessorada", s4_d:"Conduzimos a negociação com suporte jurídico e estratégico.",
-    s5_t:"Fechamento & transição", s5_d:"Formalizamos a operação e acompanhamos a transição.",
-    why_title:"Resultados que importam",
-    m1:"Empresas analisadas", m2:"Volume transacionado", m3:"Polos: PT · BR · Dubai", m4:"Satisfação dos clientes",
-    foot_desc:"Consultoria de negócios e investimentos. Estruturamos, compramos e vendemos empresas com método, dados e visão internacional.",
-    foot_nav:"Navegação", foot_hubs:"Polos", rights:"Todos os direitos reservados",
-    disclaimer:"Ambiente privado. As oportunidades e indicadores exibidos são ilustrativos; dados completos disponibilizados apenas mediante acordo de confidencialidade.",
-    modal_form_title:"Solicite o acesso confidencial (NDA)", modal_ok_title:"Solicitação enviada", modal_ok_sub:"Após validação e NDA, liberamos o dossiê completo desta oportunidade.",
-    empty:"Nenhuma oportunidade encontrada com esses filtros."
-  },
-  en:{
-    ticker_label:"Recent transactions", status_closed:"CLOSED",
-    nav_opportunities:"Opportunities", nav_sell:"Sell a company", nav_how:"How it works", nav_about:"Authority",
-    cta_sell:"Sell a company", cta_explore:"Explore opportunities", cta_sell_company:"Sell my company",
-    hero_kicker:"Private business exchange",
-    hero_title:'Buy and sell companies with <span class="em">curation and confidentiality</span>.',
-    hero_sub:"We connect entrepreneurs and qualified investors in a closed M&A environment. Real, vetted opportunities structured by Zillion Business across Portugal, Brazil and Dubai.",
-    hero_note:"Detailed data unlocked under NDA",
-    stat_listed:"Companies vetted", stat_volume:"Deal volume", stat_hubs:"International hubs",
-    market_title:"Featured opportunities",
-    market_sub:"Companies with real cash flow, available for full or partial equity acquisition. Every deal is validated by the Zillion team.",
-    filter_search:"Search", search_ph:"Code, sector...", filter_sector:"Sector", filter_country:"Country", filter_price:"Price range", filter_sort:"Sort",
-    all_sectors:"All sectors", all_countries:"All countries", all_prices:"Any price",
-    sort_relevance:"Relevance", sort_price_desc:"Highest price", sort_price_asc:"Lowest price", sort_revenue:"Highest revenue", sort_new:"Newest",
-    results:"available opportunities",
-    label_revenue:"Annual revenue", label_ebitda:"EBITDA", label_multiple:"Multiple", label_employees:"Employees", label_founded:"Founded", label_asking:"Asking price",
-    status_new:"New", status_available:"Available", status_under_offer:"Under offer", status_exclusive:"Exclusive",
-    card_request:"Request access", confidential:"Under NDA",
-    sector_tech:"Technology & SaaS", sector_ecommerce:"E-commerce & Retail", sector_health:"Health & Wellness", sector_food:"Food & Beverage",
-    sector_realestate:"Real Estate", sector_industry:"Industry", sector_services:"B2B Services", sector_finance:"Finance & Fintech",
-    country_pt:"Portugal", country_br:"Brazil", country_ae:"United Arab Emirates", country_it:"Italy", country_es:"Spain",
-    sell_kicker:"For business owners", sell_title:"Sell your company through Zillion",
-    sell_sub:"We structure the sale of your business with full discretion: fair valuation, financials preparation and direct access to a network of qualified investors.",
-    sell_p1_t:"Confidential valuation", sell_p1_d:"Valuation analysis based on real cash, margin and growth data.",
-    sell_p2_t:"Investor network", sell_p2_d:"Connection to qualified buyers across Portugal, Brazil and Dubai.",
-    sell_p3_t:"Secrecy secured by NDA", sell_p3_d:"Your identity is only revealed after a signed confidentiality agreement.",
-    sell_p4_t:"Advisory until closing", sell_p4_d:"Legal and strategic support at every stage of the negotiation.",
-    sell_form_title:"Submit your company for valuation", sell_form_sub:"Takes 2 minutes. Our team replies within 48 business hours.",
-    form_company:"Company name", form_revenue:"Annual revenue", form_reason:"Reason for selling", form_name:"Your name", form_email:"Email", form_phone:"Phone / WhatsApp", form_message:"Tell us a bit about the business",
-    rev_r1:"Up to €500K", rev_r2:"€500K – €2M", rev_r3:"€2M – €10M", rev_r4:"Above €10M",
-    reason_1:"New chapter / retirement", reason_2:"Focus on another business", reason_3:"Raising a partner", reason_4:"Strategic sale", reason_5:"Other",
-    sell_submit:"Submit for valuation", sell_privacy:"Your data is handled confidentially and used only to assess the deal.",
-    ok_title:"We received your company", ok_sub:"A Zillion specialist will reach out within 48 business hours to begin the confidential valuation.",
-    how_kicker:"The process", how_title:"How a deal works at Zillion", how_sub:"A clear method, from first contact to closing — designed to protect both sides.",
-    step:"Step",
-    s1_t:"Onboarding & valuation", s1_d:"We receive the business and run a confidential review of the numbers.",
-    s2_t:"Curation & matching", s2_d:"We structure the dossier and connect you with compatible investors.",
-    s3_t:"NDA & due diligence", s3_d:"Confidentiality is signed and data is opened securely.",
-    s4_t:"Advised negotiation", s4_d:"We lead the negotiation with legal and strategic support.",
-    s5_t:"Closing & transition", s5_d:"We formalize the deal and support the transition.",
-    why_title:"Results that matter",
-    m1:"Companies analyzed", m2:"Transacted volume", m3:"Hubs: PT · BR · Dubai", m4:"Client satisfaction",
-    foot_desc:"Business & investment consultancy. We structure, buy and sell companies with method, data and an international view.",
-    foot_nav:"Navigation", foot_hubs:"Hubs", rights:"All rights reserved",
-    disclaimer:"Private environment. Listed opportunities and metrics are illustrative; full data is shared only under a confidentiality agreement.",
-    modal_form_title:"Request confidential access (NDA)", modal_ok_title:"Request sent", modal_ok_sub:"After validation and NDA, we release the full dossier for this opportunity.",
-    empty:"No opportunities match these filters."
-  },
-  it:{
-    ticker_label:"Transazioni recenti", status_closed:"CONCLUSO",
-    nav_opportunities:"Opportunità", nav_sell:"Vendere un'azienda", nav_how:"Come funziona", nav_about:"Autorevolezza",
-    cta_sell:"Vendere un'azienda", cta_explore:"Esplora le opportunità", cta_sell_company:"Vendi la mia azienda",
-    hero_kicker:"Borsa privata di aziende",
-    hero_title:'Compra e vendi aziende con <span class="em">curatela e riservatezza</span>.',
-    hero_sub:"Colleghiamo imprenditori e investitori qualificati in un ambiente M&A riservato. Opportunità reali, valutate e strutturate da Zillion Business tra Portogallo, Brasile e Dubai.",
-    hero_note:"Dati dettagliati accessibili previo NDA",
-    stat_listed:"Aziende valutate", stat_volume:"Volume negoziato", stat_hubs:"Sedi internazionali",
-    market_title:"Opportunità in evidenza",
-    market_sub:"Aziende con cassa reale, disponibili per l'acquisizione totale o parziale di quote. Ogni operazione è validata dal team Zillion.",
-    filter_search:"Cerca", search_ph:"Codice, settore...", filter_sector:"Settore", filter_country:"Paese", filter_price:"Fascia di prezzo", filter_sort:"Ordina",
-    all_sectors:"Tutti i settori", all_countries:"Tutti i paesi", all_prices:"Qualsiasi prezzo",
-    sort_relevance:"Rilevanza", sort_price_desc:"Prezzo più alto", sort_price_asc:"Prezzo più basso", sort_revenue:"Maggior fatturato", sort_new:"Più recenti",
-    results:"opportunità disponibili",
-    label_revenue:"Fatturato annuo", label_ebitda:"EBITDA", label_multiple:"Multiplo", label_employees:"Dipendenti", label_founded:"Fondata nel", label_asking:"Prezzo richiesto",
-    status_new:"Nuova", status_available:"Disponibile", status_under_offer:"In trattativa", status_exclusive:"Esclusiva",
-    card_request:"Richiedi accesso", confidential:"Sotto NDA",
-    sector_tech:"Tecnologia & SaaS", sector_ecommerce:"E-commerce & Retail", sector_health:"Salute & Benessere", sector_food:"Food & Beverage",
-    sector_realestate:"Immobiliare", sector_industry:"Industria", sector_services:"Servizi B2B", sector_finance:"Finanza & Fintech",
-    country_pt:"Portogallo", country_br:"Brasile", country_ae:"Emirati Arabi Uniti", country_it:"Italia", country_es:"Spagna",
-    sell_kicker:"Per gli imprenditori", sell_title:"Vendi la tua azienda con Zillion",
-    sell_sub:"Strutturiamo la vendita della tua azienda con la massima discrezione: valutazione equa, preparazione dei numeri e accesso diretto a una rete di investitori qualificati.",
-    sell_p1_t:"Valutazione riservata", sell_p1_d:"Analisi di valutazione basata su dati reali di cassa, margine e potenziale.",
-    sell_p2_t:"Rete di investitori", sell_p2_d:"Connessione con acquirenti qualificati tra Portogallo, Brasile e Dubai.",
-    sell_p3_t:"Riservatezza garantita da NDA", sell_p3_d:"La tua identità viene rivelata solo dopo la firma dell'accordo di riservatezza.",
-    sell_p4_t:"Assistenza fino al closing", sell_p4_d:"Supporto legale e strategico in ogni fase della trattativa.",
-    sell_form_title:"Invia la tua azienda per la valutazione", sell_form_sub:"Compilazione in 2 minuti. Il team risponde entro 48 ore lavorative.",
-    form_company:"Nome dell'azienda", form_revenue:"Fatturato annuo", form_reason:"Motivo della vendita", form_name:"Il tuo nome", form_email:"E-mail", form_phone:"Telefono / WhatsApp", form_message:"Raccontaci qualcosa sull'azienda",
-    rev_r1:"Fino a €500K", rev_r2:"€500K – €2M", rev_r3:"€2M – €10M", rev_r4:"Oltre €10M",
-    reason_1:"Nuova fase / pensione", reason_2:"Focus su un altro business", reason_3:"Ingresso di un socio", reason_4:"Vendita strategica", reason_5:"Altro",
-    sell_submit:"Invia per la valutazione", sell_privacy:"I tuoi dati sono trattati con riservatezza e usati solo per valutare l'operazione.",
-    ok_title:"Abbiamo ricevuto la tua azienda", ok_sub:"Uno specialista Zillion ti contatterà entro 48 ore lavorative per avviare la valutazione riservata.",
-    how_kicker:"Il processo", how_title:"Come funziona un'operazione in Zillion", how_sub:"Un metodo chiaro, dal primo contatto al closing — pensato per tutelare entrambe le parti.",
-    step:"Fase",
-    s1_t:"Onboarding & valutazione", s1_d:"Riceviamo l'azienda e svolgiamo una valutazione riservata dei numeri.",
-    s2_t:"Curatela & matching", s2_d:"Strutturiamo il dossier e ti colleghiamo con investitori compatibili.",
-    s3_t:"NDA & due diligence", s3_d:"Firma di riservatezza e apertura sicura dei dati.",
-    s4_t:"Trattativa assistita", s4_d:"Conduciamo la trattativa con supporto legale e strategico.",
-    s5_t:"Closing & transizione", s5_d:"Formalizziamo l'operazione e seguiamo la transizione.",
-    why_title:"Risultati che contano",
-    m1:"Aziende analizzate", m2:"Volume transato", m3:"Sedi: PT · BR · Dubai", m4:"Soddisfazione clienti",
-    foot_desc:"Consulenza aziendale e di investimento. Strutturiamo, compriamo e vendiamo aziende con metodo, dati e visione internazionale.",
-    foot_nav:"Navigazione", foot_hubs:"Sedi", rights:"Tutti i diritti riservati",
-    disclaimer:"Ambiente privato. Le opportunità e gli indicatori mostrati sono illustrativi; i dati completi sono condivisi solo previo accordo di riservatezza.",
-    modal_form_title:"Richiedi l'accesso riservato (NDA)", modal_ok_title:"Richiesta inviata", modal_ok_sub:"Dopo validazione e NDA, rilasciamo il dossier completo di questa opportunità.",
-    empty:"Nessuna opportunità trovata con questi filtri."
-  }
-};
-
-/* ===================== DATA ===================== */
-const SECTORS=["tech","ecommerce","health","food","realestate","industry","services","finance"];
-const COUNTRIES=["pt","br","ae","it","es"];
-const FLAGS={pt:"🇵🇹",br:"🇧🇷",ae:"🇦🇪",it:"🇮🇹",es:"🇪🇸"};
-
-const LISTINGS=[
-  {code:"Project Aurora",sector:"tech",country:"pt",cur:"EUR",revenue:2400000,ebitda:780000,ask:5900000,mult:"7.5x",emp:24,year:2018,status:"exclusive",featured:true,
-    teaser:{pt:"Plataforma SaaS B2B com receita recorrente, retenção acima de 90% e clientes na Europa. Operação enxuta, pronta para escalar internacionalmente.",
-            en:"B2B SaaS platform with recurring revenue, 90%+ retention and clients across Europe. Lean operation, ready to scale internationally.",
-            it:"Piattaforma SaaS B2B con ricavi ricorrenti, retention oltre il 90% e clienti in Europa. Operazione snella, pronta a scalare a livello internazionale."}},
-  {code:"Project Cedro",sector:"ecommerce",country:"br",cur:"BRL",revenue:18500000,ebitda:3200000,ask:14000000,mult:"4.4x",emp:60,year:2016,status:"available",
-    teaser:{pt:"E-commerce de moda com marca própria, base fiel e logística estruturada. Margens saudáveis e forte presença em marketplaces.",
-            en:"Own-brand fashion e-commerce with a loyal base and structured logistics. Healthy margins and strong marketplace presence.",
-            it:"E-commerce di moda a marchio proprio, base fedele e logistica strutturata. Margini sani e forte presenza nei marketplace."}},
-  {code:"Project Dunas",sector:"food",country:"ae",cur:"AED",revenue:9800000,ebitda:2100000,ask:11500000,mult:"5.5x",emp:45,year:2019,status:"new",
-    teaser:{pt:"Rede de F&B premium em Dubai com pontos consolidados e fluxo elevado. Modelo replicável e marca reconhecida localmente.",
-            en:"Premium F&B chain in Dubai with consolidated locations and high footfall. Replicable model and locally recognized brand.",
-            it:"Catena F&B premium a Dubai con location consolidate e alto flusso. Modello replicabile e marchio riconosciuto localmente."}},
-  {code:"Project Vento",sector:"services",country:"pt",cur:"EUR",revenue:1300000,ebitda:420000,ask:2400000,mult:"5.7x",emp:18,year:2015,status:"available",
-    teaser:{pt:"Agência de serviços B2B com contratos recorrentes e baixa dependência do fundador. Carteira diversificada e processos documentados.",
-            en:"B2B services agency with recurring contracts and low founder dependency. Diversified portfolio and documented processes.",
-            it:"Agenzia di servizi B2B con contratti ricorrenti e bassa dipendenza dal fondatore. Portafoglio diversificato e processi documentati."}},
-  {code:"Project Marmo",sector:"industry",country:"it",cur:"EUR",revenue:6700000,ebitda:1500000,ask:8900000,mult:"5.9x",emp:52,year:2009,status:"available",
-    teaser:{pt:"Indústria de manufatura no norte da Itália com clientes de longo prazo e parque fabril próprio. História sólida e exportação ativa.",
-            en:"Manufacturing company in northern Italy with long-term clients and owned facilities. Solid track record and active exports.",
-            it:"Azienda manifatturiera nel Nord Italia con clienti di lungo periodo e stabilimento di proprietà. Storia solida ed export attivo."}},
-  {code:"Project Lumen",sector:"health",country:"es",cur:"EUR",revenue:3900000,ebitda:1050000,ask:6300000,mult:"6.0x",emp:30,year:2017,status:"under_offer",
-    teaser:{pt:"Clínica de saúde e bem-estar com marca forte e fluxo recorrente de pacientes. Estrutura moderna e potencial de expansão regional.",
-            en:"Health & wellness clinic with a strong brand and recurring patient flow. Modern facility and regional expansion potential.",
-            it:"Clinica salute e benessere con marchio forte e flusso ricorrente di pazienti. Struttura moderna e potenziale di espansione regionale."}},
-  {code:"Project Nexo",sector:"finance",country:"pt",cur:"EUR",revenue:2100000,ebitda:560000,ask:9500000,mult:"—",emp:21,year:2020,status:"new",
-    teaser:{pt:"Fintech em forte crescimento com licença operacional e produto validado. Avaliação por potencial: ideal para investidor estratégico.",
-            en:"Fast-growing fintech with operating license and validated product. Valued on potential — ideal for a strategic investor.",
-            it:"Fintech in forte crescita con licenza operativa e prodotto validato. Valutazione sul potenziale: ideale per investitore strategico."}},
-  {code:"Project Terra",sector:"realestate",country:"br",cur:"BRL",revenue:12000000,ebitda:4800000,ask:22000000,mult:"4.6x",emp:15,year:2012,status:"available",
-    teaser:{pt:"Portfólio imobiliário com renda recorrente de aluguéis e ocupação elevada. Ativos bem localizados e gestão profissionalizada.",
-            en:"Real-estate portfolio with recurring rental income and high occupancy. Well-located assets and professional management.",
-            it:"Portafoglio immobiliare con reddito da locazione ricorrente e alta occupazione. Asset ben posizionati e gestione professionale."}},
-  {code:"Project Onda",sector:"ecommerce",country:"it",cur:"EUR",revenue:4200000,ebitda:900000,ask:5400000,mult:"6.0x",emp:28,year:2018,status:"available",
-    teaser:{pt:"E-commerce de produtos para casa com marca consolidada e operação eficiente. Forte recompra e presença em vários mercados europeus.",
-            en:"Home-goods e-commerce with a consolidated brand and efficient operation. Strong repurchase and presence across European markets.",
-            it:"E-commerce di prodotti per la casa con marchio consolidato e operazione efficiente. Forte riacquisto e presenza in più mercati europei."}}
-];
-
-const TICKER=[
-  {code:"Project Helios",sector:"tech",up:"6.8x"},
-  {code:"Project Atlas",sector:"industry",up:"5.2x"},
-  {code:"Project Mare",sector:"food",up:"5.9x"},
-  {code:"Project Sole",sector:"ecommerce",up:"4.5x"},
-  {code:"Project Vega",sector:"finance",up:"7.1x"},
-  {code:"Project Pinha",sector:"services",up:"5.4x"},
-  {code:"Project Oasis",sector:"realestate",up:"4.8x"}
-];
-
-/* ===================== STATE ===================== */
-let lang = "pt";
-let theme = "dark";
-try{const sl=localStorage.getItem("zb_lang"); if(sl)lang=sl; const st=localStorage.getItem("zb_theme"); if(st)theme=st;}catch(e){}
-
-const $=s=>document.querySelector(s);
-const $$=s=>document.querySelectorAll(s);
-function t(k){return (I18N[lang]&&I18N[lang][k])||I18N.pt[k]||k;}
-
-/* ===================== FORMAT ===================== */
-const LOC={pt:"pt-PT",en:"en-US",it:"it-IT"};
-function fmtPrice(v,cur){
-  try{return new Intl.NumberFormat(LOC[lang],{style:"currency",currency:cur,maximumFractionDigits:v>=1000000?2:0,notation:v>=1000000?"compact":"standard"}).format(v);}
-  catch(e){return cur+" "+v;}
-}
-
-/* ===================== I18N APPLY ===================== */
-function applyI18n(){
-  document.documentElement.lang=lang;
-  $$("[data-i18n]").forEach(el=>el.textContent=t(el.dataset.i18n));
-  $$("[data-i18n-html]").forEach(el=>el.innerHTML=t(el.dataset.i18nHtml));
-  $$("[data-i18n-ph]").forEach(el=>el.placeholder=t(el.dataset.i18nPh));
-  $("#langCode").textContent=lang.toUpperCase();
-  $("#langFlag").textContent={pt:"🇵🇹",en:"🇬🇧",it:"🇮🇹"}[lang];
-  $$("#langMenu button").forEach(b=>b.classList.toggle("active",b.dataset.lang===lang));
-}
-
-/* ===================== SELECTS ===================== */
-function buildSelects(){
-  // marketplace filters
-  const fSector=$("#fSector"), fCountry=$("#fCountry"), fPrice=$("#fPrice"), fSort=$("#fSort");
-  fSector.innerHTML=`<option value="">${t("all_sectors")}</option>`+SECTORS.map(s=>`<option value="${s}">${t("sector_"+s)}</option>`).join("");
-  fCountry.innerHTML=`<option value="">${t("all_countries")}</option>`+COUNTRIES.map(c=>`<option value="${c}">${FLAGS[c]} ${t("country_"+c)}</option>`).join("");
-  fPrice.innerHTML=`<option value="">${t("all_prices")}</option>
-    <option value="0-3">&lt; €3M</option><option value="3-7">€3M – €7M</option><option value="7-15">€7M – €15M</option><option value="15-999">&gt; €15M</option>`;
-  fSort.innerHTML=`<option value="rel">${t("sort_relevance")}</option><option value="pd">${t("sort_price_desc")}</option><option value="pa">${t("sort_price_asc")}</option><option value="rv">${t("sort_revenue")}</option><option value="nw">${t("sort_new")}</option>`;
-  // sell form selects
-  const sSector=$("#sSector"), sCountry=$("#sCountry"), sRevenue=$("#sRevenue"), sReason=$("#sReason");
-  sSector.innerHTML=SECTORS.map(s=>`<option value="${s}">${t("sector_"+s)}</option>`).join("");
-  sCountry.innerHTML=COUNTRIES.map(c=>`<option value="${c}">${FLAGS[c]} ${t("country_"+c)}</option>`).join("");
-  sRevenue.innerHTML=["rev_r1","rev_r2","rev_r3","rev_r4"].map(r=>`<option>${t(r)}</option>`).join("");
-  sReason.innerHTML=["reason_1","reason_2","reason_3","reason_4","reason_5"].map(r=>`<option>${t(r)}</option>`).join("");
-}
-
-/* ===================== RENDER LISTINGS ===================== */
-function listingCard(L){
-  const ask=fmtPrice(L.ask,L.cur), rev=fmtPrice(L.revenue,L.cur), eb=fmtPrice(L.ebitda,L.cur);
-  if(L.featured){
-    return `<article class="card featured" data-code="${L.code}">
-      <div class="card-main">
-        <div class="card-top">
-          <div>
-            <div class="card-code">${L.code}</div>
-            <div class="card-sector">${t("sector_"+L.sector)} <span class="geo">· ${FLAGS[L.country]} ${t("country_"+L.country)}</span></div>
-          </div>
-          <span class="badge ${L.status}">${t("status_"+L.status)}</span>
-        </div>
-        <p class="card-teaser">${L.teaser[lang]}</p>
-        <div class="metrics">
-          <div class="metric"><div class="k">${t("label_revenue")}</div><div class="v">${rev}</div></div>
-          <div class="metric"><div class="k">${t("label_ebitda")}</div><div class="v">${eb}</div></div>
-          <div class="metric"><div class="k">${t("label_multiple")}</div><div class="v accent">${L.mult}</div></div>
-          <div class="metric"><div class="k">${t("label_founded")}</div><div class="v">${L.year}</div></div>
-        </div>
-      </div>
-      <div class="card-side">
-        <div class="metric" style="border:1px solid var(--border);border-radius:var(--r-md);margin-bottom:14px"><div class="k">${t("label_employees")}</div><div class="v">${L.emp}</div></div>
-        <div class="ask" style="margin-bottom:16px"><div class="k" style="font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:var(--faint);font-weight:700;font-family:var(--font-mono)">${t("label_asking")}</div><div class="v" style="font-family:var(--font-mono);font-weight:700;font-size:1.9rem;color:var(--accent-2)">${ask}</div></div>
-        <button class="btn btn-primary" style="justify-content:center">${t("card_request")}</button>
-      </div>
-    </article>`;
-  }
-  return `<article class="card" data-code="${L.code}">
-    <div class="card-top">
-      <div>
-        <div class="card-code">${L.code}</div>
-        <div class="card-sector">${t("sector_"+L.sector)} <span class="geo">· ${FLAGS[L.country]}</span></div>
-      </div>
-      <span class="badge ${L.status}">${t("status_"+L.status)}</span>
-    </div>
-    <p class="card-teaser">${L.teaser[lang]}</p>
-    <div class="metrics">
-      <div class="metric"><div class="k">${t("label_revenue")}</div><div class="v">${rev}</div></div>
-      <div class="metric"><div class="k">${t("label_multiple")}</div><div class="v accent">${L.mult}</div></div>
-    </div>
-    <div class="card-foot">
-      <div class="ask"><div class="k">${t("label_asking")}</div><div class="v">${ask}</div></div>
-      <button class="btn btn-ghost">${t("card_request")}</button>
-    </div>
-  </article>`;
-}
-
-function priceBand(ask){ // normalize roughly to EUR millions for filter (BRL/AED treated nominally)
-  const m=ask/1000000; if(m<3)return"0-3"; if(m<7)return"3-7"; if(m<15)return"7-15"; return"15-999";
-}
-
-function renderGrid(){
-  const q=$("#fSearch").value.trim().toLowerCase();
-  const sec=$("#fSector").value, ctr=$("#fCountry").value, pr=$("#fPrice").value, sort=$("#fSort").value;
-  let list=LISTINGS.filter(L=>{
-    if(sec && L.sector!==sec)return false;
-    if(ctr && L.country!==ctr)return false;
-    if(pr && priceBand(L.ask)!==pr)return false;
-    if(q){const hay=(L.code+" "+t("sector_"+L.sector)+" "+t("country_"+L.country)+" "+L.teaser[lang]).toLowerCase(); if(!hay.includes(q))return false;}
-    return true;
-  });
-  if(sort==="pd")list.sort((a,b)=>b.ask-a.ask);
-  else if(sort==="pa")list.sort((a,b)=>a.ask-b.ask);
-  else if(sort==="rv")list.sort((a,b)=>b.revenue-a.revenue);
-  else if(sort==="nw")list.sort((a,b)=>b.year-a.year);
-  else list.sort((a,b)=>(b.featured?1:0)-(a.featured?1:0));
-
-  const grid=$("#grid");
-  grid.innerHTML=list.length?list.map(listingCard).join(""):`<div class="empty">${t("empty")}</div>`;
-  $("#resCount").textContent=list.length;
-  grid.querySelectorAll(".card").forEach(c=>{
-    c.style.opacity=0;c.style.transform="translateY(14px)";
-    requestAnimationFrame(()=>{c.style.transition="opacity .45s var(--ease),transform .45s var(--ease)";c.style.opacity=1;c.style.transform="none";});
-    c.addEventListener("click",()=>openModal(c.dataset.code));
-  });
-}
-
-/* ===================== TICKER ===================== */
-function renderTicker(){
-  const items=TICKER.concat(TICKER).map(x=>`<span class="tick">${x.code} · <b>${t("sector_"+x.sector)}</b> · <span class="up">${t("status_closed")} ${x.up}</span></span>`).join("");
-  $("#tickerTrack").innerHTML=items;
-}
-
-/* ===================== STEPS ===================== */
-function renderSteps(){
-  const arr=[1,2,3,4,5];
-  $("#steps").innerHTML=arr.map(n=>`
-    <div class="step reveal">
-      <div class="n">0${n}</div>
-      <div class="et">${t("step")} ${n}</div>
-      <h4>${t("s"+n+"_t")}</h4>
-      <p>${t("s"+n+"_d")}</p>
-    </div>`).join("");
-  observeReveal();
-}
-
-/* ===================== MODAL ===================== */
-function openModal(code){
-  const L=LISTINGS.find(x=>x.code===code); if(!L)return;
-  $("#mCode").textContent=L.code;
-  $("#mSec").innerHTML=`${t("sector_"+L.sector)} <span style="color:var(--faint)">· ${FLAGS[L.country]} ${t("country_"+L.country)}</span> <span class="badge ${L.status}" style="margin-left:auto">${t("status_"+L.status)}</span>`;
-  $("#mMetrics").innerHTML=[
-    [t("label_revenue"),fmtPrice(L.revenue,L.cur)],
-    [t("label_ebitda"),fmtPrice(L.ebitda,L.cur)],
-    [t("label_asking"),fmtPrice(L.ask,L.cur)],
-    [t("label_multiple"),L.mult],
-    [t("label_employees"),L.emp],
-    [t("label_founded"),L.year]
-  ].map(m=>`<div class="metric"><div class="k">${m[0]}</div><div class="v">${m[1]}</div></div>`).join("");
-  $("#mTeaser").textContent=L.teaser[lang];
-  $("#mFormInner").style.display="block"; $("#mOk").classList.remove("show");
-  $("#mName").value="";$("#mEmail").value="";$("#mPhone").value="";
-  $("#overlay").classList.add("open"); document.body.style.overflow="hidden";
-}
-function closeModal(){$("#overlay").classList.remove("open");document.body.style.overflow="";}
-
-/* ===================== COUNT-UP ===================== */
-function countUp(el){
-  const target=+el.dataset.count, pre=el.dataset.prefix||"", suf=el.dataset.suffix||"";
-  let cur=0; const dur=1200, t0=performance.now();
-  function step(now){
-    const p=Math.min((now-t0)/dur,1); const ease=1-Math.pow(1-p,3);
-    cur=Math.round(target*ease);
-    el.textContent=pre+cur.toLocaleString(LOC[lang])+suf;
-    if(p<1)requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
-}
-
-/* ===================== REVEAL ===================== */
-let revObs;
-function observeReveal(){
-  if(!revObs){
-    revObs=new IntersectionObserver(es=>{
-      es.forEach(e=>{ if(e.isIntersecting){
-        e.target.classList.add("in");
-        e.target.querySelectorAll?.("[data-count]").forEach(countUp);
-        if(e.target.dataset&&e.target.dataset.count)countUp(e.target);
-        revObs.unobserve(e.target);
-      }});
-    },{threshold:.18});
-  }
-  $$(".reveal:not(.in)").forEach(el=>revObs.observe(el));
-  $$("[data-count]").forEach(el=>{ if(!el.closest(".reveal")) revObs.observe(el); });
-}
-
-/* ===================== THEME ===================== */
-function setTheme(tm){
-  theme=tm; document.documentElement.setAttribute("data-theme",tm);
-  $("#themeIcon").innerHTML = tm==="dark"
-    ? '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19"/>'
-    : '<path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/>';
-  try{localStorage.setItem("zb_theme",tm);}catch(e){}
-}
-
-/* ===================== LANGUAGE ===================== */
-function setLang(l){
-  lang=l; try{localStorage.setItem("zb_lang",l);}catch(e){}
-  applyI18n(); buildSelects(); renderTicker(); renderSteps(); renderGrid();
-}
-
-/* ===================== INIT ===================== */
-function init(){
-  $("#year").textContent=new Date().getFullYear();
-  // hero bars
-  $("#dpBars").innerHTML=[34,46,40,58,52,70,64,82,76,94].map((h,i)=>`<i style="height:${h}%;animation-delay:${i*.06}s"></i>`).join("");
-  setTheme(theme); applyI18n(); buildSelects(); renderTicker(); renderSteps(); renderGrid();
-
-  // filters
-  ["fSearch","fSector","fCountry","fPrice","fSort"].forEach(id=>{
-    const ev=id==="fSearch"?"input":"change"; $("#"+id).addEventListener(ev,renderGrid);
-  });
-
-  // theme + lang
-  $("#themeBtn").addEventListener("click",()=>setTheme(theme==="dark"?"light":"dark"));
-  $("#langBtn").addEventListener("click",e=>{e.stopPropagation();$("#langMenu").classList.toggle("open");});
-  $$("#langMenu button").forEach(b=>b.addEventListener("click",()=>{setLang(b.dataset.lang);$("#langMenu").classList.remove("open");}));
-  document.addEventListener("click",()=>$("#langMenu").classList.remove("open"));
-
-  // mobile nav
-  $("#menuToggle").addEventListener("click",()=>$("#mobileNav").classList.toggle("open"));
-  $$("#mobileNav a").forEach(a=>a.addEventListener("click",()=>$("#mobileNav").classList.remove("open")));
-
-  // modal
-  $("#mClose").addEventListener("click",closeModal);
-  $("#overlay").addEventListener("click",e=>{if(e.target.id==="overlay")closeModal();});
-  document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal();});
-  $("#mSubmit").addEventListener("click",()=>{
-    if(!$("#mEmail").value.trim()){$("#mEmail").focus();return;}
-    $("#mFormInner").style.display="none"; $("#mOk").classList.add("show");
-  });
-
-  // sell form
-  $("#sellSubmit").addEventListener("click",()=>{
-    const ok=$("#sCompany").value.trim()&&$("#sName").value.trim()&&$("#sEmail").value.trim();
-    if(!ok){ if(!$("#sCompany").value.trim())$("#sCompany").focus(); else if(!$("#sName").value.trim())$("#sName").focus(); else $("#sEmail").focus(); return; }
-    $("#sellFormInner").style.display="none"; $("#sellOk").classList.add("show");
-    $("#sellOk").scrollIntoView({behavior:"smooth",block:"center"});
-  });
-
-  observeReveal();
-}
-document.addEventListener("DOMContentLoaded",init);
-</script>
+<script src="js/bolsa.js"></script>
 </body>
 </html>
