@@ -104,7 +104,7 @@ section{position:relative;padding:84px 0}
 .divider{height:1px;background:linear-gradient(90deg,transparent,var(--border-strong),transparent);max-width:var(--maxw);margin:0 auto}
 
 /* ---------- LOGO MARK ---------- */
-.mark{width:1em;height:1em;flex:none}
+.mark{width:3em;height:3em;flex:none;margin-right: 10px;}
 .mark .peak{stroke:var(--text)}
 .mark .accent{stroke:var(--logo-grey)}
 
