@@ -34,6 +34,79 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
+/* ---------- PILLARS EXPANDABLE ---------- */
+(function() {
+  let activePillar = null;
+
+  function getPillars() {
+    return (window.ZB && ZB.I18N[ZB.lang] && ZB.I18N[ZB.lang].pillars_data) || [];
+  }
+
+  function closePillar() {
+    activePillar = null;
+    const detail = document.getElementById('pillarDetail');
+    if (detail) detail.style.display = 'none';
+    document.querySelectorAll('.pill[data-pillar]').forEach(b => b.classList.remove('active'));
+  }
+
+  function renderDetail(i) {
+    const p = getPillars()[i];
+    if (!p) return;
+    const inner = document.getElementById('pillarDetailInner');
+    if (!inner) return;
+    inner.innerHTML = `
+      <h4>${p.n} · ${p.label}</h4>
+      <p>${p.desc}</p>
+      <ul class="pillar-detail-bullets">${p.bullets.map(b => `<li>${b}</li>`).join('')}</ul>
+      <div class="pillar-tags">${p.tags.map(t => `<span>${t}</span>`).join('')}</div>`;
+    const detail = document.getElementById('pillarDetail');
+    if (detail) {
+      detail.style.display = 'block';
+      detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+
+  document.querySelectorAll('.pill[data-pillar]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const i = +btn.dataset.pillar;
+      if (activePillar === i) { closePillar(); return; }
+      document.querySelectorAll('.pill[data-pillar]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activePillar = i;
+      renderDetail(i);
+    });
+  });
+
+  // Atualiza conteúdo ao mudar idioma sem fechar o painel
+  window.addEventListener('zb:langchange', () => {
+    if (activePillar !== null) renderDetail(activePillar);
+  });
+})();
+
+let activePillar = null;
+document.querySelectorAll('.pill[data-pillar]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const i = +btn.dataset.pillar;
+    const detail = document.getElementById('pillarDetail');
+    const inner  = document.getElementById('pillarDetailInner');
+    if (activePillar === i) {
+      activePillar = null; detail.style.display = 'none';
+      btn.classList.remove('active'); return;
+    }
+    document.querySelectorAll('.pill').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activePillar = i;
+    const p = PILLARS[i];
+    inner.innerHTML = `
+      <h4>${p.n} · ${p.label}</h4>
+      <p>${p.desc}</p>
+      <ul class="pillar-detail-bullets">${p.bullets.map(b=>`<li>${b}</li>`).join('')}</ul>
+      <div class="pillar-tags">${p.tags.map(t=>`<span>${t}</span>`).join('')}</div>`;
+    detail.style.display = 'block';
+    detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+});
+
   /* ---------- MOBILE NAV ---------- */
   const menuToggle = $("#menuToggle");
   const mobileNav = $("#mobileNav");
@@ -79,7 +152,7 @@
   const logBody = $("#logBody");
   if (logBody) {
     const events = (window.ZB && ZB.I18N[ZB.lang] && ZB.I18N[ZB.lang].log) || [
-      ["00:01", 'Instância criada', 'Zillion_Principal'],
+      ["00:01", 'Instância criada', 'Zillion_Principal'],lk
       ["00:09", 'QR Code lido', 'Equipe comercial'],
       ["00:23", 'Fluxo em execução', 'Nexus_LeadStart'],
       ["00:41", 'Lead encaminhado', 'CRM & WhatsApp'],

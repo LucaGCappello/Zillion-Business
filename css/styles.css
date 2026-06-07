@@ -299,6 +299,26 @@ header.scrolled{
 .pill .n{font-family:var(--font-mono);font-size:.72rem;color:var(--accent-2);font-weight:700}
 .concept-note{margin-top:30px;color:var(--muted);font-size:.98rem;max-width:780px;line-height:1.65;border-left:2px solid var(--accent);padding-left:18px}
 
+/* --- PILLAR DETAIL --- */
+.pill { cursor: pointer; justify-content: flex-start; }
+.pill-arrow { margin-left: auto; font-style: normal; font-size: .8rem; color: var(--accent-2); transition: transform .25s var(--ease); }
+.pill.active .pill-arrow { transform: rotate(180deg); }
+.pill.active { border-color: var(--accent); background: var(--surface-2); }
+
+.pillar-detail {
+  grid-column: 1 / -1; margin-top: 10px;
+  background: var(--surface); border: 1px solid var(--border-strong);
+  border-radius: var(--r-lg); padding: 28px 32px;
+  animation: slidedown .3s var(--ease);
+}
+.pillar-detail-inner h4 { font-family: var(--font-display); font-size: 1.15rem; margin-bottom: .6rem; }
+.pillar-detail-inner p { color: var(--muted); font-size: .95rem; line-height: 1.65; margin-bottom: 1rem; }
+.pillar-detail-bullets { display: flex; flex-direction: column; gap: .6rem; margin-bottom: 1rem; }
+.pillar-detail-bullets li { display: flex; gap: .6rem; font-size: .9rem; color: var(--muted); }
+.pillar-detail-bullets li::before { content: "▸"; color: var(--accent-2); flex: none; }
+.pillar-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+.pillar-tags span { font-size: .75rem; padding: .3rem .7rem; border: 1px solid var(--border); border-radius: 100px; color: var(--muted); background: var(--surface-2); }
+
 /* ---------- ECOSYSTEM ---------- */
 .eco-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .eco-card{

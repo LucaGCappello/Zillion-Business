@@ -149,13 +149,16 @@
     </div>
     <div class="pillars-block reveal">
       <span class="eyebrow" data-i18n="pillars_eyebrow">Pilares que sustentam o ecossistema</span>
-      <div class="pillars">
-        <div class="pill"><span class="n">01</span> <span data-i18n="pillar1">Arquitetura de Negócios</span></div>
-        <div class="pill"><span class="n">02</span> <span data-i18n="pillar2">Marketing &amp; Growth</span></div>
-        <div class="pill"><span class="n">03</span> <span data-i18n="pillar3">Tecnologia &amp; Automação</span></div>
-        <div class="pill"><span class="n">04</span> <span data-i18n="pillar4">Internacionalização</span></div>
-        <div class="pill"><span class="n">05</span> <span data-i18n="pillar5">Planos de Investimentos</span></div>
-        <div class="pill"><span class="n">06</span> <span data-i18n="pillar6">Estrutura Comercial</span></div>
+      <div class="pillars" id="pillarsGrid">
+        <button class="pill" data-pillar="0"><span class="n">01</span><span data-i18n="pillar1">Arquitetura de Negócios</span><i class="pill-arrow">▾</i></button>
+        <button class="pill" data-pillar="1"><span class="n">02</span><span data-i18n="pillar2">Marketing &amp; Growth</span><i class="pill-arrow">▾</i></button>
+        <button class="pill" data-pillar="2"><span class="n">03</span><span data-i18n="pillar3">Tecnologia &amp; Automação</span><i class="pill-arrow">▾</i></button>
+        <button class="pill" data-pillar="3"><span class="n">04</span><span data-i18n="pillar4">Internacionalização</span><i class="pill-arrow">▾</i></button>
+        <button class="pill" data-pillar="4"><span class="n">05</span><span data-i18n="pillar5">Planos de Investimentos</span><i class="pill-arrow">▾</i></button>
+        <button class="pill" data-pillar="5"><span class="n">06</span><span data-i18n="pillar6">Estrutura Comercial</span><i class="pill-arrow">▾</i></button>
+      </div>
+      <div class="pillar-detail" id="pillarDetail" style="display:none">
+        <div class="pillar-detail-inner" id="pillarDetailInner"></div>
       </div>
       <p class="concept-note" data-i18n="concept_note">Cada projeto é desenhado para ser sustentável no longo prazo.</p>
     </div>
