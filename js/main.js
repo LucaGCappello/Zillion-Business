@@ -75,7 +75,7 @@
   $$(".reveal").forEach(el => io.observe(el));
   $$("[data-count]").forEach(el => { if (!el.closest(".reveal")) io.observe(el); });
 
-  /* ---------- NEXUS LOG (typed reveal) ---------- */
+  /* ---------- LOG (typed reveal) ---------- */
   const logBody = $("#logBody");
   if (logBody) {
     const events = (window.ZB && ZB.I18N[ZB.lang] && ZB.I18N[ZB.lang].log) || [

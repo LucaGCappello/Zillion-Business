@@ -8,7 +8,7 @@ ZB.I18N = {
   /* ---------------- PORTUGUÊS ---------------- */
   pt: {
     nav_home:"Início", nav_concept:"Conceito", nav_ecosystem:"Ecossistema", nav_method:"Metodologia",
-    nav_nexus:"Nexus Tech", nav_podcast:"Podcast", nav_bolsa:"Bolsa Privada", nav_login:"Login",
+    nav_nexus:"Nexus", nav_podcast:"Podcast", nav_bolsa:"Bolsa", nav_login:"Login",
     cta_specialist:"Falar com especialista",
 
     hero_kicker:"Business Architect · Automation · Intelligence",
@@ -22,8 +22,8 @@ ZB.I18N = {
 
     concept_kicker:"Conceito",
     concept_title:'Zillion como <span class="gradient-text">Business Architect</span>',
-    concept_sub:"Mais do que uma agência ou consultoria, a Zillion nasce para desenhar, construir, otimizar e internacionalizar negócios, unindo estratégia, tecnologia e capital num mesmo ecossistema.",
-    concept_lead:"A Zillion acompanha o ciclo completo, da ideia ao negócio pronto para crescer em diferentes países. Combinamos visão estratégica, operação enxuta e inteligência de dados para que cada decisão seja sustentada por contexto real.",
+    concept_sub:"Mais do que uma agência ou consultoria, a Zillion Business nasce para desenhar, construir, otimizar e internacionalizar negócios, unindo estratégia, tecnologia e capital num mesmo ecossistema.",
+    concept_lead:"A Zillion Business acompanha o ciclo completo, da ideia ao negócio pronto para crescer em diferentes países. Combinamos visão estratégica, operação enxuta e inteligência de dados para que cada decisão seja sustentada por contexto real.",
     entry_title:"Porta de entrada para o mundo empresarial",
     entry1:"<b>Criação de projetos do zero:</b> conceito, registro, posicionamento e go-to-market.",
     entry2:"<b>Escala assistida:</b> automações, IA, processos, time e governança.",
@@ -31,11 +31,11 @@ ZB.I18N = {
     pillars_eyebrow:"Pilares que sustentam o ecossistema",
     pillar1:"Arquitetura de Negócios", pillar2:"Marketing & Growth", pillar3:"Tecnologia & Automação",
     pillar4:"Internacionalização", pillar5:"Planos de Investimentos", pillar6:"Estrutura Comercial",
-    concept_note:"Cada projeto é desenhado para ser sustentável no longo prazo, com estrutura que suporta novas linhas de receita, expansão geográfica e entrada de investidores — sem perder o controle da operação.",
+    concept_note:"Cada projeto é desenhado para ser sustentável no longo prazo, com estrutura que suporta novas linhas de receita, expansão geográfica e entrada de investidores, sem perder o controle da operação.",
 
-    eco_kicker:"Ecossistema Zillion",
+    eco_kicker:"Ecossistema Zillion Business",
     eco_title:'Tudo que um negócio precisa para crescer <span class="gradient-text">em um só lugar</span>',
-    eco_sub:"Em vez de juntar peças soltas — agência, consultoria, tecnologia, jurídico, investimento, você opera com um parceiro que conecta todas essas frentes numa mesma arquitetura.",
+    eco_sub:"Em vez de juntar peças soltas, agência, consultoria, tecnologia, jurídico, investimento, você opera com um parceiro que conecta todas essas frentes numa mesma arquitetura.",
     eco1_tag:"01 · Arquitetura de Negócios", eco1_t:"Desenho estratégico completo",
     eco1_d:"Modelagem de negócios, posicionamento, proposta de valor, precificação, estrutura societária e roadmap de crescimento alinhados ao contexto real da empresa.",
     eco2_tag:"02 · Growth & Operação", eco2_t:"Marketing que conversa com o negócio",
@@ -49,7 +49,7 @@ ZB.I18N = {
     eco6_tag:"06 · Estrutura Comercial", eco6_t:"Performance e crescimento escalável",
     eco6_d:"Construímos a Máquina de Vendas da sua empresa. Da estratégia à execução, otimizamos processos e tecnologia para garantir fluxo de clientes constante e receita previsível.",
 
-    who_kicker:"Para quem é", who_title:"Quem mais se beneficia da Zillion",
+    who_kicker:"Para quem é", who_title:"Quem mais se beneficia da Zillion Business",
     who_sub:"A proposta é global, mas o foco é sempre o mesmo: empresários e equipes que querem consistência, escala e visão de futuro, sem perder o controle do dia a dia.",
     who1_tag:"Empresas em crescimento", who1_t:"Negócios que já validaram o produto",
     who1_d:"Empresas que saíram da fase de sobrevivência e precisam organizar operação, marketing e vendas para dar o próximo salto.",
@@ -58,21 +58,21 @@ ZB.I18N = {
     who3_tag:"Investidores & Novos negócios", who3_t:"Quem quer entrar em negócios prontos",
     who3_d:"Pessoas e fundos que buscam oportunidades em empresas já estruturadas, com tese clara, indicadores e plano de expansão.",
 
-    feat_kicker:"Entrega", feat_title:"O que a Zillion faz acontecer no dia a dia",
+    feat_kicker:"Entrega", feat_title:"O que a Zillion Business faz acontecer no dia a dia",
     feat_sub:"Estratégia bonita em slide não basta. A base é transformar visão em rotina, com processos claros, pessoas certas e tecnologia conectando tudo.",
     feat1_t:"Automação de processos", feat1_d:"Fluxos que tiram tarefas repetitivas da mão do time, reduzem erros e liberam energia para decisões estratégicas.",
     feat2_t:"Central de atendimento integrada", feat2_d:"Nexus e outros canais conectados numa experiência única, com histórico centralizado, regras claras e prioridade por operação.",
-    feat3_t:"Visão em tempo real", feat3_d:"Dashboards e relatórios que mostram gargalos, oportunidades e a saúde do negócio — sem caçar informação em dez sistemas.",
+    feat3_t:"Visão em tempo real", feat3_d:"Dashboards e relatórios que mostram gargalos, oportunidades e a saúde do negócio, sem caçar informação em dez sistemas.",
     feat4_t:"Escalabilidade inteligente", feat4_d:"Soluções modulares que acompanham a maturidade da empresa e permitem crescer sem travar a operação ou queimar a equipe.",
 
-    method_kicker:"Metodologia", method_title:"Como funciona a parceria com a Zillion",
+    method_kicker:"Metodologia", method_title:"Como funciona a parceria com a Zillion Business",
     method_sub:"Do diagnóstico profundo à otimização contínua. Cada etapa é pensada para reduzir ruído, ganhar clareza e gerar resultado mensurável.",
     step1_t:"Diagnóstico guiado", step1_d:"Mapeamos operação, canais, metas, números e contexto de mercado para entender exatamente onde estamos pisando.",
     step2_t:"Arquitetura da solução", step2_d:"Desenhamos o fluxo ideal: integrações, automações, estrutura de atendimento, governança e papéis de cada membro da equipe.",
     step3_t:"Implantação assistida", step3_d:"Colocamos a arquitetura em operação, acompanhando o dia a dia, ajustando fluxos e garantindo estabilidade.",
     step4_t:"Otimização contínua", step4_d:"Monitoramos dados, identificamos oportunidades, testamos melhorias e evoluímos o ecossistema conforme a empresa cresce.",
 
-    nexus_kicker:"Nexus Tech",
+    nexus_kicker:"Nexus",
     nexus_title:'Tecnologia própria como <span class="gradient-text">motor da operação</span>',
     nexus_sub:"Nexus não é “mais uma ferramenta de WhatsApp”. É o coração tecnológico da Zillion, preparado para conectar canais, automações, IA e gestão num único fluxo.",
     nexus_h3:"Hub de conexão entre atendimento, automação, IA e dados",
@@ -80,7 +80,7 @@ ZB.I18N = {
     chip1:"Múltiplas instâncias de WhatsApp", chip2:"Automação por eventos", chip3:"Monitoramento em tempo real",
     chip4:"Inteligência Artificial", chip5:"Conexão com CRMs & ERPs", chip6:"Otimização de Vendas",
     nexus_note:"Interfaces pensadas para que o empresário entenda o que está acontecendo sem precisar ser técnico. Conexão via QR Code, fila de espera e painel de status são extensões diretas dessa camada tecnológica.",
-    nexus_cta:"Ativar Nexus Tech por 7 dias grátis",
+    nexus_cta:"Ativar Nexus por 7 dias grátis",
 
     pod_badge:"🎧 Grow to Inspire · Podcast",
     pod_title:"Bastidores reais de quem constrói negócios de verdade",
@@ -94,7 +94,7 @@ ZB.I18N = {
     proof2_d:"redução de tarefas manuais em rotinas repetitivas com automações simples.",
     proof3_d:"operações rodando com estabilidade e monitoramento constante de instâncias e fluxos.",
 
-    cta_title:"Quer ver a Zillion aplicada dentro da sua operação?",
+    cta_title:"Quer ver a Zillion Business aplicada dentro da sua operação?",
     cta_p:"Receba o planejamento dos próximos 6 meses do seu negócio com o nosso especialista e entenda, em 30 minutos, onde a arquitetura de negócios e a automação podem destravar resultado imediato para a sua empresa.",
     cta_btn1:"Falar com um especialista", cta_btn2:"Entrar na fila do Nexus",
 
@@ -119,25 +119,25 @@ ZB.I18N = {
     land_badge:"Powered by Nexus AI",
     land_hero_kicker:"Consultoria de Negócios & Inteligência Artificial",
     land_hero_title:'Mais vendas, menos esforço: <span class="gradient-text">crescimento previsível com IA</span>',
-    land_hero_sub:"A Zillion une estratégia, automação e IA para transformar a sua operação numa máquina de vendas previsível — com resultado garantido em até 3 meses ou o seu dinheiro de volta.",
+    land_hero_sub:"A Zillion Business une estratégia, automação e IA para transformar a sua operação numa máquina de vendas previsível — com resultado garantido em até 3 meses ou o seu dinheiro de volta.",
     land_hero_cta1:"Quero meu diagnóstico gratuito", land_hero_cta2:"Qualificar com a Nexus IA",
     land_trust1:"Resultado em até 3 meses ou 100% de volta", land_trust2:"+800 campanhas gerenciadas", land_trust3:"R$8,2M em ROI gerado",
     lf_title:"Receba um diagnóstico gratuito", lf_sub:"Preencha e um especialista entra em contacto em até 24h.",
     lf_name:"Nome", lf_email:"E-mail", lf_phone:"WhatsApp", lf_segment:"Segmento da empresa",
     lf_btn:"Quero meu diagnóstico", lf_note:"Os seus dados estão seguros. Sem spam.",
     lf_ok:"Recebemos os seus dados! Um especialista entrará em contacto em breve. 🚀", lf_err:"Por favor, preencha nome e um contacto válido.",
-    land_proof:"Marcas que já cresceram com a Zillion",
+    land_proof:"Marcas que já cresceram com a Zillion Business",
     m1_v:"+800", m1_l:"campanhas gerenciadas", m2_v:"R$2M", m2_l:"investidos em tráfego",
     m3_v:"R$8,2M", m3_l:"de ROI médio gerado", m4_l:"operações otimizadas",
     ai_kicker:"Nexus AI",
     ai_title:'Inteligência artificial que <span class="gradient-text">trabalha pela sua operação</span>',
-    ai_sub:"A Nexus é o cérebro de IA da Zillion: qualifica leads, responde em segundos, automatiza rotinas e entrega decisões baseadas em dados — 24 horas por dia.",
+    ai_sub:"A Nexus é o cérebro de IA da Zillion Business: qualifica leads, responde em segundos, automatiza rotinas e entrega decisões baseadas em dados — 24 horas por dia.",
     ai1_t:"Qualificação de leads com IA", ai1_d:"A Nexus conversa, entende a intenção e prioriza os leads quentes antes do seu time atender.",
     ai2_t:"Atendimento 24/7", ai2_d:"Respostas em segundos no WhatsApp e outros canais, mesmo fora do horário comercial.",
     ai3_t:"Automação por eventos", ai3_d:"Cada ação dispara o próximo passo: nada de lead esquecido ou follow-up perdido.",
     ai4_t:"Decisões com dados", ai4_d:"Dashboards e IA apontam gargalos e oportunidades em tempo real.",
     ai_cta:"Ver a Nexus IA em ação",
-    ben_kicker:"Por que a Zillion", ben_title:"O que você ganha na prática",
+    ben_kicker:"Por que a Zillion Business", ben_title:"O que você ganha na prática",
     ben1_t:"Receita previsível", ben1_d:"Um funil estruturado e uma máquina de vendas que gera caixa todos os meses.",
     ben2_t:"Menos esforço manual", ben2_d:"Automação e IA assumem as tarefas repetitivas e liberam o seu time.",
     ben3_t:"Clareza total", ben3_d:"Indicadores em tempo real para decidir com dados, não com achismo.",
@@ -153,7 +153,7 @@ ZB.I18N = {
     gar1_t:"3 meses", gar1_d:"de garantia de resultados comprovados",
     gar2_t:"100%", gar2_d:"foco no processo: planejamento, execução e análise",
     gar3_t:"Performance", gar3_d:"compromisso real acima de promessas",
-    tst_kicker:"Quem cresce com a Zillion", tst_title:"O que dizem os nossos parceiros",
+    tst_kicker:"Quem cresce com a Zillion Business", tst_title:"O que dizem os nossos parceiros",
     tst1_q:"Em poucas semanas a operação ficou previsível. A automação com IA mudou o nosso atendimento.", tst1_a:"Diretor, empresa de serviços",
     tst2_q:"Saímos do caos para um funil organizado. As vendas passaram a ser consistentes.", tst2_a:"Fundadora, e-commerce",
     tst3_q:"O acompanhamento por dados nos deu clareza para decidir e escalar com segurança.", tst3_a:"CEO, grupo empresarial",
@@ -162,14 +162,14 @@ ZB.I18N = {
     faq1_q:"Em quanto tempo vejo resultado?", faq1_a:"O foco é gerar resultados reais em até 3 meses. Se não entregarmos, devolvemos 100% do investimento.",
     faq2_q:"Como funciona a garantia?", faq2_a:"Trabalhamos com prazo de garantia de 3 meses. Sem resultado comprovado, você recebe o valor de volta.",
     faq3_q:"Preciso entender de tecnologia?", faq3_a:"Não. A Nexus IA e as interfaces são pensadas para o empresário entender tudo sem ser técnico.",
-    faq4_q:"A Zillion atende a minha empresa?", faq4_a:"Atendemos empresas em crescimento, grupos e investidores, com polos em Portugal, Brasil e Dubai.",
+    faq4_q:"A Zillion Business atende a minha empresa?", faq4_a:"Atendemos empresas em crescimento, grupos e investidores, com polos em Portugal, Itália, Brasil e Dubai.",
     fin_title:"Pronto para crescer com previsibilidade?",
     fin_sub:"Fale com um especialista ou deixe a Nexus IA qualificar o seu caso agora. O diagnóstico é gratuito.",
     fin_cta1:"Quero meu diagnóstico gratuito", fin_cta2:"Qualificar com a Nexus IA",
     foot_rights:"Todos os direitos reservados.",
     lead:{
       fab:"Qualificar com a Nexus IA", title:"Nexus IA", subtitle:"Qualificação inteligente · online", placeholder:"Escreva aqui...",
-      greeting:"Olá! 👋 Sou a Nexus, a IA da Zillion. Posso fazer 4 perguntas rápidas para preparar o seu diagnóstico gratuito?",
+      greeting:"Olá! 👋 Sou a Nexus, a IA da Zillion Business. Posso fazer 4 perguntas rápidas para preparar o seu diagnóstico gratuito?",
       start:["Vamos lá","Falar com humano"],
       steps:[
         {key:"name", q:"Perfeito! Como posso te chamar?"},
@@ -182,7 +182,7 @@ ZB.I18N = {
       summary_line:"Segmento: {segment} · Faturamento: {revenue} · Objetivo: {goal}",
       closing:"Um especialista vai analisar e entrar em contacto em {contact}. Enquanto isso, posso te conectar agora:",
       done_cta:{label:"Falar com especialista", href:"#lead"},
-      human:"Sem problema! 😊 Toque abaixo para falar agora com um especialista da Zillion.",
+      human:"Sem problema! 😊 Toque abaixo para falar agora com um especialista da Zillion Business.",
       human_cta:{label:"Falar com especialista", href:"#lead"},
       invalid_contact:"Parece que faltou um contacto válido. Pode digitar um WhatsApp ou e-mail?"
     },
@@ -212,14 +212,14 @@ ZB.I18N = {
       greeting:"Olá! 👋 Sou a Nexus, assistente da Zillion Business. Como posso ajudar a estruturar o seu negócio hoje?",
       quick:["Serviços","Bolsa Privada","Falar com especialista","Como funciona a Nexus"],
       intents:[
-        {k:["serviço","servico","serviços","servicos","oferecem","fazem","o que voce"], r:"A Zillion conecta estratégia, marketing & growth, tecnologia Nexus, internacionalização e investimento num único ecossistema. Quer que eu mostre uma frente específica?"},
+        {k:["serviço","servico","serviços","servicos","oferecem","fazem","o que voce"], r:"A Zillion Business conecta estratégia, marketing & growth, tecnologia Nexus, internacionalização e investimento num único ecossistema. Quer que eu mostre uma frente específica?"},
         {k:["bolsa","comprar","vender empresa","compra","venda","aquisi","m&a","empresa à venda","empresa a venda"], r:"Temos a Bolsa Privada de Empresas: oportunidades reais de compra e venda, com curadoria e confidencialidade. Posso abrir para você.", cta:{label:"Abrir Bolsa Privada", href:"bolsa.html"}},
         {k:["preço","preco","valor","custo","quanto","avalia","valuation","investimento"], r:"O investimento depende do escopo e do estágio do negócio. O caminho mais rápido é uma conversa de 30 min com um especialista, onde montamos um plano dos próximos 6 meses.", cta:{label:"Falar com especialista", href:"#cta"}},
         {k:["especialista","falar","reuni","agendar","contato","contacto","consultor"], r:"Perfeito! Em 30 minutos um especialista mostra onde a arquitetura de negócios e a automação podem destravar resultado imediato.", cta:{label:"Agendar conversa", href:"#cta"}},
-        {k:["nexus","automa","whatsapp"," ia","inteligência","bot","crm","erp"], r:"A Nexus é o motor tecnológico da Zillion: múltiplas instâncias de WhatsApp, automação por eventos, IA e integração com CRMs/ERPs — tudo monitorado em tempo real. Quer ativar 7 dias grátis?", cta:{label:"Ativar 7 dias grátis", href:"#nexus"}},
+        {k:["nexus","automa","whatsapp"," ia","inteligência","bot","crm","erp"], r:"A Nexus é o motor tecnológico da Zillion Business: múltiplas instâncias de WhatsApp, automação por eventos, IA e integração com CRMs/ERPs — tudo monitorado em tempo real. Quer ativar 7 dias grátis?", cta:{label:"Ativar 7 dias grátis", href:"#nexus"}},
         {k:["internacional","dubai","portugal","brasil","exterior","fora","global"], r:"Atuamos com polos em Portugal, Brasil e Dubai, conectando visão global com execução local — ideal para quem quer internacionalizar a operação."},
-        {k:["oi","olá","ola","bom dia","boa tarde","boa noite","hey","e aí","eai"], r:"Olá! Que bom ter você por aqui. 😊 Quer entender o ecossistema Zillion, conhecer a Bolsa Privada ou falar com um especialista?"},
-        {k:["obrigad","valeu","grato","thanks"], r:"Disponha! Se quiser, posso te conectar agora com um especialista da Zillion. 🚀", cta:{label:"Falar com especialista", href:"#cta"}}
+        {k:["oi","olá","ola","bom dia","boa tarde","boa noite","hey","e aí","eai"], r:"Olá! Que bom ter você por aqui. 😊 Quer entender o ecossistema Zillion Business, conhecer a Bolsa Privada ou falar com um especialista?"},
+        {k:["obrigad","valeu","grato","thanks"], r:"Disponha! Se quiser, posso te conectar agora com um especialista da Zillion Business. 🚀", cta:{label:"Falar com especialista", href:"#cta"}}
       ],
       fallback:"Boa pergunta! Posso ajudar com serviços, a Bolsa Privada de empresas, a tecnologia Nexus ou agendar uma conversa com um especialista. Por onde prefere começar?"
     }
@@ -228,7 +228,7 @@ ZB.I18N = {
   /* ---------------- ENGLISH ---------------- */
   en: {
     nav_home:"Home", nav_concept:"Concept", nav_ecosystem:"Ecosystem", nav_method:"Methodology",
-    nav_nexus:"Nexus Tech", nav_podcast:"Podcast", nav_bolsa:"Private Exchange", nav_login:"Login",
+    nav_nexus:"Nexus", nav_podcast:"Podcast", nav_bolsa:"Exchange", nav_login:"Login",
     cta_specialist:"Talk to a specialist",
 
     hero_kicker:"Business Architect · Automation · Intelligence",
@@ -241,9 +241,9 @@ ZB.I18N = {
     dash_growth:"Growth · 12 months", float_t:"automation active", float_v:"24/7 monitored",
 
     concept_kicker:"Concept",
-    concept_title:'Zillion as a <span class="gradient-text">Business Architect</span>',
-    concept_sub:"More than an agency or consultancy, Zillion was born to design, build, optimize and internationalize businesses — uniting strategy, technology and capital in a single ecosystem.",
-    concept_lead:"Zillion follows the complete cycle, from idea to a business ready to grow across different countries. We combine strategic vision, lean operations and data intelligence so every decision is backed by real context.",
+    concept_title:'Zillion Business as a <span class="gradient-text">Business Architect</span>',
+    concept_sub:"More than an agency or consultancy, Zillion Business was born to design, build, optimize and internationalize businesses — uniting strategy, technology and capital in a single ecosystem.",
+    concept_lead:"Zillion Business follows the complete cycle, from idea to a business ready to grow across different countries. We combine strategic vision, lean operations and data intelligence so every decision is backed by real context.",
     entry_title:"Gateway to the business world",
     entry1:"<b>Building projects from scratch:</b> concept, registration, positioning and go-to-market.",
     entry2:"<b>Assisted scaling:</b> automation, AI, processes, team and governance.",
@@ -278,7 +278,7 @@ ZB.I18N = {
     who3_tag:"Investors & New ventures", who3_t:"Those entering ready-made businesses",
     who3_d:"Individuals and funds seeking opportunities in already structured companies, with a clear thesis, indicators and an expansion plan.",
 
-    feat_kicker:"Delivery", feat_title:"What Zillion makes happen day to day",
+    feat_kicker:"Delivery", feat_title:"What Zillion Business makes happen day to day",
     feat_sub:"A pretty strategy on a slide isn't enough. The foundation is turning vision into routine — with clear processes, the right people and technology connecting everything.",
     feat1_t:"Process automation", feat1_d:"Flows that take repetitive tasks off the team's hands, reduce errors and free up energy for strategic decisions.",
     feat2_t:"Integrated service hub", feat2_d:"Nexus and other channels connected in a single experience, with centralized history, clear rules and priority by operation.",
@@ -292,7 +292,7 @@ ZB.I18N = {
     step3_t:"Assisted rollout", step3_d:"We put the architecture into operation, following the day-to-day, adjusting flows and ensuring stability.",
     step4_t:"Continuous optimization", step4_d:"We monitor data, identify opportunities, test improvements and evolve the ecosystem as the company grows.",
 
-    nexus_kicker:"Nexus Tech",
+    nexus_kicker:"Nexus",
     nexus_title:'Proprietary technology as the <span class="gradient-text">engine of the operation</span>',
     nexus_sub:"Nexus isn't “just another WhatsApp tool”. It's Zillion's technological heart, built to connect channels, automation, AI and management in a single flow.",
     nexus_h3:"A connection hub between service, automation, AI and data",
@@ -300,7 +300,7 @@ ZB.I18N = {
     chip1:"Multiple WhatsApp instances", chip2:"Event-based automation", chip3:"Real-time monitoring",
     chip4:"Artificial Intelligence", chip5:"Connection with CRMs & ERPs", chip6:"Sales optimization",
     nexus_note:"Interfaces designed so the entrepreneur understands what's happening without needing to be technical. QR Code connection, waiting queue and status panel are direct extensions of this technology layer.",
-    nexus_cta:"Activate Nexus Tech for 7 free days",
+    nexus_cta:"Activate Nexus for 7 free days",
 
     pod_badge:"🎧 Grow to Inspire · Podcast",
     pod_title:"Real behind-the-scenes of those who build real businesses",
@@ -314,7 +314,7 @@ ZB.I18N = {
     proof2_d:"reduction of manual tasks in repetitive routines with simple automation.",
     proof3_d:"operations running with stability and constant monitoring of instances and flows.",
 
-    cta_title:"Want to see Zillion applied inside your operation?",
+    cta_title:"Want to see Zillion Business applied inside your operation?",
     cta_p:"Get the plan for the next 6 months of your business with our specialist and understand, in 30 minutes, where business architecture and automation can unlock immediate results for your company.",
     cta_btn1:"Talk to a specialist", cta_btn2:"Join the Nexus queue",
 
@@ -339,7 +339,7 @@ ZB.I18N = {
     land_badge:"Powered by Nexus AI",
     land_hero_kicker:"Business Consulting & Artificial Intelligence",
     land_hero_title:'More sales, less effort: <span class="gradient-text">predictable growth with AI</span>',
-    land_hero_sub:"Zillion combines strategy, automation and AI to turn your operation into a predictable sales machine — with results guaranteed in up to 3 months or your money back.",
+    land_hero_sub:"Zillion Business combines strategy, automation and AI to turn your operation into a predictable sales machine — with results guaranteed in up to 3 months or your money back.",
     land_hero_cta1:"Get my free diagnosis", land_hero_cta2:"Qualify with Nexus AI",
     land_trust1:"Results in up to 3 months or 100% back", land_trust2:"+800 campaigns managed", land_trust3:"R$8.2M in ROI generated",
     lf_title:"Get a free diagnosis", lf_sub:"Fill in and a specialist will reach out within 24h.",
@@ -382,7 +382,7 @@ ZB.I18N = {
     faq1_q:"How long until I see results?", faq1_a:"The focus is real results in up to 3 months. If we don't deliver, we return 100% of the investment.",
     faq2_q:"How does the guarantee work?", faq2_a:"We work with a 3-month guarantee period. Without proven results, you get your money back.",
     faq3_q:"Do I need to understand technology?", faq3_a:"No. Nexus AI and the interfaces are designed so the entrepreneur understands everything without being technical.",
-    faq4_q:"Does Zillion serve my company?", faq4_a:"We serve growing companies, groups and investors, with hubs in Portugal, Brazil and Dubai.",
+    faq4_q:"Does Zillion Business serve my company?", faq4_a:"We serve growing companies, groups and investors, with hubs in Portugal, Brazil and Dubai.",
     fin_title:"Ready to grow with predictability?",
     fin_sub:"Talk to a specialist or let Nexus AI qualify your case now. The diagnosis is free.",
     fin_cta1:"Get my free diagnosis", fin_cta2:"Qualify with Nexus AI",
@@ -402,7 +402,7 @@ ZB.I18N = {
       summary_line:"Segment: {segment} · Revenue: {revenue} · Goal: {goal}",
       closing:"A specialist will review and reach out at {contact}. Meanwhile, I can connect you now:",
       done_cta:{label:"Talk to a specialist", href:"#lead"},
-      human:"No problem! 😊 Tap below to talk to a Zillion specialist now.",
+      human:"No problem! 😊 Tap below to talk to a Zillion Business specialist now.",
       human_cta:{label:"Talk to a specialist", href:"#lead"},
       invalid_contact:"Looks like a valid contact is missing. Could you type a WhatsApp or email?"
     },
@@ -432,14 +432,14 @@ ZB.I18N = {
       greeting:"Hi! 👋 I'm Nexus, Zillion Business's assistant. How can I help structure your business today?",
       quick:["Services","Private Exchange","Talk to a specialist","How Nexus works"],
       intents:[
-        {k:["service","services","offer","do you do","what do you"], r:"Zillion connects strategy, marketing & growth, Nexus technology, internationalization and investment in a single ecosystem. Want me to show a specific area?"},
+        {k:["service","services","offer","do you do","what do you"], r:"Zillion Business connects strategy, marketing & growth, Nexus technology, internationalization and investment in a single ecosystem. Want me to show a specific area?"},
         {k:["exchange","buy","sell","company for sale","acquisition","m&a","private exchange"], r:"We have the Private Business Exchange: real buy/sell opportunities with curation and confidentiality. I can open it for you.", cta:{label:"Open Private Exchange", href:"bolsa.html"}},
         {k:["price","cost","how much","valuation","fee","invest"], r:"The investment depends on the scope and stage of the business. The fastest path is a 30-min talk with a specialist, where we build a plan for the next 6 months.", cta:{label:"Talk to a specialist", href:"#cta"}},
         {k:["specialist","talk","meeting","schedule","contact","consultant"], r:"Perfect! In 30 minutes a specialist shows where business architecture and automation can unlock immediate results.", cta:{label:"Schedule a talk", href:"#cta"}},
         {k:["nexus","automat","whatsapp"," ai","bot","crm","erp"], r:"Nexus is Zillion's tech engine: multiple WhatsApp instances, event-based automation, AI and CRM/ERP integration — all monitored in real time. Want to try 7 free days?", cta:{label:"Start 7 free days", href:"#nexus"}},
         {k:["international","dubai","portugal","brazil","abroad","global"], r:"We operate with hubs in Portugal, Brazil and Dubai, connecting global vision with local execution — ideal for internationalizing your operation."},
         {k:["hi","hello","hey","good morning","good afternoon"], r:"Hello! Great to have you here. 😊 Want to explore the Zillion ecosystem, check the Private Exchange or talk to a specialist?"},
-        {k:["thank","thanks","cheers"], r:"Anytime! If you'd like, I can connect you with a Zillion specialist now. 🚀", cta:{label:"Talk to a specialist", href:"#cta"}}
+        {k:["thank","thanks","cheers"], r:"Anytime! If you'd like, I can connect you with a Zillion Business specialist now. 🚀", cta:{label:"Talk to a specialist", href:"#cta"}}
       ],
       fallback:"Great question! I can help with services, the Private Business Exchange, Nexus technology or scheduling a talk with a specialist. Where would you like to start?"
     }
@@ -448,7 +448,7 @@ ZB.I18N = {
   /* ---------------- ITALIANO ---------------- */
   it: {
     nav_home:"Home", nav_concept:"Concetto", nav_ecosystem:"Ecosistema", nav_method:"Metodologia",
-    nav_nexus:"Nexus Tech", nav_podcast:"Podcast", nav_bolsa:"Borsa Privata", nav_login:"Login",
+    nav_nexus:"Nexus", nav_podcast:"Podcast", nav_bolsa:"Borsa", nav_login:"Login",
     cta_specialist:"Parla con uno specialista",
 
     hero_kicker:"Business Architect · Automation · Intelligence",
@@ -461,9 +461,9 @@ ZB.I18N = {
     dash_growth:"Crescita · 12 mesi", float_t:"automazione attiva", float_v:"monitorato 24/7",
 
     concept_kicker:"Concetto",
-    concept_title:'Zillion come <span class="gradient-text">Business Architect</span>',
-    concept_sub:"Più di un'agenzia o di una società di consulenza, Zillion nasce per progettare, costruire, ottimizzare e internazionalizzare le imprese — unendo strategia, tecnologia e capitale in un unico ecosistema.",
-    concept_lead:"Zillion segue l'intero ciclo, dall'idea all'azienda pronta a crescere in diversi paesi. Uniamo visione strategica, operazioni snelle e intelligenza dei dati affinché ogni decisione sia supportata da un contesto reale.",
+    concept_title:'Zillion Business come <span class="gradient-text">Business Architect</span>',
+    concept_sub:"Più di un'agenzia o di una società di consulenza, Zillion Business nasce per progettare, costruire, ottimizzare e internazionalizzare le imprese — unendo strategia, tecnologia e capitale in un unico ecosistema.",
+    concept_lead:"Zillion Business segue l'intero ciclo, dall'idea all'azienda pronta a crescere in diversi paesi. Uniamo visione strategica, operazioni snelle e intelligenza dei dati affinché ogni decisione sia supportata da un contesto reale.",
     entry_title:"Porta d'accesso al mondo imprenditoriale",
     entry1:"<b>Creazione di progetti da zero:</b> concetto, registrazione, posizionamento e go-to-market.",
     entry2:"<b>Scalabilità assistita:</b> automazioni, IA, processi, team e governance.",
@@ -498,7 +498,7 @@ ZB.I18N = {
     who3_tag:"Investitori & Nuovi business", who3_t:"Chi vuole entrare in aziende già avviate",
     who3_d:"Persone e fondi che cercano opportunità in aziende già strutturate, con una tesi chiara, indicatori e un piano di espansione.",
 
-    feat_kicker:"Esecuzione", feat_title:"Cosa Zillion realizza ogni giorno",
+    feat_kicker:"Esecuzione", feat_title:"Cosa Zillion Business realizza ogni giorno",
     feat_sub:"Una bella strategia su una slide non basta. La base è trasformare la visione in routine — con processi chiari, le persone giuste e la tecnologia che collega tutto.",
     feat1_t:"Automazione dei processi", feat1_d:"Flussi che tolgono al team le attività ripetitive, riducono gli errori e liberano energia per le decisioni strategiche.",
     feat2_t:"Centro assistenza integrato", feat2_d:"Nexus e altri canali collegati in un'unica esperienza, con storico centralizzato, regole chiare e priorità per operazione.",
@@ -512,7 +512,7 @@ ZB.I18N = {
     step3_t:"Implementazione assistita", step3_d:"Mettiamo in funzione l'architettura, seguendo il quotidiano, regolando i flussi e garantendo stabilità.",
     step4_t:"Ottimizzazione continua", step4_d:"Monitoriamo i dati, individuiamo opportunità, testiamo miglioramenti ed evolviamo l'ecosistema man mano che l'azienda cresce.",
 
-    nexus_kicker:"Nexus Tech",
+    nexus_kicker:"Nexus",
     nexus_title:'Tecnologia proprietaria come <span class="gradient-text">motore dell\'operazione</span>',
     nexus_sub:"Nexus non è “l'ennesimo strumento per WhatsApp”. È il cuore tecnologico di Zillion, pensato per collegare canali, automazioni, IA e gestione in un unico flusso.",
     nexus_h3:"Un hub di connessione tra assistenza, automazione, IA e dati",
@@ -520,7 +520,7 @@ ZB.I18N = {
     chip1:"Istanze multiple di WhatsApp", chip2:"Automazione basata su eventi", chip3:"Monitoraggio in tempo reale",
     chip4:"Intelligenza Artificiale", chip5:"Connessione con CRM & ERP", chip6:"Ottimizzazione delle vendite",
     nexus_note:"Interfacce pensate affinché l'imprenditore capisca cosa sta succedendo senza dover essere tecnico. Connessione via QR Code, coda d'attesa e pannello di stato sono estensioni dirette di questo livello tecnologico.",
-    nexus_cta:"Attiva Nexus Tech per 7 giorni gratis",
+    nexus_cta:"Attiva Nexus per 7 giorni gratis",
 
     pod_badge:"🎧 Grow to Inspire · Podcast",
     pod_title:"Il dietro le quinte reale di chi costruisce aziende vere",
@@ -534,7 +534,7 @@ ZB.I18N = {
     proof2_d:"riduzione delle attività manuali nelle routine ripetitive con automazioni semplici.",
     proof3_d:"operazioni che funzionano con stabilità e monitoraggio costante di istanze e flussi.",
 
-    cta_title:"Vuoi vedere Zillion applicata dentro la tua operazione?",
+    cta_title:"Vuoi vedere Zillion Business applicata dentro la tua operazione?",
     cta_p:"Ricevi la pianificazione dei prossimi 6 mesi del tuo business con il nostro specialista e scopri, in 30 minuti, dove l'architettura d'impresa e l'automazione possono sbloccare risultati immediati per la tua azienda.",
     cta_btn1:"Parla con uno specialista", cta_btn2:"Entra nella coda Nexus",
 
@@ -559,7 +559,7 @@ ZB.I18N = {
     land_badge:"Powered by Nexus AI",
     land_hero_kicker:"Consulenza Aziendale & Intelligenza Artificiale",
     land_hero_title:'Più vendite, meno sforzo: <span class="gradient-text">crescita prevedibile con l\'IA</span>',
-    land_hero_sub:"Zillion unisce strategia, automazione e IA per trasformare la tua operazione in una macchina di vendita prevedibile — con risultati garantiti entro 3 mesi o ti restituiamo i soldi.",
+    land_hero_sub:"Zillion Business unisce strategia, automazione e IA per trasformare la tua operazione in una macchina di vendita prevedibile — con risultati garantiti entro 3 mesi o ti restituiamo i soldi.",
     land_hero_cta1:"Voglio la mia diagnosi gratuita", land_hero_cta2:"Qualificati con Nexus IA",
     land_trust1:"Risultati entro 3 mesi o 100% indietro", land_trust2:"+800 campagne gestite", land_trust3:"R$8,2M di ROI generato",
     lf_title:"Ricevi una diagnosi gratuita", lf_sub:"Compila e uno specialista ti contatterà entro 24h.",
@@ -602,7 +602,7 @@ ZB.I18N = {
     faq1_q:"Tra quanto vedo i risultati?", faq1_a:"Il focus è ottenere risultati reali entro 3 mesi. Se non li otteniamo, restituiamo il 100% dell'investimento.",
     faq2_q:"Come funziona la garanzia?", faq2_a:"Lavoriamo con un periodo di garanzia di 3 mesi. Senza risultati comprovati, riavrai i tuoi soldi.",
     faq3_q:"Devo capire di tecnologia?", faq3_a:"No. Nexus IA e le interfacce sono pensate affinché l'imprenditore capisca tutto senza essere tecnico.",
-    faq4_q:"Zillion lavora con la mia azienda?", faq4_a:"Lavoriamo con aziende in crescita, gruppi e investitori, con sedi in Portogallo, Brasile e Dubai.",
+    faq4_q:"Zillion Business lavora con la mia azienda?", faq4_a:"Lavoriamo con aziende in crescita, gruppi e investitori, con sedi in Portogallo, Brasile e Dubai.",
     fin_title:"Pronto a crescere con prevedibilità?",
     fin_sub:"Parla con uno specialista o lascia che Nexus IA qualifichi il tuo caso ora. La diagnosi è gratuita.",
     fin_cta1:"Voglio la mia diagnosi gratuita", fin_cta2:"Qualificati con Nexus IA",
@@ -652,7 +652,7 @@ ZB.I18N = {
       greeting:"Ciao! 👋 Sono Nexus, l'assistente di Zillion Business. Come posso aiutarti a strutturare la tua azienda oggi?",
       quick:["Servizi","Borsa Privata","Parla con uno specialista","Come funziona Nexus"],
       intents:[
-        {k:["servizi","servizio","offrite","fate","cosa fate"], r:"Zillion collega strategia, marketing & growth, tecnologia Nexus, internazionalizzazione e investimenti in un unico ecosistema. Vuoi che ti mostri un'area specifica?"},
+        {k:["servizi","servizio","offrite","fate","cosa fate"], r:"Zillion Business collega strategia, marketing & growth, tecnologia Nexus, internazionalizzazione e investimenti in un unico ecosistema. Vuoi che ti mostri un'area specifica?"},
         {k:["borsa","comprare","vendere","azienda in vendita","acquisizione","m&a","borsa privata"], r:"Abbiamo la Borsa Privata di Aziende: opportunità reali di acquisto e vendita, con curatela e riservatezza. Posso aprirla per te.", cta:{label:"Apri Borsa Privata", href:"bolsa.html"}},
         {k:["prezzo","costo","quanto","valutazione","investimento"], r:"L'investimento dipende dallo scopo e dalla fase del business. Il percorso più rapido è una chiamata di 30 min con uno specialista, in cui costruiamo un piano per i prossimi 6 mesi.", cta:{label:"Parla con uno specialista", href:"#cta"}},
         {k:["specialista","parlare","riunione","fissare","contatto","consulente"], r:"Perfetto! In 30 minuti uno specialista mostra dove l'architettura d'impresa e l'automazione possono sbloccare risultati immediati.", cta:{label:"Fissa una chiamata", href:"#cta"}},
