@@ -36,10 +36,12 @@
     });
   }
 
-  function cover(post, idx, big) {
-    const fig = big ? "" : '<span class="cv-fig">' + String(idx + 1).padStart(2, "0") + "</span>";
-    return '<div class="post-cover cat-' + post.cat + (big ? " big" : "") + '">' +
-           '<span class="cv-cat">' + esc(ZB.t("cat_" + post.cat)) + "</span>" + fig + "</div>";
+function cover(post, idx, big) {
+    const img = post.img || (window.ZB_CAT_IMG && ZB_CAT_IMG[post.cat]) || "";
+    const imgTag = img ? '<img class="cover-img" src="' + esc(img) + '" alt="" loading="lazy">' : "";
+    const fig = (big || img) ? "" : '<span class="cv-fig">' + String(idx + 1).padStart(2, "0") + "</span>";
+    return '<div class="post-cover cat-' + post.cat + (big ? " big" : "") + (img ? " has-img" : "") + '">' +
+           imgTag + '<span class="cv-cat">' + esc(ZB.t("cat_" + post.cat)) + "</span>" + fig + "</div>";
   }
   function meta(post) {
     return '<div class="post-meta"><span class="au"><span class="au-av"></span>' + esc(ZB.t("author_team")) + "</span>" +

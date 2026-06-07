@@ -807,3 +807,9 @@ html[data-theme="light"] .art-cat{color:var(--accent-2);background:color-mix(in 
 .art-notfound h1{font-size:4rem;background:linear-gradient(120deg,var(--accent-2),var(--accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .art-notfound p{color:var(--muted);margin:10px 0 24px}
 @media(max-width:760px){ .rel-grid{grid-template-columns:1fr} }
+/* ---- capas de blog com imagem ---- */
+.post-cover .cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.post-cover.has-img::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(4,4,20,.12),rgba(4,4,20,.66))}
+.post-cover.has-img .cv-cat{z-index:2}
+.art-hero.has-img{background-size:cover;background-position:center}
+.art-hero.has-img::before{opacity:1;background:linear-gradient(180deg,rgba(4,4,20,.55),rgba(4,4,20,.80))}

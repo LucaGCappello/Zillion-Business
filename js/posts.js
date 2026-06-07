@@ -3,7 +3,10 @@
    posts.js  (dados dos artigos, compartilhado por blog.js e article.js)
    Corpo: cada item do array é um parágrafo; itens iniciados por "## " viram subtítulo.
    ========================================================= */
-window.ZB_POSTS = [
+   window.ZB_CAT_IMG = {
+    strategy:"public/strategy.webp", growth:"public/IMG_3617.PNG", traffic:"", sales:"public/sales.webp", tech:"public/tech.webp", international:"public/expansion.webp", investment:"public/investment.webp"
+};
+   window.ZB_POSTS = [
   { slug:"crescer-estruturar-melhor", cat:"strategy", date:"2026-05-20", read:6, featured:true,
     pt:{title:"Crescer não é aparecer mais: é estruturar melhor",
         excerpt:"Por que empresas com bons produtos travam — e o que muda quando estratégia, processos e tecnologia trabalham juntos.",

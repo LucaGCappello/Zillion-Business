@@ -42,8 +42,12 @@
     const pool = rel.length ? rel : POSTS.filter(p => p.slug !== post.slug).slice(0, 3);
     const cards = pool.map(p => {
       const c = p[L()];
+      const rImg = p.img || (window.ZB_CAT_IMG && ZB_CAT_IMG[p.cat]) || "";
+      const rImgTag = rImg ? '<img class="cover-img" src="' + esc(rImg) + '" alt="" loading="lazy">' : "";
       return '<a class="rel-card" href="artigo.html?p=' + encodeURIComponent(p.slug) + '">' +
-        '<div class="post-cover cat-' + p.cat + '"><span class="cv-cat">' + esc(ZB.t("cat_" + p.cat)) + "</span></div>" +
+        // '<div class="post-cover cat-' + p.cat + '"><span class="cv-cat">' + esc(ZB.t("cat_" + p.cat)) + "</span></div>" +
+        '<div class="post-cover cat-' + p.cat + (rImg ? " has-img" : "") + '">' + rImgTag +
+        '<span class="cv-cat">' + esc(ZB.t("cat_" + p.cat)) + "</span></div>" +
         '<div class="rel-body"><h4>' + esc(c.title) + "</h4></div></a>";
     }).join("");
     return '<section class="art-related"><h3>' + esc(ZB.t("art_related")) + '</h3><div class="rel-grid">' + cards + "</div></section>";
@@ -60,8 +64,11 @@
     const md = document.querySelector('meta[name="description"]'); if (md) md.setAttribute("content", c.excerpt);
     document.documentElement.lang = ZB.lang;
 
+    const heroImg = post.img || (window.ZB_CAT_IMG && ZB_CAT_IMG[post.cat]) || "";
+    const heroStyle = heroImg ? ' style="background-image:url(\'' + heroImg.replace(/'/g, "%27") + '\')"' : "";
+
     root.innerHTML =
-      '<div class="art-hero cat-' + post.cat + '"><div class="wrap">' +
+        '<div class="art-hero cat-' + post.cat + (heroImg ? " has-img" : "") + '"' + heroStyle + '><div class="wrap">' +
         '<nav class="breadcrumb"><a href="index.html">' + esc(ZB.t("nav_home")) + '</a><span>/</span>' +
         '<a href="blog.html">' + esc(ZB.t("nav_blog")) + '</a><span>/</span><b>' + esc(ZB.t("cat_" + post.cat)) + "</b></nav>" +
         '<span class="art-cat">' + esc(ZB.t("cat_" + post.cat)) + "</span>" +
