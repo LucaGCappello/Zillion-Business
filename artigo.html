@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Blog — Zillion Business | Insights de estratégia, automação e investimento</title>
-<meta name="description" content="Blog da Zillion Business: estratégia, automação, growth e internacionalização. Conteúdo prático de quem constrói empresas de verdade. Grow to Inspire." />
+<title>Artigo — Zillion Business</title>
+<meta name="description" content="Insights da Zillion Business sobre estratégia, automação, growth e investimento." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -20,17 +20,15 @@
       <img src="public/IMG_3617.PNG" class="mark" alt="Zillion Business"/>
       <span class="brand-name">ZILLION<small>BUSINESS</small></span>
     </a>
-
     <nav class="nav-links">
       <a href="index.html" data-i18n="nav_home">Home</a>
       <a href="index.html#ecosystem" data-i18n="nav_ecosystem">Ecossistema</a>
       <a href="index.html#nexus" data-i18n="nav_nexus">Nexus</a>
       <a href="bolsa.html" data-i18n="nav_bolsa">Bolsa</a>
-      <a href="blog.html" class="active" aria-current="page" data-i18n="nav_blog">Blog</a>
+      <a href="blog.html" data-i18n="nav_blog">Blog</a>
     </nav>
-
     <div class="nav-tools">
-      <a href="login.html" class="login-link" data-i18n="nav_login">Login</a>
+      <a href="#" class="login-link" data-i18n="nav_login">Login</a>
       <div class="lang">
         <button class="lang-btn" id="langBtn" aria-haspopup="true">
           <span class="flag" id="langFlag">🇵🇹</span><span id="langCode">PT</span>
@@ -54,38 +52,16 @@
   <nav class="mobile-nav" id="mobileNav">
     <a href="index.html" data-i18n="nav_home">Home</a>
     <a href="index.html#ecosystem" data-i18n="nav_ecosystem">Ecossistema</a>
-    <a href="index.html#nexus" data-i18n="nav_nexus">Nexus Tech</a>
+    <a href="index.html#nexus" data-i18n="nav_nexus">Nexus</a>
     <a href="bolsa.html" data-i18n="nav_bolsa">Bolsa</a>
     <a href="blog.html" data-i18n="nav_blog">Blog</a>
-    <a href="login.html" data-i18n="nav_login">Login</a>
+    <a href="#" data-i18n="nav_login">Login</a>
     <a href="index.html#cta" class="btn btn-primary" data-i18n="cta_specialist">Falar com especialista</a>
   </nav>
 </header>
 
-<!-- ============ BLOG HERO ============ -->
-<section class="blog-top">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="kicker" data-i18n="blog_kicker">Blog · Insights</span>
-      <h1 data-i18n-html="blog_title">Ideias para <span class="gradient-text">estruturar e escalar</span> o seu negócio</h1>
-      <p data-i18n="blog_sub">Estratégia, automação, growth e internacionalização — sem fórmulas prontas.</p>
-      <div class="blog-search">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-        <input type="text" id="blogSearch" data-i18n-ph="blog_search_ph" placeholder="Buscar artigos...">
-      </div>
-      <div class="cat-bar" id="catBar"></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ BLOG LIST ============ -->
-<section class="blog-list">
-  <div class="wrap">
-    <div class="featured" id="featuredWrap"></div>
-    <div class="post-grid" id="postGrid"></div>
-    <div class="blog-empty" id="blogEmpty" data-i18n="blog_empty">Nenhum artigo encontrado para a sua busca.</div>
-  </div>
-</section>
+<!-- ============ ARTIGO (render via article.js) ============ -->
+<main id="article"></main>
 
 <!-- ============ NEWSLETTER ============ -->
 <section id="newsletter">
@@ -155,14 +131,12 @@
     </span>
     <span class="fab-text" id="nexusFabLabel">Falar com a Nexus</span>
   </button>
-
   <div class="nexus-panel" id="nexusPanel" role="dialog" aria-label="Chat Nexus">
     <div class="nx-head">
       <span class="av">
         <svg viewBox="0 0 100 100" fill="none" stroke-width="11" stroke-linecap="round" stroke-linejoin="round">
           <path d="M83 27 L57 66" stroke="#9aa0b4"/><path d="M20 73 L48 27 L76 73" stroke="#fff"/>
-        </svg>
-        <span class="on"></span>
+        </svg><span class="on"></span>
       </span>
       <div class="meta">
         <div class="nm" id="nexusTitle">Nexus</div>
@@ -179,30 +153,10 @@
   </div>
 </div>
 
-<script src="js/auth.js"></script>
 <script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
 <script src="js/chat.js"></script>
 <script src="js/posts.js"></script>
-<script src="js/blog.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    if (!window.ZB || !ZB.Auth) return;
-    const session = ZB.Auth.getSession();
-    if (!session) return;
-    const firstName = session.user.name ? session.user.name.split(' ')[0] : 'Conta';
-    const greeting  = 'Olá, ' + firstName;
-    [document.querySelector('a.login-link'),
-     document.querySelector('.mobile-nav a[href="login.html"]')]
-      .forEach(function (el) {
-        if (!el) return;
-        el.removeAttribute('data-i18n');
-        el.textContent = greeting;
-        el.href = '#';
-        el.title = 'Clique para terminar sessão';
-        el.addEventListener('click', function (e) { e.preventDefault(); ZB.Auth.logout(); });
-      });
-  });
-</script>
+<script src="js/article.js"></script>
 </body>
 </html>

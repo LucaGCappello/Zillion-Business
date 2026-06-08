@@ -104,7 +104,7 @@ section{position:relative;padding:84px 0}
 .divider{height:1px;background:linear-gradient(90deg,transparent,var(--border-strong),transparent);max-width:var(--maxw);margin:0 auto}
 
 /* ---------- LOGO MARK ---------- */
-.mark{width:3em;height:3em;flex:none;margin-right: 10px;}
+.mark{width:2em;height:2em;flex:none;margin-right: 0px !important;}
 .mark .peak{stroke:var(--text)}
 .mark .accent{stroke:var(--logo-grey)}
 
@@ -150,10 +150,52 @@ header.scrolled{
   border-bottom-color:var(--border);
 }
 .nav{display:flex;align-items:center;justify-content:space-between;width:100%}
-.brand{display:flex;align-items:center;gap:.6rem}
-.brand .mark{font-size:32px}
-.brand-name{font-family:var(--font-display);font-weight:700;font-size:1.02rem;letter-spacing:.05em;line-height:1}
-.brand-name small{display:block;font-family:var(--font-mono);font-weight:400;font-size:.54rem;letter-spacing:.32em;color:var(--faint);margin-top:3px}
+.brand {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-start !important; /* Garante o alinhamento inicial */
+  gap: 0.25rem !important;                 /* Espaço controlado entre logo e texto */
+  text-align: left;
+  width: max-content;                     /* Força o container a ter o tamanho exato do conteúdo */
+}
+
+/* 1. Resetar o elemento do LOGO (geralmente uma imagem ou SVG) */
+.brand svg, 
+.brand img, 
+.brand .mark {
+  font-size: 32px;
+  margin: 0 !important;    /* Remove margens antigas que empurram o texto */
+  padding: 0 !important;   /* Remove paddings que criam falso espaço */
+  flex-shrink: 0;          /* Impede o logo de esmagar */
+}
+
+/* 2. Ajustar o container do TEXTO */
+.brand-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.02rem;
+  letter-spacing: .05em;
+  line-height: 1;
+  white-space: nowrap;
+  
+  margin: 0 !important;    /* Zera margens que jogam o texto para a direita */
+  padding: 0 !important;   /* Zera paddings */
+  flex-grow: 0;            /* Garante que ele não ocupe espaço desnecessário */
+}
+
+.brand-name small {
+  display: block;
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: .54rem;
+  letter-spacing: .32em;
+  color: var(--faint);
+  margin-top: 3px;
+  
+  margin-right: -.32em;    /* Compensa o letter-spacing */
+  width: 100%;
+  box-sizing: border-box;
+}
 .nav-links{display:flex;gap:2px;align-items:center}
 .nav-links a{position:relative;padding:.5rem .8rem;font-size:.85rem;font-weight:600;color:var(--muted);transition:color .25s}
 .nav-links a::after{content:"";position:absolute;left:.8rem;right:.8rem;bottom:.28rem;height:1.5px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
@@ -225,7 +267,7 @@ header.scrolled{
 @keyframes grow{from{transform:scaleY(.05)}}
 
 /* float badge over dash */
-.float-card{
+/* .float-card{
   position:absolute;left:-22px;bottom:30px;z-index:3;background:var(--elevated);border:1px solid var(--border-strong);
   border-radius:var(--r-md);padding:11px 15px;box-shadow:var(--shadow);display:flex;align-items:center;gap:.65rem;
   animation:floaty 5s ease-in-out infinite;max-width:78%;
@@ -235,7 +277,7 @@ header.scrolled{
 .float-card .ic svg{width:16px;height:16px}
 .float-card .ft{display:flex;flex-direction:column;line-height:1.25;min-width:0}
 .float-card .t{font-size:.66rem;color:var(--faint);font-family:var(--font-mono);letter-spacing:.03em;white-space:nowrap}
-.float-card .v{font-weight:700;font-size:.9rem;white-space:nowrap}
+.float-card .v{font-weight:700;font-size:.9rem;white-space:nowrap} */
 
 /* ---------- CONCEPT / PILLARS ---------- */
 .concept-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
@@ -256,6 +298,26 @@ header.scrolled{
 .pill:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:var(--glow)}
 .pill .n{font-family:var(--font-mono);font-size:.72rem;color:var(--accent-2);font-weight:700}
 .concept-note{margin-top:30px;color:var(--muted);font-size:.98rem;max-width:780px;line-height:1.65;border-left:2px solid var(--accent);padding-left:18px}
+
+/* --- PILLAR DETAIL --- */
+.pill { cursor: pointer; justify-content: flex-start; }
+.pill-arrow { margin-left: auto; font-style: normal; font-size: .8rem; color: var(--accent-2); transition: transform .25s var(--ease); }
+.pill.active .pill-arrow { transform: rotate(180deg); }
+.pill.active { border-color: var(--accent); background: var(--surface-2); }
+
+.pillar-detail {
+  grid-column: 1 / -1; margin-top: 10px;
+  background: var(--surface); border: 1px solid var(--border-strong);
+  border-radius: var(--r-lg); padding: 28px 32px;
+  animation: slidedown .3s var(--ease);
+}
+.pillar-detail-inner h4 { font-family: var(--font-display); font-size: 1.15rem; margin-bottom: .6rem; }
+.pillar-detail-inner p { color: var(--muted); font-size: .95rem; line-height: 1.65; margin-bottom: 1rem; }
+.pillar-detail-bullets { display: flex; flex-direction: column; gap: .6rem; margin-bottom: 1rem; }
+.pillar-detail-bullets li { display: flex; gap: .6rem; font-size: .9rem; color: var(--muted); }
+.pillar-detail-bullets li::before { content: "▸"; color: var(--accent-2); flex: none; }
+.pillar-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+.pillar-tags span { font-size: .75rem; padding: .3rem .7rem; border: 1px solid var(--border); border-radius: 100px; color: var(--muted); background: var(--surface-2); }
 
 /* ---------- ECOSYSTEM ---------- */
 .eco-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
@@ -690,3 +752,58 @@ footer{border-top:1px solid var(--border);padding:56px 0 34px;background:color-m
   .metrics{gap:24px}
   .gar-band{padding:36px 22px}
 }
+
+/* =========================================================
+   BLOG v2 — autor nos cards, novas categorias, página do artigo
+   ========================================================= */
+img.mark{object-fit:contain}
+
+/* novas categorias (capas) */
+.cat-traffic{background:linear-gradient(135deg,#0a3d5e,#22b3c9)}
+.cat-sales{background:linear-gradient(135deg,#1d2a78,#3169ff)}
+
+/* autor no meta dos cards */
+.post-meta .au{display:inline-flex;align-items:center;gap:.4rem;color:var(--muted)}
+.au-av{width:18px;height:18px;border-radius:50%;background:linear-gradient(150deg,var(--accent-2),var(--accent));flex:none;display:inline-block}
+
+/* ---- página do artigo ---- */
+.art-hero{position:relative;padding:calc(var(--header-h) + 46px) 0 38px;overflow:hidden;border-bottom:1px solid var(--border)}
+.art-hero::before{content:"";position:absolute;inset:0;opacity:.16;background:inherit}
+.art-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent,var(--bg) 96%)}
+.art-hero>.wrap{position:relative;z-index:1;max-width:860px}
+.breadcrumb{display:flex;align-items:center;gap:.5rem;font-family:var(--font-mono);font-size:.72rem;color:var(--faint);margin-bottom:20px;flex-wrap:wrap}
+.breadcrumb a{color:var(--muted)}
+.breadcrumb a:hover{color:var(--text)}
+.breadcrumb b{color:var(--accent-2);font-weight:700}
+.art-cat{display:inline-block;font-family:var(--font-mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:#fff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);padding:.34rem .7rem;border-radius:100px;margin-bottom:16px;backdrop-filter:blur(4px)}
+html[data-theme="light"] .art-cat{color:var(--accent-2);background:color-mix(in srgb,var(--accent) 12%,transparent);border-color:color-mix(in srgb,var(--accent) 30%,transparent)}
+.art-hero h1{font-size:clamp(2rem,4.2vw,3rem);line-height:1.08;max-width:18ch}
+.art-meta{display:flex;align-items:center;gap:.6rem;margin-top:22px;font-family:var(--font-mono);font-size:.78rem;color:var(--muted);flex-wrap:wrap}
+.art-meta .au{display:inline-flex;align-items:center;gap:.45rem;color:var(--text);font-weight:700}
+.art-meta .au-av{width:22px;height:22px}
+.art-meta .dot{width:3px;height:3px;border-radius:50%;background:var(--faint)}
+.art-wrap{max-width:760px;padding-top:42px;padding-bottom:20px}
+.art-body .art-lead{font-size:1.2rem;line-height:1.65;color:var(--text);font-weight:500;margin-bottom:1.6rem}
+.art-body p{font-size:1.05rem;line-height:1.8;color:var(--muted);margin-bottom:1.3rem}
+.art-body h2{font-family:var(--font-display);font-size:clamp(1.3rem,2.4vw,1.7rem);letter-spacing:-.01em;margin:2.2rem 0 1rem;color:var(--text)}
+.art-body h2::before{content:"";display:block;width:38px;height:3px;border-radius:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2));margin-bottom:14px}
+.art-share{display:flex;align-items:center;gap:.6rem;margin:34px 0;padding-top:24px;border-top:1px solid var(--border);flex-wrap:wrap}
+.art-share .lbl{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);font-weight:700;margin-right:.3rem}
+.art-share a,.art-share .copy{width:40px;height:40px;border-radius:10px;border:1px solid var(--border);display:grid;place-items:center;color:var(--muted);transition:.25s var(--ease);background:var(--surface)}
+.art-share a:hover,.art-share .copy:hover{border-color:var(--accent);color:var(--accent-2);transform:translateY(-2px)}
+.art-share svg{width:18px;height:18px}
+.art-share .copy.done{border-color:var(--positive);color:var(--positive)}
+.art-backlink{display:inline-block;margin-top:8px;color:var(--accent-2);font-weight:700;font-size:.92rem}
+.art-related{max-width:760px;margin:10px auto 0;padding-bottom:10px}
+.art-related h3{font-family:var(--font-display);font-size:1.3rem;margin-bottom:18px}
+.rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rel-card{border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;background:var(--surface);transition:.3s var(--ease);display:flex;flex-direction:column}
+.rel-card:hover{transform:translateY(-5px);border-color:var(--border-strong);box-shadow:var(--shadow)}
+.rel-card .post-cover{min-height:96px}
+.rel-card .post-cover .cv-cat{font-size:.56rem}
+.rel-body{padding:16px}
+.rel-body h4{font-size:.96rem;line-height:1.3}
+.art-notfound{max-width:560px;text-align:center;padding:120px 0 90px}
+.art-notfound h1{font-size:4rem;background:linear-gradient(120deg,var(--accent-2),var(--accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.art-notfound p{color:var(--muted);margin:10px 0 24px}
+@media(max-width:760px){ .rel-grid{grid-template-columns:1fr} }

@@ -377,6 +377,7 @@ footer{border-top:1px solid var(--border);padding:54px 0 34px;background:color-m
   .hero-stats{justify-content:center}
   .deal-preview{max-width:500px;margin:0 auto}
 
+
   .card.featured{flex-direction:column;gap:22px}
   .card.featured .card-side{border-left:none;border-top:1px solid var(--border);padding-left:0;padding-top:22px}
   .sell-grid{grid-template-columns:1fr;gap:40px}
