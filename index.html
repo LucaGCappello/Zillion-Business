@@ -34,7 +34,7 @@
     </nav>
 
     <div class="nav-tools">
-      <a href="#" class="login-link" data-i18n="nav_login">Login</a>
+      <a href="login.html" class="login-link" data-i18n="nav_login">Login</a>
       <div class="lang">
         <button class="lang-btn" id="langBtn" aria-haspopup="true">
           <span class="flag" id="langFlag">🇵🇹</span><span id="langCode">PT</span>
@@ -64,7 +64,7 @@
     <a href="bolsa.html" data-i18n="nav_bolsa">Bolsa Privada</a>
     <a href="blog.html" data-i18n="nav_blog">Blog</a>
     <a href="#podcast" data-i18n="nav_podcast">Podcast</a>
-    <a href="#" data-i18n="nav_login">Login</a>
+    <a href="login.html" data-i18n="nav_login">Login</a>
     <a href="#cta" class="btn btn-primary" data-i18n="cta_specialist">Falar com especialista</a>
   </nav>
 </header>
@@ -449,8 +449,34 @@
   </div>
 </div>
 
+<script src="js/auth.js"></script>
 <script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
 <script src="js/chat.js"></script>
+<script>
+  // Update navbar to reflect logged-in state
+  document.addEventListener('DOMContentLoaded', function () {
+    if (!window.ZB || !ZB.Auth) return;
+    const session = ZB.Auth.getSession();
+    if (!session) return;
+
+    const firstName = session.user.name ? session.user.name.split(' ')[0] : 'Conta';
+    const greeting  = 'Olá, ' + firstName;
+
+    [document.querySelector('a.login-link'),
+     document.querySelector('.mobile-nav a[href="login.html"]')]
+      .forEach(function (el) {
+        if (!el) return;
+        el.removeAttribute('data-i18n');
+        el.textContent = greeting;
+        el.href = '#';
+        el.title = 'Clique para terminar sessão';
+        el.addEventListener('click', function (e) {
+          e.preventDefault();
+          ZB.Auth.logout();
+        });
+      });
+  });
+</script>
 </body>
 </html>

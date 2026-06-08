@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Login — Zillion Business</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+/* ======= LOGIN PAGE ======= */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+}
+
+/* ---- LEFT BRAND PANEL ---- */
+.login-brand {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 52px 60px;
+  position: relative;
+  overflow: hidden;
+}
+.login-brand::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(760px 560px at 15% 65%, rgba(49,105,255,.24), transparent 62%),
+    radial-gradient(420px 320px at 78% 18%, rgba(111,155,255,.13), transparent 58%);
+  pointer-events: none;
+}
+.login-brand-nav {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.login-brand-body {
+  position: relative;
+  max-width: 490px;
+}
+.login-brand-body .kicker { margin-bottom: 1.6rem; }
+.login-brand-body h1 {
+  font-size: clamp(2.1rem, 3.6vw, 3rem);
+  line-height: 1.06;
+  margin-bottom: 1.1rem;
+}
+.login-brand-body .brand-desc {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.65;
+  max-width: 390px;
+}
+.login-feats {
+  display: flex;
+  flex-direction: column;
+  gap: .85rem;
+  margin-top: 2.6rem;
+}
+.login-feat {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  font-size: .88rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+.feat-ic {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  background: color-mix(in srgb, var(--accent) 13%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  display: grid;
+  place-items: center;
+  flex: none;
+  color: var(--accent-2);
+}
+.feat-ic svg { width: 15px; height: 15px; }
+.login-brand-foot {
+  font-family: var(--font-mono);
+  font-size: .6rem;
+  color: var(--faint);
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  position: relative;
+}
+
+/* ---- VERTICAL SEPARATOR ---- */
+.login-sep {
+  width: 1px;
+  background: var(--border);
+  align-self: stretch;
+  flex: none;
+}
+
+/* ---- RIGHT FORM PANEL ---- */
+.login-panel {
+  flex: 0 0 auto;
+  width: min(500px, 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 52px 56px;
+}
+.login-panel-head { margin-bottom: 2rem; }
+.login-panel-head h2 {
+  font-size: 1.65rem;
+  letter-spacing: -.025em;
+  margin-bottom: .4rem;
+}
+.login-panel-head p {
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+/* password field wrapper */
+.pass-wrap { position: relative; }
+.pass-wrap input { padding-right: 2.8rem; }
+.pass-toggle {
+  position: absolute;
+  right: .85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--faint);
+  padding: 4px;
+  display: grid;
+  place-items: center;
+  line-height: 0;
+  transition: color .2s;
+}
+.pass-toggle:hover { color: var(--muted); }
+.pass-toggle svg { width: 17px; height: 17px; }
+
+/* remember + forgot row */
+.login-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: .2rem 0 1.35rem;
+}
+.cb-label {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .83rem;
+  color: var(--muted);
+  cursor: pointer;
+  user-select: none;
+}
+.cb-label input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  accent-color: var(--accent);
+  cursor: pointer;
+  flex: none;
+}
+.forgot-link {
+  font-size: .83rem;
+  font-weight: 600;
+  color: var(--accent-2);
+  transition: color .2s;
+}
+.forgot-link:hover { color: var(--text); }
+
+/* submit button */
+.login-submit {
+  width: 100%;
+  height: 50px;
+  font-size: .95rem;
+}
+.login-submit .spin {
+  display: none;
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba(255,255,255,.25);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: lspin .65s linear infinite;
+}
+@keyframes lspin { to { transform: rotate(360deg); } }
+.login-submit.loading { pointer-events: none; opacity: .75; }
+.login-submit.loading .btn-label { display: none; }
+.login-submit.loading .spin { display: block; }
+
+/* error message */
+.login-err {
+  display: none;
+  align-items: center;
+  gap: .5rem;
+  margin-top: .8rem;
+  padding: .72rem .9rem;
+  border-radius: var(--r-sm);
+  background: color-mix(in srgb, #d93030 10%, transparent);
+  border: 1px solid color-mix(in srgb, #d93030 28%, transparent);
+  color: #ff7272;
+  font-size: .83rem;
+}
+.login-err.show { display: flex; }
+.login-err svg { width: 15px; height: 15px; flex: none; }
+
+/* demo hint box */
+.demo-box {
+  margin-top: 1.2rem;
+  padding: .74rem .9rem;
+  background: color-mix(in srgb, var(--accent) 7%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 18%, transparent);
+  border-radius: var(--r-sm);
+  font-size: .74rem;
+  font-family: var(--font-mono);
+  color: var(--accent-2);
+  line-height: 1.75;
+}
+.demo-box strong {
+  color: var(--faint);
+  display: block;
+  margin-bottom: .15rem;
+}
+
+/* back to site link */
+.back-home {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  margin-top: 1.8rem;
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--faint);
+  transition: color .2s;
+}
+.back-home:hover { color: var(--muted); }
+.back-home svg { width: 14px; height: 14px; }
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 900px) {
+  .login-page { flex-direction: column; }
+
+  .login-brand {
+    padding: 32px 28px 28px;
+    flex: none;
+    position: relative;
+  }
+  .login-brand::after {
+    content: "";
+    position: absolute;
+    bottom: 0; left: 28px; right: 28px;
+    height: 1px;
+    background: var(--border);
+  }
+  .login-brand-body h1 { font-size: 1.95rem; }
+  .login-feats,
+  .login-brand-foot { display: none; }
+
+  .login-sep { display: none; }
+
+  .login-panel {
+    width: 100%;
+    padding: 36px 28px 52px;
+  }
+}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<div class="login-page">
+
+  <!-- ======= BRAND PANEL ======= -->
+  <div class="login-brand">
+    <div class="login-brand-nav">
+      <img src="public/IMG_3617.PNG" class="mark" alt="">
+      <a href="index.html" class="brand" aria-label="Zillion Business">
+        <span class="brand-name">ZILLION<small>BUSINESS</small></span>
+      </a>
+    </div>
+
+    <div class="login-brand-body">
+      <span class="kicker">Área de Clientes</span>
+      <h1>Bem-vindo<br>de volta ao<br><span class="gradient-text">ecossistema</span>.</h1>
+      <p class="brand-desc">Aceda à sua área privada e acompanhe projetos, relatórios, automações Nexus e o desempenho do negócio em tempo real.</p>
+
+      <div class="login-feats">
+        <div class="login-feat">
+          <span class="feat-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+            </svg>
+          </span>
+          Dashboard executivo em tempo real
+        </div>
+        <div class="login-feat">
+          <span class="feat-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </span>
+          Automações e integrações Nexus ativas
+        </div>
+        <div class="login-feat">
+          <span class="feat-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </span>
+          Relatórios e métricas de crescimento
+        </div>
+        <div class="login-feat">
+          <span class="feat-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+            </svg>
+          </span>
+          Acesso seguro e protegido
+        </div>
+      </div>
+    </div>
+
+    <div class="login-brand-foot">© 2025 Zillion Business · Todos os direitos reservados</div>
+  </div>
+
+  <!-- Vertical divider (desktop) -->
+  <div class="login-sep"></div>
+
+  <!-- ======= FORM PANEL ======= -->
+  <div class="login-panel">
+    <div class="login-panel-head">
+      <h2>Entrar na conta</h2>
+      <p>Utilize as suas credenciais de acesso.</p>
+    </div>
+
+    <form id="loginForm" novalidate>
+      <div class="field">
+        <label for="loginEmail">Email</label>
+        <input type="email" id="loginEmail" name="email"
+               placeholder="nome@empresa.com"
+               autocomplete="email" required>
+      </div>
+
+      <div class="field">
+        <label for="loginPass">Palavra-passe</label>
+        <div class="pass-wrap">
+          <input type="password" id="loginPass" name="password"
+                 placeholder="••••••••"
+                 autocomplete="current-password" required>
+          <button type="button" class="pass-toggle" id="passToggle"
+                  aria-label="Mostrar palavra-passe">
+            <svg id="eyeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="login-meta">
+        <label class="cb-label">
+          <input type="checkbox" id="remember" name="remember">
+          Lembrar-me
+        </label>
+        <a href="#" class="forgot-link">Esqueci a palavra-passe</a>
+      </div>
+
+      <button type="submit" class="btn btn-primary login-submit" id="loginBtn">
+        <span class="btn-label">Entrar</span>
+        <span class="spin"></span>
+      </button>
+
+      <div class="login-err" id="loginErr">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="8" x2="12" y2="12"/>
+          <line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+        <span id="loginErrMsg">Email ou palavra-passe incorretos.</span>
+      </div>
+    </form>
+
+    <div class="demo-box">
+      <strong>// acesso demo</strong>
+      admin@zillionbusiness.com · zillion2024<br>
+      demo@zillionbusiness.com · demo123
+    </div>
+
+    <a href="index.html" class="back-home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+        <path d="M19 12H5M12 5l-7 7 7 7"/>
+      </svg>
+      Voltar ao site
+    </a>
+  </div>
+
+</div>
+
+<script src="js/auth.js"></script>
+<script>
+  // Apply saved theme (prevent FOUC on light mode users)
+  (function () {
+    const t = localStorage.getItem('zb_site_theme');
+    if (t) document.documentElement.setAttribute('data-theme', t);
+
+    // If already logged in, go back
+    if (window.ZB && ZB.Auth && ZB.Auth.isLoggedIn()) {
+      window.location.replace('index.html');
+    }
+  })();
+
+  // ---- Password show/hide ----
+  const passToggle = document.getElementById('passToggle');
+  const passInput  = document.getElementById('loginPass');
+  const eyeIcon    = document.getElementById('eyeIcon');
+  const EYE_OPEN   = '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>';
+  const EYE_CLOSED = '<path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19m-6.72-1.07a3 3 0 11-4.24-4.24M1 1l22 22"/>';
+  let passVisible = false;
+
+  passToggle.addEventListener('click', () => {
+    passVisible = !passVisible;
+    passInput.type = passVisible ? 'text' : 'password';
+    eyeIcon.innerHTML = passVisible ? EYE_CLOSED : EYE_OPEN;
+    passToggle.setAttribute('aria-label', passVisible ? 'Ocultar palavra-passe' : 'Mostrar palavra-passe');
+  });
+
+  // ---- Form submission ----
+  const loginForm = document.getElementById('loginForm');
+  const loginBtn  = document.getElementById('loginBtn');
+  const loginErr  = document.getElementById('loginErr');
+  const loginErrMsg = document.getElementById('loginErrMsg');
+
+  loginForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const email    = document.getElementById('loginEmail').value.trim();
+    const password = document.getElementById('loginPass').value;
+    const remember = document.getElementById('remember').checked;
+
+    loginErr.classList.remove('show');
+    loginBtn.classList.add('loading');
+
+    try {
+      await ZB.Auth.login(email, password, remember);
+      window.location.href = 'index.html';
+    } catch (err) {
+      loginErrMsg.textContent = err.message || 'Ocorreu um erro. Tente novamente.';
+      loginErr.classList.add('show');
+    } finally {
+      loginBtn.classList.remove('loading');
+    }
+  });
+</script>
+</body>
+</html>
