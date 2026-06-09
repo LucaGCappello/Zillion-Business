@@ -21,6 +21,39 @@
   let opened = false;
   const C = () => ZB.I18N[ZB.lang].chat;
 
+  /* ---------- History persistence ---------- */
+  const STORAGE_KEY = 'zb_chat_history';
+  const TTL = 24 * 60 * 60 * 1000;
+  const MAX_MSGS = 50;
+
+  function saveToHistory(role, text, cta) {
+    let msgs = loadHistory();
+    msgs.push({ role, text, cta: cta || null, ts: Date.now() });
+    if (msgs.length > MAX_MSGS) msgs = msgs.slice(-MAX_MSGS);
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(msgs)); } catch (_) {}
+  }
+
+  function loadHistory() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return [];
+      const msgs = JSON.parse(raw);
+      if (!Array.isArray(msgs) || !msgs.length) return [];
+      if (Date.now() - msgs[msgs.length - 1].ts > TTL) {
+        localStorage.removeItem(STORAGE_KEY);
+        return [];
+      }
+      return msgs;
+    } catch (_) { return []; }
+  }
+
+  function restoreHistory(msgs) {
+    msgs.forEach(m => {
+      if (m.role === 'user') addUser(m.text, true);
+      else addBot(m.text, m.cta || undefined, true);
+    });
+  }
+
   /* ---------- UI labels ---------- */
   function syncLabels() {
     const c = C();
@@ -49,15 +82,16 @@
            '<path d="M83 27 L57 66" stroke="#9aa0b4"/><path d="M20 73 L48 27 L76 73" stroke="#fff"/></svg></span>';
   }
 
-  function addUser(text) {
+  function addUser(text, _restore = false) {
     const m = document.createElement("div");
     m.className = "nx-msg user";
     m.innerHTML = '<div class="nx-bubble">' + escapeHtml(text) + "</div>";
     body.appendChild(m);
     scrollDown();
+    if (!_restore) saveToHistory('user', text);
   }
 
-  function addBot(text, cta) {
+  function addBot(text, cta, _restore = false) {
     const m = document.createElement("div");
     m.className = "nx-msg bot";
     let inner = botAvatar() + '<div class="nx-bubble">' + escapeHtml(text);
@@ -73,6 +107,7 @@
     const link = m.querySelector(".nx-cta[data-anchor]");
     if (link) link.addEventListener("click", () => closePanel());
     scrollDown();
+    if (!_restore) saveToHistory('bot', text, cta);
   }
 
   function typing() {
@@ -140,8 +175,13 @@
     fab.classList.add("hidden");
     if (!opened) {
       opened = true;
-      const t = typing();
-      setTimeout(() => { t.remove(); addBot(C().greeting); }, 600);
+      const history = loadHistory();
+      if (history.length) {
+        restoreHistory(history);
+      } else {
+        const t = typing();
+        setTimeout(() => { t.remove(); addBot(C().greeting); }, 600);
+      }
     }
     setTimeout(() => input && input.focus(), 300);
   }
