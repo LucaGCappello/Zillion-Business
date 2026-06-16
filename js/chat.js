@@ -124,7 +124,7 @@
   }
 
   /* ---------- n8n webhook ---------- */
-  const N8N_WEBHOOK = "/api/chat";
+  const N8N_WEBHOOK = "https://n8nsinclair.scompany.com.pt/webhook/assistente-sdr";
 
   /* ---------- Local intent fallback ---------- */
   function localReply(text) {
