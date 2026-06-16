@@ -7,7 +7,7 @@
     strategy:"public/strategy.webp", growth:"public/IMG_3617.PNG", traffic:"", sales:"public/sales.webp", tech:"public/tech.webp", international:"public/expansion.webp", investment:"public/investment.webp"
 };
    window.ZB_POSTS = [
-  { slug:"crescer-estruturar-melhor", cat:"strategy", date:"2026-05-20", read:6, featured:true,
+  { slug:"crescer-estruturar-melhor", cat:"strategy1", date:"2026-05-20", read:6, featured:true,
     pt:{title:"Crescer não é aparecer mais: é estruturar melhor",
         excerpt:"Por que empresas com bons produtos travam — e o que muda quando estratégia, processos e tecnologia trabalham juntos.",
         body:["Muitas empresas têm bom produto e bom serviço, mas continuam a operar com processos manuais e decisões baseadas em intuição. O resultado é crescimento instável e dependente do dono.",
