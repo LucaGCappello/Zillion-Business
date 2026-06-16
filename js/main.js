@@ -152,7 +152,7 @@ document.querySelectorAll('.pill[data-pillar]').forEach(btn => {
   const logBody = $("#logBody");
   if (logBody) {
     const events = (window.ZB && ZB.I18N[ZB.lang] && ZB.I18N[ZB.lang].log) || [
-      ["00:01", 'Instância criada', 'Zillion_Principal'],lk
+      ["00:01", 'Instância criada', 'Zillion_Principal'],
       ["00:09", 'QR Code lido', 'Equipe comercial'],
       ["00:23", 'Fluxo em execução', 'Nexus_LeadStart'],
       ["00:41", 'Lead encaminhado', 'CRM & WhatsApp'],
