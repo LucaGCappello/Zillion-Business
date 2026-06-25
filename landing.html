@@ -70,6 +70,11 @@
         <div class="field"><label data-i18n="lf_phone">WhatsApp</label><input type="tel" id="lfPhone" autocomplete="tel"></div>
       </div>
       <div class="field"><label data-i18n="lf_segment">Segmento da empresa</label><input type="text" id="lfSegment"></div>
+      <div class="consent-row">
+        <input type="checkbox" id="lfConsent">
+        <label for="lfConsent" data-i18n-html="form_consent_html">Li e aceito a <a href="politica-privacidade.html" target="_blank">Política de Privacidade</a> e autorizo o tratamento dos meus dados para contacto comercial.</label>
+      </div>
+      <p class="consent-err" id="lfConsentErr" data-i18n="form_consent_required">Deve aceitar a política de privacidade para continuar.</p>
       <button class="btn btn-primary" id="lfBtn" data-i18n="mv_form_btn">Falar com especialista</button>
       <p class="note" data-i18n="lf_note">Os seus dados estão seguros. Sem spam.</p>
       <p class="lf-msg" id="lfMsg"></p>
@@ -315,7 +320,11 @@
       <span class="brand-name">ZILLION<small>BUSINESS</small></span>
     </a>
     <div class="tag-line">GROW TO INSPIRE</div>
-    <p class="lp-foot-rights">© <span id="year">2025</span> Zillion Business · <span data-i18n="foot_rights">Todos os direitos reservados.</span></p>
+    <div class="lp-foot-legal">
+      <p data-i18n="foot_legal">SENTINELREVELATION, LDA · NIPC 518981169 · Rua Diogo Cão, n.º 1, Loja 5, 2660-445 Santo António dos Cavaleiros, Loures, Portugal</p>
+      <p><a href="mailto:privacidade@zillionbusiness.pt">privacidade@zillionbusiness.pt</a> · <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener noreferrer" data-i18n="foot_complaints">Livro de Reclamações</a></p>
+    </div>
+    <p class="lp-foot-rights">© <span id="year">2025</span> Zillion Business (SENTINELREVELATION, LDA) · <a href="politica-privacidade.html" data-i18n="foot_privacy_link">Política de Privacidade</a> · <a href="termos.html" data-i18n="foot_terms_link">Termos e Condições</a></p>
   </div>
 </footer>
 
@@ -354,5 +363,6 @@
 <script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
 <script src="js/lead.js"></script>
+<script src="js/cookie-consent.js" defer></script>
 </body>
 </html>

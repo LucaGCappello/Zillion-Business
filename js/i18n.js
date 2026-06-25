@@ -100,6 +100,14 @@ ZB.I18N = {
 
     foot_desc:"Arquitetura de negócios, tecnologia e investimento para empresas que querem inspirar pelo crescimento.",
     foot_nav:"Navegação", foot_hubs:"Polos", foot_connect:"Conecte-se",
+    foot_legal_title:"Informação Legal",
+    foot_legal:"SENTINELREVELATION, LDA · NIPC 518981169 · Rua Diogo Cão, n.º 1, Loja 5, 2660-445 Santo António dos Cavaleiros, Loures, Portugal",
+    foot_email_label:"Contacto:",
+    foot_complaints:"Livro de Reclamações",
+    foot_privacy_link:"Política de Privacidade",
+    foot_terms_link:"Termos e Condições",
+    foot_cookies_link:"Política de Cookies",
+    foot_gdpr_rights:"Direitos RGPD / Privacidade",
 
     nav_blog:"Blog",
     blog_kicker:"Blog · Insights",
@@ -115,6 +123,8 @@ ZB.I18N = {
     news_ph:"O seu melhor e-mail", news_btn:"Inscrever-se",
     news_note:"Ao inscrever-se, concorda em receber comunicações da Zillion Business.",
     news_ok:"Inscrição recebida! Em breve você receberá os nossos insights.",
+    form_consent_html:'Li e aceito a <a href="politica-privacidade.html" target="_blank">Política de Privacidade</a> e autorizo o tratamento dos meus dados.',
+    form_consent_required:"Deve aceitar a política de privacidade para continuar.",
 
     /* ---- LANDING ---- */
     land_badge:"Powered by Nexus AI",
@@ -365,6 +375,14 @@ ZB.I18N = {
 
     foot_desc:"Business architecture, technology and investment for companies that want to inspire through growth.",
     foot_nav:"Navigation", foot_hubs:"Hubs", foot_connect:"Connect",
+    foot_legal_title:"Legal Information",
+    foot_legal:"SENTINELREVELATION, LDA · VAT 518981169 · Rua Diogo Cão, n.º 1, Loja 5, 2660-445 Santo António dos Cavaleiros, Loures, Portugal",
+    foot_email_label:"Contact:",
+    foot_complaints:"Complaints Book",
+    foot_privacy_link:"Privacy Policy",
+    foot_terms_link:"Terms & Conditions",
+    foot_cookies_link:"Cookie Policy",
+    foot_gdpr_rights:"GDPR Rights / Privacy",
 
     nav_blog:"Blog",
     blog_kicker:"Blog · Insights",
@@ -380,6 +398,8 @@ ZB.I18N = {
     news_ph:"Your best email", news_btn:"Subscribe",
     news_note:"By subscribing, you agree to receive communications from Zillion Business.",
     news_ok:"Subscription received! You'll get our insights soon.",
+    form_consent_html:'I have read and accept the <a href="politica-privacidade.html" target="_blank">Privacy Policy</a> and authorise the processing of my personal data.',
+    form_consent_required:"You must accept the privacy policy to continue.",
 
     /* ---- LANDING ---- */
     land_badge:"Powered by Nexus AI",
@@ -630,6 +650,14 @@ ZB.I18N = {
 
     foot_desc:"Architettura d'impresa, tecnologia e investimenti per aziende che vogliono ispirare attraverso la crescita.",
     foot_nav:"Navigazione", foot_hubs:"Sedi", foot_connect:"Connettiti",
+    foot_legal_title:"Informazioni Legali",
+    foot_legal:"SENTINELREVELATION, LDA · P.IVA 518981169 · Rua Diogo Cão, n.º 1, Loja 5, 2660-445 Santo António dos Cavaleiros, Loures, Portogallo",
+    foot_email_label:"Contatto:",
+    foot_complaints:"Libro dei Reclami",
+    foot_privacy_link:"Informativa sulla Privacy",
+    foot_terms_link:"Termini e Condizioni",
+    foot_cookies_link:"Politica dei Cookie",
+    foot_gdpr_rights:"Diritti GDPR / Privacy",
 
     nav_blog:"Blog",
     blog_kicker:"Blog · Insights",
@@ -645,6 +673,8 @@ ZB.I18N = {
     news_ph:"La tua email migliore", news_btn:"Iscriviti",
     news_note:"Iscrivendoti, accetti di ricevere comunicazioni da Zillion Business.",
     news_ok:"Iscrizione ricevuta! Riceverai presto i nostri insight.",
+    form_consent_html:'Ho letto e accetto l\'<a href="politica-privacidade.html" target="_blank">Informativa sulla Privacy</a> e autorizzo il trattamento dei miei dati personali.',
+    form_consent_required:"Devi accettare l'informativa sulla privacy per continuare.",
 
     /* ---- LANDING ---- */
     land_badge:"Powered by Nexus AI",

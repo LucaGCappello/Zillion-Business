@@ -153,16 +153,25 @@
       const phone = (document.getElementById(fields.phone) || {}).value || "";
       const contactOk = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.trim()) || /^[+\d][\d\s().-]{6,}$/.test(phone.trim());
       const ok = document.getElementById(okId);
+      // RGPD consent validation
+      const consentCb = document.getElementById(fields.consent);
+      const consentErr = document.getElementById(fields.consentErr);
+      if (consentCb && !consentCb.checked) {
+        if (consentErr) consentErr.style.display = "block";
+        return;
+      }
+      if (consentErr) consentErr.style.display = "none";
       if (name.trim().length < 2 || !contactOk) {
         ok.textContent = ZB.t("lf_err"); ok.className = "lf-msg err show"; return;
       }
       ok.textContent = ZB.t("lf_ok"); ok.className = "lf-msg ok show";
       [fields.name, fields.email, fields.phone, fields.segment].forEach(id => { const el = document.getElementById(id); if (el) el.value = ""; });
+      if (consentCb) consentCb.checked = false;
     });
   }
 
   document.addEventListener("DOMContentLoaded", () => {
-    wireForm("lfBtn", "lfMsg", { name:"lfName", email:"lfEmail", phone:"lfPhone", segment:"lfSegment" });
+    wireForm("lfBtn", "lfMsg", { name:"lfName", email:"lfEmail", phone:"lfPhone", segment:"lfSegment", consent:"lfConsent", consentErr:"lfConsentErr" });
     window.addEventListener("zb:langchange", () => {
       const ok = document.getElementById("lfMsg");
       if (ok && ok.classList.contains("show")) ok.textContent = ZB.t(ok.classList.contains("err") ? "lf_err" : "lf_ok");

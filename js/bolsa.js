@@ -434,12 +434,20 @@ function init(){
   $("#overlay").addEventListener("click",e=>{if(e.target.id==="overlay")closeModal();});
   document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal();});
   $("#mSubmit").addEventListener("click",()=>{
+    const mConsent=$("#mConsent");
+    const mConsentErr=$("#mConsentErr");
+    if(mConsent&&!mConsent.checked){if(mConsentErr)mConsentErr.style.display="block";return;}
+    if(mConsentErr)mConsentErr.style.display="none";
     if(!$("#mEmail").value.trim()){$("#mEmail").focus();return;}
     $("#mFormInner").style.display="none"; $("#mOk").classList.add("show");
   });
 
   // sell form
   $("#sellSubmit").addEventListener("click",()=>{
+    const sellConsent=$("#sellConsent");
+    const sellConsentErr=$("#sellConsentErr");
+    if(sellConsent&&!sellConsent.checked){if(sellConsentErr)sellConsentErr.style.display="block";return;}
+    if(sellConsentErr)sellConsentErr.style.display="none";
     const ok=$("#sCompany").value.trim()&&$("#sName").value.trim()&&$("#sEmail").value.trim();
     if(!ok){ if(!$("#sCompany").value.trim())$("#sCompany").focus(); else if(!$("#sName").value.trim())$("#sName").focus(); else $("#sEmail").focus(); return; }
     $("#sellFormInner").style.display="none"; $("#sellOk").classList.add("show");

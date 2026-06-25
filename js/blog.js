@@ -104,9 +104,17 @@ function cover(post, idx, big) {
   const newsInput = document.getElementById("newsInput");
   const newsOk = document.getElementById("newsOk");
   if (newsBtn) newsBtn.addEventListener("click", () => {
+    const newsConsent = document.getElementById("newsConsent");
+    const newsConsentErr = document.getElementById("newsConsentErr");
+    if (newsConsent && !newsConsent.checked) {
+      if (newsConsentErr) newsConsentErr.style.display = "block";
+      return;
+    }
+    if (newsConsentErr) newsConsentErr.style.display = "none";
     const v = (newsInput.value || "").trim();
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)) { newsInput.focus(); newsInput.style.borderColor = "var(--accent)"; return; }
     newsInput.value = ""; newsInput.style.borderColor = "";
+    if (newsConsent) newsConsent.checked = false;
     newsOk.textContent = ZB.t("news_ok"); newsOk.classList.add("show");
   });
 

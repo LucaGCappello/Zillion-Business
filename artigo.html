@@ -74,7 +74,11 @@
         <input type="email" id="newsInput" data-i18n-ph="news_ph" placeholder="O seu melhor e-mail">
         <button class="btn btn-primary" id="newsBtn" data-i18n="news_btn">Inscrever-se</button>
       </div>
-      <p class="news-note" data-i18n="news_note">Ao inscrever-se, concorda em receber comunicações da Zillion Business.</p>
+      <div class="consent-row" style="justify-content:center;max-width:480px;margin:.6rem auto 0">
+        <input type="checkbox" id="newsConsent">
+        <label for="newsConsent" data-i18n-html="form_consent_html">Li e aceito a <a href="politica-privacidade.html" target="_blank">Política de Privacidade</a> e autorizo o envio de comunicações por email.</label>
+      </div>
+      <p class="consent-err" id="newsConsentErr" style="text-align:center" data-i18n="form_consent_required">Deve aceitar a política de privacidade para continuar.</p>
       <p class="news-ok" id="newsOk"></p>
     </div>
   </div>
@@ -98,6 +102,9 @@
         <a href="index.html#nexus" data-i18n="nav_nexus">Nexus</a>
         <a href="bolsa.html" data-i18n="nav_bolsa">Bolsa</a>
         <a href="blog.html" data-i18n="nav_blog">Blog</a>
+        <a href="politica-privacidade.html" data-i18n="foot_privacy_link">Política de Privacidade</a>
+        <a href="termos.html" data-i18n="foot_terms_link">Termos e Condições</a>
+        <a href="politica-cookies.html" data-i18n="foot_cookies_link">Política de Cookies</a>
       </div>
       <div class="foot-col">
         <h5 data-i18n="foot_hubs">Polos</h5>
@@ -114,10 +121,15 @@
           <a href="https://www.facebook.com/zillionbusiness.pt" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
           <a href="https://www.youtube.com/@zillionbusiness" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.4-.43-5a2.78 2.78 0 00-1.95-2C18.88 4.5 12 4.5 12 4.5s-6.88 0-8.62.5A2.78 2.78 0 001.43 7C1 8.6 1 12 1 12s0 3.4.43 5a2.78 2.78 0 001.95 2c1.74.5 8.62.5 8.62.5s6.88 0 8.62-.5a2.78 2.78 0 001.95-2c.43-1.6.43-5 .43-5zM9.75 15.5v-7l6 3.5z"/></svg></a>
         </div>
+        <a href="mailto:privacidade@zillionbusiness.pt" class="foot-gdpr-link" data-i18n="foot_gdpr_rights">Direitos RGPD / Privacidade</a>
       </div>
     </div>
+    <div class="foot-legal-bar">
+      <p data-i18n="foot_legal">SENTINELREVELATION, LDA · NIPC 518981169 · Rua Diogo Cão, n.º 1, Loja 5, 2660-445 Santo António dos Cavaleiros, Loures, Portugal</p>
+      <p><span data-i18n="foot_email_label">Contacto:</span> <a href="mailto:privacidade@zillionbusiness.pt">privacidade@zillionbusiness.pt</a> · <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener noreferrer" data-i18n="foot_complaints">Livro de Reclamações</a></p>
+    </div>
     <div class="foot-bottom">
-      © <span id="year">2025</span> Zillion Business — <span data-i18n="foot_desc">Arquitetura de negócios, tecnologia e investimento para empresas que querem inspirar pelo crescimento.</span>
+      © <span id="year">2025</span> Zillion Business (SENTINELREVELATION, LDA) · <a href="politica-privacidade.html" data-i18n="foot_privacy_link">Política de Privacidade</a> · <a href="termos.html" data-i18n="foot_terms_link">Termos e Condições</a>
     </div>
   </div>
 </footer>
@@ -157,6 +169,29 @@
 <script src="js/main.js"></script>
 <script src="js/chat.js"></script>
 <script src="js/posts.js"></script>
+<script src="js/cookie-consent.js" defer></script>
 <script src="js/article.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var newsBtn = document.getElementById("newsBtn");
+  var newsInput = document.getElementById("newsInput");
+  var newsOk = document.getElementById("newsOk");
+  if (!newsBtn) return;
+  newsBtn.addEventListener("click", function() {
+    var newsConsent = document.getElementById("newsConsent");
+    var newsConsentErr = document.getElementById("newsConsentErr");
+    if (newsConsent && !newsConsent.checked) {
+      if (newsConsentErr) newsConsentErr.style.display = "block";
+      return;
+    }
+    if (newsConsentErr) newsConsentErr.style.display = "none";
+    var v = (newsInput.value || "").trim();
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)) { newsInput.focus(); newsInput.style.borderColor = "var(--accent)"; return; }
+    newsInput.value = ""; newsInput.style.borderColor = "";
+    if (newsConsent) newsConsent.checked = false;
+    if (newsOk) { newsOk.textContent = ZB.t("news_ok"); newsOk.classList.add("show"); }
+  });
+});
+</script>
 </body>
 </html>

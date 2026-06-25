@@ -188,6 +188,11 @@
           <div class="full"><label class="in-label" data-i18n="form_phone">Telefone / WhatsApp</label><input class="ctrl" id="sPhone"></div>
           <div class="full"><label class="in-label" data-i18n="form_message">Conte um pouco sobre o negócio</label><textarea class="ctrl" id="sMsg"></textarea></div>
         </div>
+        <div class="consent-row">
+          <input type="checkbox" id="sellConsent">
+          <label for="sellConsent" data-i18n-html="form_consent_html">Li e aceito a <a href="politica-privacidade.html" target="_blank">Política de Privacidade</a> e autorizo o tratamento dos dados da minha empresa para efeitos de avaliação.</label>
+        </div>
+        <p class="consent-err" id="sellConsentErr" data-i18n="form_consent_required">Deve aceitar a política de privacidade para continuar.</p>
         <button class="btn btn-primary" id="sellSubmit" data-i18n="sell_submit">Enviar para avaliação</button>
         <div class="privacy">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
@@ -248,6 +253,9 @@
         <a href="#sell" data-i18n="nav_sell">Vender empresa</a>
         <a href="#how" data-i18n="nav_how">Como funciona</a>
         <a href="#why" data-i18n="nav_about">Autoridade</a>
+        <a href="politica-privacidade.html" data-i18n="foot_privacy_link">Política de Privacidade</a>
+        <a href="termos.html" data-i18n="foot_terms_link">Termos e Condições</a>
+        <a href="politica-cookies.html" data-i18n="foot_cookies_link">Política de Cookies</a>
       </div>
       <div class="foot-col">
         <h5 data-i18n="foot_hubs">Polos</h5>
@@ -261,10 +269,15 @@
           <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.4-.43-5a2.78 2.78 0 00-1.95-2C18.88 4.5 12 4.5 12 4.5s-6.88 0-8.62.5A2.78 2.78 0 001.43 7C1 8.6 1 12 1 12s0 3.4.43 5a2.78 2.78 0 001.95 2c1.74.5 8.62.5 8.62.5s6.88 0 8.62-.5a2.78 2.78 0 001.95-2c.43-1.6.43-5 .43-5zM9.75 15.5v-7l6 3.5z"/></svg></a>
           <a href="#" aria-label="Website"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20 15 15 0 010-20z"/></svg></a>
         </div>
+        <a href="mailto:privacidade@zillionbusiness.pt" class="foot-gdpr-link" data-i18n="foot_gdpr_rights">Direitos RGPD / Privacidade</a>
       </div>
     </div>
+    <div class="foot-legal-bar">
+      <p data-i18n="foot_legal">SENTINELREVELATION, LDA · NIPC 518981169 · Rua Diogo Cão, n.º 1, Loja 5, 2660-445 Santo António dos Cavaleiros, Loures, Portugal</p>
+      <p><span data-i18n="foot_email_label">Contacto:</span> <a href="mailto:privacidade@zillionbusiness.pt">privacidade@zillionbusiness.pt</a> · <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener noreferrer" data-i18n="foot_complaints">Livro de Reclamações</a></p>
+    </div>
     <div class="foot-bottom">
-      <span>© <span id="year"></span> Zillion Business · <span data-i18n="rights">Todos os direitos reservados</span></span>
+      <span>© <span id="year"></span> Zillion Business (SENTINELREVELATION, LDA) · <a href="politica-privacidade.html" data-i18n="foot_privacy_link">Política de Privacidade</a> · <a href="termos.html" data-i18n="foot_terms_link">Termos e Condições</a></span>
       <span class="disc" data-i18n="disclaimer">Ambiente privado. As oportunidades e indicadores exibidos são ilustrativos; dados completos disponibilizados apenas mediante acordo de confidencialidade.</span>
     </div>
   </div>
@@ -287,6 +300,11 @@
           <div><label class="in-label" data-i18n="form_name">Nome</label><input class="ctrl" id="mName"></div>
           <div><label class="in-label" data-i18n="form_email">E-mail</label><input class="ctrl" id="mEmail" type="email"></div>
           <div class="full"><label class="in-label" data-i18n="form_phone">Telefone / WhatsApp</label><input class="ctrl" id="mPhone"></div>
+          <div class="consent-row full">
+            <input type="checkbox" id="mConsent">
+            <label for="mConsent" data-i18n-html="form_consent_html">Li e aceito a <a href="politica-privacidade.html" target="_blank">Política de Privacidade</a> e autorizo o contacto para acesso à informação confidencial.</label>
+          </div>
+          <p class="consent-err" id="mConsentErr" data-i18n="form_consent_required">Deve aceitar a política de privacidade para continuar.</p>
           <button class="btn btn-primary full" id="mSubmit" data-i18n="card_request">Solicitar acesso</button>
         </div>
       </div>
@@ -300,5 +318,6 @@
 </div>
 
 <script src="js/bolsa.js"></script>
+<script src="js/cookie-consent.js" defer></script>
 </body>
 </html>
