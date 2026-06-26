@@ -815,7 +815,7 @@ html[data-theme="light"] .art-cat{color:var(--accent-2);background:color-mix(in 
 .art-hero.has-img::before{opacity:1;background:linear-gradient(180deg,rgba(4,4,20,.55),rgba(4,4,20,.80))}
 
 /* ---- Cookie Consent Banner (RGPD) ---- */
-#zbCookieBanner{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(calc(100% + 24px));width:min(96vw,780px);background:var(--surface);border:1px solid var(--border-strong);border-radius:var(--r-lg);box-shadow:0 8px 40px rgba(0,0,0,.45);z-index:9999;padding:20px 24px;transition:transform .35s var(--ease)}
+#zbCookieBanner{position:fixed;bottom:20px;left:0;right:0;margin:0 auto;transform:translateY(calc(100% + 24px));width:min(92vw,780px);background:color-mix(in srgb,var(--surface) 96%,black);border:1px solid var(--border-strong);border-radius:var(--r-lg);box-shadow:0 8px 48px rgba(0,0,0,.75),0 0 0 1px rgba(255,255,255,.05);z-index:9999;padding:20px 24px;transition:transform .35s var(--ease);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
 .zb-cb-inner{display:flex;align-items:flex-start;gap:24px;flex-wrap:wrap}
 .zb-cb-text{flex:1;min-width:200px}
 .zb-cb-title{display:block;font-family:var(--font-display);font-size:.95rem;font-weight:700;margin-bottom:6px;color:var(--text)}
@@ -834,7 +834,13 @@ html[data-theme="light"] .art-cat{color:var(--accent-2);background:color-mix(in 
 .zb-cb-toggle-label{display:flex;justify-content:space-between;align-items:center;width:100%;font-size:.84rem;color:var(--muted);cursor:pointer;gap:12px}
 .zb-cb-always-on{font-family:var(--font-mono);font-size:.7rem;color:var(--positive);font-weight:700}
 .zb-cb-toggle-label input[type="checkbox"]{accent-color:var(--accent);width:16px;height:16px;cursor:pointer;flex-shrink:0}
-@media(max-width:600px){.zb-cb-inner{flex-direction:column}.zb-cb-actions{min-width:unset;width:100%}}
+@media(max-width:600px){
+  #zbCookieBanner{bottom:0;width:100%;border-radius:var(--r-lg) var(--r-lg) 0 0;padding:18px 16px 32px}
+  .zb-cb-inner{flex-direction:column;gap:16px}
+  .zb-cb-actions{min-width:unset;width:100%;flex-direction:row;flex-wrap:wrap;gap:8px}
+  .zb-cb-btn{flex:1;min-width:0}
+  .zb-cb-link{width:100%;text-align:center}
+}
 
 /* ---- Legal footer bar (DL 7/2004 compliance) ---- */
 .foot-legal-bar{border-top:1px solid var(--border);padding:14px 0 4px;margin-top:24px}
