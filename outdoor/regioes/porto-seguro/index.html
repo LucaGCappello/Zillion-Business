@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Outdoor em Porto Seguro | Zillion Business</title>
+<meta name="description" content="Campanhas de outdoor no centro de Porto Seguro: BR-367, Av. Adno Musser, Av. do Trabalhador e principais acessos à cidade. Veja os pontos disponíveis." />
+<link rel="canonical" href="https://zillionbusiness.pt/outdoor/regioes/porto-seguro/" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/outdoor.css">
+</head>
+<body id="top">
+<div class="grain"></div>
+<header id="header">
+  <div class="wrap nav">
+    <a href="/index.html" class="brand" aria-label="Zillion Business">
+      <img src="/public/IMG_3617.png" class="mark"/>
+      <span class="brand-name">ZILLION<small>BUSINESS</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="/index.html" data-i18n="nav_home">Início</a>
+      <a href="/bolsa.html" data-i18n="nav_bolsa">Bolsa Privada</a>
+      <a href="/blog.html" data-i18n="nav_blog">Blog</a>
+      <a href="/outdoor/" class="active" data-i18n="nav_outdoor">Outdoor</a>
+    </nav>
+    <div class="nav-tools">
+      <a href="/login.html" class="login-link" data-i18n="nav_login">Login</a>
+      <button class="icon-btn" id="themeBtn" aria-label="Tema"><svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"></svg></button>
+      <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="/index.html" data-i18n="nav_home">Início</a>
+    <a href="/outdoor/" class="active" data-i18n="nav_outdoor">Outdoor</a>
+    <a href="/login.html" data-i18n="nav_login">Login</a>
+  </nav>
+</header>
+
+<section class="od-region-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="/outdoor/">Outdoor</a> <span>›</span> <a href="/outdoor/pontos/">Regiões</a> <span>›</span> <b>Porto Seguro</b></div>
+    <div class="sec-head reveal" style="margin-top:16px">
+      <span class="kicker">Mídia exterior · Porto Seguro</span>
+      <h1 style="font-family:var(--font-display);font-size:clamp(2rem,4vw,2.9rem)">Outdoor no centro de Porto Seguro</h1>
+      <p>A malha urbana de Porto Seguro concentra o maior volume de pontos da rede Zillion: a BR-367 (entrada da cidade), a Av. Adno Musser e a Av. do Trabalhador, corredores de fluxo comercial e de chegada à cidade.</p>
+    </div>
+  </div>
+</section>
+
+<section class="od-section">
+  <div class="wrap">
+    <h2 style="font-family:var(--font-display);font-size:1.4rem;margin-bottom:18px">Locais estratégicos na região</h2>
+    <div class="od-cluster-grid" id="odRegionClusters"></div>
+    <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
+      <a href="/outdoor/pontos/" class="btn btn-primary">Ver todos os pontos</a>
+      <a href="/outdoor/planejar-campanha/" class="btn btn-ghost">Planejar campanha</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-bottom">© <span id="year">2025</span> Zillion Business (SENTINELREVELATION, LDA) · <a href="/politica-privacidade.html">Política de Privacidade</a></div>
+  </div>
+</footer>
+
+<script>window.dataLayer = window.dataLayer || [];</script>
+<script src="/js/auth.js"></script>
+<script src="/js/i18n.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/cookie-consent.js" defer></script>
+<script src="/js/outdoor/config.js"></script>
+<script src="/js/outdoor/data-clusters.js"></script>
+<script src="/js/outdoor/data-points.js"></script>
+<script src="/js/outdoor/cart.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var ids = ["atacadao-mineirao", "ifba", "atacadao-mix-mateus", "portal-da-cidade", "trevo-coca-cola", "anel-viario-mundai"];
+  var clusters = ZB.Outdoor.CLUSTERS.filter(function (c) { return ids.indexOf(c.id) !== -1; });
+  document.getElementById("odRegionClusters").innerHTML = clusters.map(function (c) {
+    var count = ZB.Outdoor.POINTS.filter(function (p) { return p.clusterId === c.id; }).length;
+    return '<article class="od-cluster-card"><h3>' + c.name + '</h3><div class="road">' + c.road + '</div><div class="count">' + count + ' ponto(s)</div></article>';
+  }).join("");
+});
+</script>
+</body>
+</html>

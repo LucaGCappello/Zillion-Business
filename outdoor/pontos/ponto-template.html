@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title id="odMetaTitle">Outdoor em Porto Seguro | Zillion Business</title>
+<meta name="description" id="odMetaDesc" content="Conheça este ponto de outdoor da Zillion Business em Porto Seguro, Bahia. Preços, formato e disponibilidade." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/outdoor.css">
+</head>
+<body id="top">
+<div class="grain"></div>
+
+<!-- ============ HEADER ============ -->
+<header id="header">
+  <div class="wrap nav">
+    <a href="/index.html" class="brand" aria-label="Zillion Business">
+      <img src="/public/IMG_3617.png" class="mark"/>
+      <span class="brand-name">ZILLION<small>BUSINESS</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="/index.html" data-i18n="nav_home">Início</a>
+      <a href="/index.html#ecosystem" data-i18n="nav_ecosystem">Ecossistema</a>
+      <a href="/index.html#nexus" data-i18n="nav_nexus">Nexus</a>
+      <a href="/bolsa.html" data-i18n="nav_bolsa">Bolsa Privada</a>
+      <a href="/blog.html" data-i18n="nav_blog">Blog</a>
+      <a href="/outdoor/" class="active" data-i18n="nav_outdoor">Outdoor</a>
+    </nav>
+    <div class="nav-tools">
+      <a href="/login.html" class="login-link" data-i18n="nav_login">Login</a>
+      <button class="icon-btn" id="themeBtn" aria-label="Tema">
+        <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"></svg>
+      </button>
+      <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="/index.html" data-i18n="nav_home">Início</a>
+    <a href="/bolsa.html" data-i18n="nav_bolsa">Bolsa Privada</a>
+    <a href="/blog.html" data-i18n="nav_blog">Blog</a>
+    <a href="/outdoor/" class="active" data-i18n="nav_outdoor">Outdoor</a>
+    <a href="/login.html" data-i18n="nav_login">Login</a>
+  </nav>
+</header>
+
+<section class="od-point-hero">
+  <div class="wrap">
+    <div class="breadcrumb" id="odBreadcrumb">
+      <a href="/outdoor/">Outdoor</a> <span>›</span> <a href="/outdoor/pontos/">Pontos</a>
+    </div>
+
+    <div id="odPointNotFound" style="display:none;padding:60px 0;text-align:center">
+      <h1>Ponto não encontrado</h1>
+      <p style="color:var(--muted);margin:.8rem 0 1.4rem">Este ponto pode ter sido desativado ou o link está incorreto.</p>
+      <a href="/outdoor/pontos/" class="btn btn-primary">Ver todos os pontos</a>
+    </div>
+
+    <div id="odPointContent" style="display:none">
+      <div class="od-point-hero-grid" style="margin-top:16px">
+        <div class="reveal">
+          <span class="kicker" id="odPointKicker">PONTO 00</span>
+          <h1 id="odPointTitle" style="font-family:var(--font-display);font-size:clamp(1.9rem,3.6vw,2.6rem)"></h1>
+          <p id="odPointRoad" style="color:var(--muted);margin:.5rem 0 1.2rem"></p>
+          <div class="od-point-photo">
+            <img id="odPointImg" src="" alt="">
+          </div>
+          <div class="od-badge-row" id="odPointBadges" style="margin-top:16px"></div>
+
+          <h2 style="font-family:var(--font-display);font-size:1.3rem;margin-top:34px">Sobre este ponto</h2>
+          <p id="odPointAbout" style="color:var(--muted);margin-top:.6rem;line-height:1.65"></p>
+
+          <h2 style="font-family:var(--font-display);font-size:1.3rem;margin-top:30px">Localização</h2>
+          <div id="odPointMapWrap" class="od-map-wrap" style="margin-top:12px;display:none">
+            <div class="od-map" id="odPointMap" style="height:320px"></div>
+          </div>
+          <p id="odPointNoMap" style="color:var(--muted);margin-top:10px;display:none">Coordenadas exatas não verificadas para este ponto. Abra a localização de referência no Google Maps.</p>
+          <a id="odPointMapsLink" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm" style="margin-top:12px">Abrir localização</a>
+
+          <div id="odPointTagsBlock" style="margin-top:30px;display:none">
+            <h2 style="font-family:var(--font-display);font-size:1.3rem">Indicado para</h2>
+            <div class="od-tag-row" id="odPointTags" style="margin-top:10px"></div>
+          </div>
+
+          <div id="odRelatedBlock" style="margin-top:40px;display:none">
+            <h2 style="font-family:var(--font-display);font-size:1.3rem;margin-bottom:14px">Outros pontos nesta localização</h2>
+            <div id="odRelatedList" style="display:flex;flex-direction:column;gap:12px"></div>
+          </div>
+        </div>
+
+        <div class="od-point-side reveal d2">
+          <h3 style="font-size:1.1rem;margin-bottom:14px">Investimento</h3>
+          <div class="price-row"><span>15 dias</span><b>R$850</b></div>
+          <div class="price-row"><span>30 dias</span><b>R$1.250</b></div>
+          <div class="price-row"><span>Criação de arte</span><b>+ R$150</b></div>
+          <p style="font-size:.78rem;color:var(--faint);margin-top:10px">Impressão e instalação incluídas. Sujeita à disponibilidade.</p>
+          <button class="btn btn-primary" style="width:100%;margin-top:16px" id="odPointAddBtn" data-outdoor-add="0">Adicionar à campanha</button>
+          <a href="/outdoor/planejar-campanha/" class="btn btn-ghost" style="width:100%;margin-top:10px">Planejar campanha →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="/index.html" class="brand">
+          <img src="/public/IMG_3617.png" class="mark"/>
+          <span class="brand-name">ZILLION<small>BUSINESS</small></span>
+        </a>
+        <p data-i18n="foot_desc">Arquitetura de negócios, tecnologia e investimento para empresas que querem inspirar pelo crescimento.</p>
+        <div class="tag-line">GROW TO INSPIRE</div>
+      </div>
+      <div class="foot-col">
+        <h5 data-i18n="foot_nav">Navegação</h5>
+        <a href="/bolsa.html" data-i18n="nav_bolsa">Bolsa Privada</a>
+        <a href="/blog.html" data-i18n="nav_blog">Blog</a>
+        <a href="/outdoor/" data-i18n="nav_outdoor">Outdoor</a>
+        <a href="/politica-privacidade.html" data-i18n="foot_privacy_link">Política de Privacidade</a>
+        <a href="/termos.html" data-i18n="foot_terms_link">Termos e Condições</a>
+        <a href="/politica-cookies.html" data-i18n="foot_cookies_link">Política de Cookies</a>
+      </div>
+      <div class="foot-col">
+        <h5 data-i18n="foot_hubs">Polos</h5>
+        <span>🇵🇹 Lisboa, Portugal</span>
+        <span>🇧🇷 Santa Cruz Cabrália, Brasil</span>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      © <span id="year">2025</span> Zillion Business (SENTINELREVELATION, LDA) · <a href="/politica-privacidade.html" data-i18n="foot_privacy_link">Política de Privacidade</a> · <a href="/termos.html" data-i18n="foot_terms_link">Termos e Condições</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/auth.js"></script>
+<script src="/js/i18n.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/cookie-consent.js" defer></script>
+<script src="/js/outdoor/config.js"></script>
+<script src="/js/outdoor/data-clusters.js"></script>
+<script src="/js/outdoor/data-points.js"></script>
+<script src="/js/outdoor/data-pricing.js"></script>
+<script src="/js/outdoor/cart.js"></script>
+<script src="/js/outdoor/whatsapp.js"></script>
+<script src="/js/outdoor/cart-drawer.js"></script>
+<script src="/js/outdoor/map.js"></script>
+<script>
+(function () {
+  function clusterById(id) { return (ZB.Outdoor.CLUSTERS || []).find(function (c) { return c.id === id; }); }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var slug = window.location.pathname.split("/").filter(Boolean).pop();
+    var point = (ZB.Outdoor.POINTS || []).find(function (p) { return p.slug === slug; });
+
+    if (!point) {
+      document.getElementById("odPointNotFound").style.display = "block";
+      return;
+    }
+    document.getElementById("odPointContent").style.display = "block";
+
+    var cluster = clusterById(point.clusterId);
+    var num = String(point.pointNumber).padStart(2, "0");
+    var label = cluster ? cluster.name : point.road;
+
+    document.getElementById("odMetaTitle").textContent = "Outdoor Ponto " + num + " - " + point.road + " Porto Seguro | Zillion Business";
+    document.getElementById("odMetaDesc").setAttribute("content", "Outdoor ponto " + num + " em " + point.road + ", Porto Seguro, Bahia. " + point.locationDescription + ". Preços a partir de R$850.");
+    document.getElementById("odBreadcrumb").innerHTML =
+      '<a href="/outdoor/">Outdoor</a> <span>›</span> <a href="/outdoor/pontos/">Pontos</a> <span>›</span> <b>Ponto ' + num + '</b>';
+    document.getElementById("odPointKicker").textContent = "PONTO " + num;
+    document.getElementById("odPointTitle").textContent = label;
+    document.getElementById("odPointRoad").textContent = point.road + " · " + point.locationDescription;
+    document.getElementById("odPointImg").src = point.image;
+    document.getElementById("odPointImg").alt = "Outdoor ponto " + num + " na " + point.road + " em Porto Seguro, Bahia";
+
+    var badges = '<span class="od-badge">' + point.widthM + '×' + point.heightM + 'm</span>' +
+      '<span class="od-badge">' + (point.faces === 2 ? '2 faces' : '1 face') + '</span>';
+    if (point.illuminated) badges += '<span class="od-badge lit">Iluminado</span>';
+    badges += '<span class="od-badge">' + point.road + '</span>';
+    document.getElementById("odPointBadges").innerHTML = badges;
+
+    document.getElementById("odPointAbout").textContent =
+      point.locationDescription + ". Ponto localizado em " + point.road + ", Porto Seguro, Bahia.";
+
+    document.getElementById("odPointAddBtn").setAttribute("data-outdoor-add", point.pointNumber);
+
+    if (cluster && cluster.hasVerifiedCoordinates) {
+      document.getElementById("odPointMapWrap").style.display = "block";
+      ZB.Outdoor.Map.init("odPointMap").then(function () { ZB.Outdoor.Map.setPoints([point]); });
+    } else {
+      document.getElementById("odPointNoMap").style.display = "block";
+    }
+    var mapsUrl = cluster ? cluster.googleMapsUrl : ("https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(point.road + " Porto Seguro"));
+    document.getElementById("odPointMapsLink").href = mapsUrl;
+
+    if (point.strategicTags && point.strategicTags.length) {
+      document.getElementById("odPointTagsBlock").style.display = "block";
+      document.getElementById("odPointTags").innerHTML = point.strategicTags.map(function (t) { return "<span>" + t + "</span>"; }).join("");
+    }
+
+    if (point.clusterId) {
+      var siblings = ZB.Outdoor.POINTS.filter(function (p) { return p.clusterId === point.clusterId && p.pointNumber !== point.pointNumber; }).slice(0, 4);
+      if (siblings.length) {
+        document.getElementById("odRelatedBlock").style.display = "block";
+        document.getElementById("odRelatedList").innerHTML = siblings.map(function (p) {
+          var n = String(p.pointNumber).padStart(2, "0");
+          return '<a href="/outdoor/pontos/' + p.slug + '" class="od-selected-item" style="text-decoration:none"><span>Ponto ' + n + ' — ' + p.locationDescription + '</span><span>→</span></a>';
+        }).join("");
+      }
+    }
+
+    if (window.dataLayer) window.dataLayer.push({ event: "view_outdoor_point", point_number: point.pointNumber, cluster: point.clusterId, road: point.road, format: point.panelType });
+  });
+})();
+</script>
+</body>
+</html>

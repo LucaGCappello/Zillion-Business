@@ -1,5 +1,13 @@
+[build]
+  functions = "netlify/functions"
+
 [[redirects]]
   from = "/api/chat"
   to = "https://n8nsinclair.scompany.com.pt/webhook/assistente-sdr"
   status = 200
   force = true
+
+[[redirects]]
+  from = "/outdoor/pontos/:slug"
+  to = "/outdoor/pontos/ponto-template.html"
+  status = 200

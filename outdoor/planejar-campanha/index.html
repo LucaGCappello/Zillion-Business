@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Planejar Campanha de Outdoor | Zillion Business</title>
+<meta name="description" content="Monte sua campanha de outdoor em Porto Seguro: escolha os pontos, o período e veja o investimento estimado na hora." />
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/outdoor.css">
+</head>
+<body id="top">
+<div class="grain"></div>
+
+<!-- ============ HEADER ============ -->
+<header id="header">
+  <div class="wrap nav">
+    <a href="/index.html" class="brand" aria-label="Zillion Business">
+      <img src="/public/IMG_3617.png" class="mark"/>
+      <span class="brand-name">ZILLION<small>BUSINESS</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="/index.html" data-i18n="nav_home">Início</a>
+      <a href="/bolsa.html" data-i18n="nav_bolsa">Bolsa Privada</a>
+      <a href="/blog.html" data-i18n="nav_blog">Blog</a>
+      <a href="/outdoor/" class="active" data-i18n="nav_outdoor">Outdoor</a>
+    </nav>
+    <div class="nav-tools">
+      <a href="/login.html" class="login-link" data-i18n="nav_login">Login</a>
+      <button class="icon-btn" id="themeBtn" aria-label="Tema">
+        <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"></svg>
+      </button>
+      <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="/index.html" data-i18n="nav_home">Início</a>
+    <a href="/outdoor/" class="active" data-i18n="nav_outdoor">Outdoor</a>
+    <a href="/login.html" data-i18n="nav_login">Login</a>
+  </nav>
+</header>
+
+<section style="padding-top:calc(var(--header-h) + 40px);padding-bottom:70px">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="/outdoor/">Outdoor</a> <span>›</span> <b>Planejar campanha</b></div>
+    <div class="sec-head" style="margin-bottom:30px">
+      <span class="kicker">Campaign Builder</span>
+      <h1 style="font-family:var(--font-display);font-size:clamp(1.9rem,3.6vw,2.6rem)">Monte sua campanha.</h1>
+      <p>Escolha os pontos, defina o período e veja o investimento estimado na hora.</p>
+    </div>
+
+    <div class="od-builder-rail" id="odRail"></div>
+
+    <div id="odBuilderForm">
+      <!-- STEP 1 — PONTOS -->
+      <div class="od-builder-step" id="odStepPontos">
+        <div class="od-builder-card">
+          <h3 style="margin-bottom:6px">Pontos selecionados</h3>
+          <p style="color:var(--muted);font-size:.88rem;margin-bottom:8px">Volte ao mapa para adicionar ou remover pontos.</p>
+          <div class="od-selected-list"></div>
+          <a href="/outdoor/pontos/" class="btn btn-ghost btn-sm">← Voltar ao mapa</a>
+          <div class="od-builder-nav">
+            <span></span>
+            <button class="btn btn-primary" data-next>Continuar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2 — PERÍODO -->
+      <div class="od-builder-step" id="odStepPeriodo">
+        <div class="od-builder-card">
+          <h3>Período</h3>
+          <div class="od-choice-row">
+            <button class="od-choice selected" data-duration-choice="15">
+              <div class="t">15 dias</div><div class="d">R$850 por outdoor</div>
+            </button>
+            <button class="od-choice" data-duration-choice="30">
+              <div class="t">30 dias</div><div class="d">R$1.250 por outdoor</div>
+            </button>
+          </div>
+          <div class="od-builder-nav">
+            <button class="btn btn-ghost" data-prev>Voltar</button>
+            <button class="btn btn-primary" data-next>Continuar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3 — ARTE -->
+      <div class="od-builder-step" id="odStepArte">
+        <div class="od-builder-card">
+          <h3>Você já tem a arte?</h3>
+          <div class="od-choice-row">
+            <button class="od-choice selected" data-creative-choice="false">
+              <div class="t">Sim, já tenho minha arte.</div><div class="d">Cuidamos da impressão e instalação.</div>
+            </button>
+            <button class="od-choice" data-creative-choice="true">
+              <div class="t">Quero que a Zillion crie.</div><div class="d">+ R$150, cobrado uma única vez.</div>
+            </button>
+          </div>
+          <div class="od-builder-nav">
+            <button class="btn btn-ghost" data-prev>Voltar</button>
+            <button class="btn btn-primary" data-next>Continuar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 4 — DATA -->
+      <div class="od-builder-step" id="odStepData">
+        <div class="od-builder-card">
+          <h3>Data desejada</h3>
+          <div class="field" style="margin-top:14px;max-width:280px">
+            <label>Data de início desejada</label>
+            <input type="date" id="odDesiredDate">
+          </div>
+          <p style="color:var(--muted);font-size:.84rem;margin-top:10px">Prazo operacional de instalação: até 5 dias úteis. A data escolhida não garante disponibilidade — ela é confirmada pela nossa equipe.</p>
+          <div class="od-builder-nav">
+            <button class="btn btn-ghost" data-prev>Voltar</button>
+            <button class="btn btn-primary" data-next>Continuar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 5 — CONTATO -->
+      <div class="od-builder-step" id="odStepContato">
+        <div class="od-builder-card">
+          <h3>Seus dados</h3>
+          <div class="field" style="margin-top:14px"><label>Nome</label><input type="text" id="odName" autocomplete="name"></div>
+          <div class="field-row">
+            <div class="field"><label>WhatsApp</label><input type="tel" id="odWhatsapp" autocomplete="tel"></div>
+            <div class="field"><label>E-mail</label><input type="email" id="odEmail" autocomplete="email"></div>
+          </div>
+          <div class="field"><label>Empresa</label><input type="text" id="odCompany"></div>
+          <div class="field-row">
+            <div class="field"><label>Objetivo da campanha</label><input type="text" id="odObjective"></div>
+            <div class="field"><label>Segmento da empresa</label><input type="text" id="odSegment"></div>
+          </div>
+          <div class="field"><label>Observações</label><input type="text" id="odNotes"></div>
+          <div class="consent-row">
+            <input type="checkbox" id="odConsent">
+            <label for="odConsent">Li e aceito a <a href="/politica-privacidade.html" target="_blank">Política de Privacidade</a> e autorizo o contato comercial.</label>
+          </div>
+          <p class="consent-err" id="odContactErr" style="display:none">Preencha nome, WhatsApp ou e-mail, e aceite a política de privacidade.</p>
+          <input type="text" id="odWebsite" name="website" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true">
+
+          <div class="od-builder-nav">
+            <button class="btn btn-ghost" data-prev>Voltar</button>
+            <button class="btn btn-primary" data-next>Continuar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 6 — RESUMO -->
+      <div class="od-builder-step" id="odStepResumo">
+        <div class="od-builder-card">
+          <h3>Sua campanha</h3>
+          <div id="odResumoBox" style="margin-top:14px"></div>
+          <p style="color:var(--faint);font-size:.76rem;margin-top:14px">Valor estimado. Campanha sujeita à confirmação de disponibilidade dos pontos. Impressão e instalação incluídas.</p>
+          <p class="consent-err" id="odSubmitErr" style="display:none"></p>
+          <div class="od-builder-nav">
+            <button class="btn btn-ghost" data-prev>Voltar</button>
+            <button class="btn btn-primary" id="odSubmitBtn">Solicitar esta campanha</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUCCESS STATE -->
+    <div class="od-success" id="odSuccess" style="display:none">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" width="30" height="30"><path d="M20 6L9 17l-5-5"/></svg></div>
+      <h2 style="font-family:var(--font-display);font-size:1.5rem">Recebemos sua campanha.</h2>
+      <p style="color:var(--muted);max-width:480px;margin:.8rem auto 6px">Agora nossa equipe vai confirmar a disponibilidade dos pontos selecionados.</p>
+      <p style="color:var(--faint);font-size:.8rem">Referência: <b id="odSuccessRef"></b></p>
+      <div class="hero-ctas" style="justify-content:center;margin-top:24px">
+        <a href="#" id="odSuccessWhatsapp" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Falar no WhatsApp</a>
+        <a href="/outdoor/pontos/" class="btn btn-ghost">Explorar mais pontos</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-bottom">
+      © <span id="year">2025</span> Zillion Business (SENTINELREVELATION, LDA) · <a href="/politica-privacidade.html" data-i18n="foot_privacy_link">Política de Privacidade</a> · <a href="/termos.html" data-i18n="foot_terms_link">Termos e Condições</a>
+    </div>
+  </div>
+</footer>
+
+<script>window.dataLayer = window.dataLayer || []; window.dataLayer.push({event:"start_outdoor_campaign"});</script>
+<script src="/js/auth.js"></script>
+<script src="/js/i18n.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/cookie-consent.js" defer></script>
+<script src="/js/outdoor/config.js"></script>
+<script src="/js/outdoor/data-clusters.js"></script>
+<script src="/js/outdoor/data-points.js"></script>
+<script src="/js/outdoor/data-pricing.js"></script>
+<script src="/js/outdoor/cart.js"></script>
+<script src="/js/outdoor/whatsapp.js"></script>
+<script src="/js/outdoor/cart-drawer.js"></script>
+<script src="/js/outdoor/campaign-builder.js"></script>
+</body>
+</html>

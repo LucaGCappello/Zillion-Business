@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pontos de Outdoor em Porto Seguro | Zillion Business</title>
+<meta name="description" content="Explore os 49 pontos de outdoor da Zillion Business em Porto Seguro, Arraial d'Ajuda e Trancoso. Filtre por região, formato e iluminação." />
+<link rel="canonical" href="https://zillionbusiness.pt/outdoor/pontos/" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/outdoor.css">
+</head>
+<body id="top">
+<div class="grain"></div>
+
+<!-- ============ HEADER ============ -->
+<header id="header">
+  <div class="wrap nav">
+    <a href="/index.html" class="brand" aria-label="Zillion Business">
+      <img src="/public/IMG_3617.png" class="mark"/>
+      <span class="brand-name">ZILLION<small>BUSINESS</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="/index.html" data-i18n="nav_home">Início</a>
+      <a href="/index.html#ecosystem" data-i18n="nav_ecosystem">Ecossistema</a>
+      <a href="/index.html#nexus" data-i18n="nav_nexus">Nexus</a>
+      <a href="/bolsa.html" data-i18n="nav_bolsa">Bolsa Privada</a>
+      <a href="/blog.html" data-i18n="nav_blog">Blog</a>
+      <a href="/outdoor/" class="active" data-i18n="nav_outdoor">Outdoor</a>
+    </nav>
+    <div class="nav-tools">
+      <a href="/login.html" class="login-link" data-i18n="nav_login">Login</a>
+      <div class="lang">
+        <button class="lang-btn" id="langBtn" aria-haspopup="true">
+          <span class="flag" id="langFlag">🇵🇹</span><span id="langCode">PT</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="lang-menu" id="langMenu" role="menu">
+          <button data-lang="pt"><span class="flag">🇵🇹</span> Português</button>
+          <button data-lang="en"><span class="flag">🇬🇧</span> English</button>
+          <button data-lang="it"><span class="flag">🇮🇹</span> Italiano</button>
+        </div>
+      </div>
+      <button class="icon-btn" id="themeBtn" aria-label="Tema">
+        <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"></svg>
+      </button>
+      <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="/index.html" data-i18n="nav_home">Início</a>
+    <a href="/index.html#ecosystem" data-i18n="nav_ecosystem">Ecossistema</a>
+    <a href="/index.html#nexus" data-i18n="nav_nexus">Nexus</a>
+    <a href="/bolsa.html" data-i18n="nav_bolsa">Bolsa Privada</a>
+    <a href="/blog.html" data-i18n="nav_blog">Blog</a>
+    <a href="/outdoor/" class="active" data-i18n="nav_outdoor">Outdoor</a>
+    <a href="/login.html" data-i18n="nav_login">Login</a>
+    <a href="https://api.whatsapp.com/send/?phone=351931496255&text&type=phone_number&app_absent=0" class="btn btn-primary" data-i18n="cta_specialist">Falar com especialista</a>
+  </nav>
+</header>
+
+<section class="od-explorer-top">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="/outdoor/">Outdoor</a> <span>›</span> <b>Pontos</b></div>
+    <div class="sec-head" style="margin-bottom:0">
+      <span class="kicker">49 pontos disponíveis</span>
+      <h1 style="font-family:var(--font-display);font-size:clamp(1.9rem,3.6vw,2.6rem)">Pontos de Outdoor</h1>
+      <p>Busque por ponto, avenida ou região.</p>
+    </div>
+    <div class="od-filter-bar">
+      <input type="text" id="odSearch" placeholder="Busque por ponto, avenida ou região">
+      <select id="odClusterFilter"><option value="">Todas as regiões</option></select>
+      <select id="odFormatFilter">
+        <option value="">Simples ou duplo</option>
+        <option value="simples">Painel simples</option>
+        <option value="duplo">Painel duplo</option>
+      </select>
+      <label style="display:flex;align-items:center;gap:.4rem;font-size:.84rem;color:var(--muted)">
+        <input type="checkbox" id="odLightFilter" style="accent-color:var(--accent);width:16px;height:16px"> Iluminado
+      </label>
+      <button class="btn btn-ghost btn-sm" id="odClearFilters">Limpar filtros</button>
+    </div>
+    <div class="od-mobile-toggle">
+      <button id="odMobileListBtn" class="active">Lista</button>
+      <button id="odMobileMapBtn">Mapa</button>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="od-explorer-layout">
+    <div class="od-list-col">
+      <div id="odPointList" style="display:flex;flex-direction:column;gap:14px"></div>
+      <div class="od-empty" id="odEmptyState" style="display:none">
+        <p>Nenhum ponto encontrado com esses filtros.</p>
+        <button class="btn btn-ghost" onclick="document.getElementById('odClearFilters').click()">Limpar filtros</button>
+      </div>
+    </div>
+    <div class="od-map-col">
+      <div class="od-map-wrap">
+        <div class="od-map" id="odExplorerMap"></div>
+        <div class="od-map-note"><span>Mapa mostra apenas locais com coordenadas verificadas.</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="/index.html" class="brand">
+          <img src="/public/IMG_3617.png" class="mark"/>
+          <span class="brand-name">ZILLION<small>BUSINESS</small></span>
+        </a>
+        <p data-i18n="foot_desc">Arquitetura de negócios, tecnologia e investimento para empresas que querem inspirar pelo crescimento.</p>
+        <div class="tag-line">GROW TO INSPIRE</div>
+      </div>
+      <div class="foot-col">
+        <h5 data-i18n="foot_nav">Navegação</h5>
+        <a href="/index.html#ecosystem" data-i18n="nav_ecosystem">Ecossistema</a>
+        <a href="/bolsa.html" data-i18n="nav_bolsa">Bolsa Privada</a>
+        <a href="/blog.html" data-i18n="nav_blog">Blog</a>
+        <a href="/outdoor/" data-i18n="nav_outdoor">Outdoor</a>
+        <a href="/politica-privacidade.html" data-i18n="foot_privacy_link">Política de Privacidade</a>
+        <a href="/termos.html" data-i18n="foot_terms_link">Termos e Condições</a>
+        <a href="/politica-cookies.html" data-i18n="foot_cookies_link">Política de Cookies</a>
+      </div>
+      <div class="foot-col">
+        <h5 data-i18n="foot_hubs">Polos</h5>
+        <span>🇵🇹 Lisboa, Portugal</span>
+        <span>🇮🇹 Roma, Italia</span>
+        <span>🇧🇷 Santa Cruz Cabrália, Brasil</span>
+        <span>🇦🇪 Dubai, UAE</span>
+      </div>
+      <div class="foot-col">
+        <h5 data-i18n="foot_connect">Conecte-se</h5>
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/zillion-business-416584400" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 102.5 6 2.5 2.5 0 004.98 3.5zM3 8.98h4v12H3zM10 8.98h3.8v1.64h.05a4.17 4.17 0 013.75-2.06c4 0 4.75 2.64 4.75 6.07v6.35h-4v-5.63c0-1.34 0-3.07-1.87-3.07s-2.16 1.46-2.16 2.97v5.73H10z"/></svg></a>
+          <a href="https://www.instagram.com/zillionbusiness.official?igsh=aGI1YzVwa2piMTd0" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.facebook.com/zillionbusiness.pt" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="https://www.youtube.com/@zillionbusiness" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.4-.43-5a2.78 2.78 0 00-1.95-2C18.88 4.5 12 4.5 12 4.5s-6.88 0-8.62.5A2.78 2.78 0 001.43 7C1 8.6 1 12 1 12s0 3.4.43 5a2.78 2.78 0 001.95 2c1.74.5 8.62.5 8.62.5s6.88 0 8.62-.5a2.78 2.78 0 001.95-2c.43-1.6.43-5 .43-5zM9.75 15.5v-7l6 3.5z"/></svg></a>
+        </div>
+        <a href="mailto:privacidade@zillionbusiness.pt" class="foot-gdpr-link" data-i18n="foot_gdpr_rights">Direitos RGPD / Privacidade</a>
+      </div>
+    </div>
+    <div class="foot-legal-bar">
+      <p data-i18n="foot_legal">SENTINELREVELATION, LDA · NIPC 518981169 · Rua Diogo Cão, n.º 1, Loja 5, 2660-445 Santo António dos Cavaleiros, Loures, Portugal</p>
+      <p><span data-i18n="foot_email_label">Contacto:</span> <a href="mailto:privacidade@zillionbusiness.pt">privacidade@zillionbusiness.pt</a> · <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener noreferrer" data-i18n="foot_complaints">Livro de Reclamações</a></p>
+    </div>
+    <div class="foot-bottom">
+      © <span id="year">2025</span> Zillion Business (SENTINELREVELATION, LDA) · <a href="/politica-privacidade.html" data-i18n="foot_privacy_link">Política de Privacidade</a> · <a href="/termos.html" data-i18n="foot_terms_link">Termos e Condições</a>
+    </div>
+  </div>
+</footer>
+
+<script>window.dataLayer = window.dataLayer || []; window.dataLayer.push({event:"view_outdoor_landing_pontos"});</script>
+<script src="/js/auth.js"></script>
+<script src="/js/i18n.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/cookie-consent.js" defer></script>
+<script src="/js/outdoor/config.js"></script>
+<script src="/js/outdoor/data-clusters.js"></script>
+<script src="/js/outdoor/data-points.js"></script>
+<script src="/js/outdoor/data-pricing.js"></script>
+<script src="/js/outdoor/cart.js"></script>
+<script src="/js/outdoor/whatsapp.js"></script>
+<script src="/js/outdoor/cart-drawer.js"></script>
+<script src="/js/outdoor/map.js"></script>
+<script src="/js/outdoor/filters.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    ZB.Outdoor.Map.init("odExplorerMap").then(function () {
+      ZB.Outdoor.rerenderExplorer();
+    });
+  });
+</script>
+</body>
+</html>

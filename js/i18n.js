@@ -8,7 +8,7 @@ ZB.I18N = {
   /* ---------------- PORTUGUÊS ---------------- */
   pt: {
     nav_home:"Início", nav_concept:"Conceito", nav_ecosystem:"Ecossistema", nav_method:"Metodologia",
-    nav_nexus:"Nexus", nav_podcast:"Podcast", nav_bolsa:"Bolsa", nav_login:"Login",
+    nav_nexus:"Nexus", nav_podcast:"Podcast", nav_bolsa:"Bolsa", nav_outdoor:"Outdoor", nav_login:"Login",
     cta_specialist:"Falar com especialista",
 
     hero_kicker:"Business Architect · Automation · Intelligence",
@@ -48,6 +48,8 @@ ZB.I18N = {
     eco5_d:"Maximizamos seu capital em duas frentes: estruturação de negócios (compra/venda de quotas em empresas com caixa real) e execução de trades financeiros estratégicos. Foco em ativos que entregam retorno tangível.",
     eco6_tag:"06 · Estrutura Comercial", eco6_t:"Performance e crescimento escalável",
     eco6_d:"Construímos a Máquina de Vendas da sua empresa. Da estratégia à execução, otimizamos processos e tecnologia para garantir fluxo de clientes constante e receita previsível.",
+    eco7_tag:"07 · Mídia Exterior", eco7_t:"Outdoor em Porto Seguro e região",
+    eco7_d:"Planejamos, produzimos e instalamos campanhas de outdoor nos principais corredores de Porto Seguro, Arraial d'Ajuda, Trancoso e região.", eco7_cta:"Conhecer Outdoor →",
 
     who_kicker:"Para quem é", who_title:"Quem mais se beneficia da Zillion Business",
     who_sub:"A proposta é global, mas o foco é sempre o mesmo: empresários e equipes que querem consistência, escala e visão de futuro, sem perder o controle do dia a dia.",
@@ -283,7 +285,7 @@ ZB.I18N = {
   /* ---------------- ENGLISH ---------------- */
   en: {
     nav_home:"Home", nav_concept:"Concept", nav_ecosystem:"Ecosystem", nav_method:"Methodology",
-    nav_nexus:"Nexus", nav_podcast:"Podcast", nav_bolsa:"Exchange", nav_login:"Login",
+    nav_nexus:"Nexus", nav_podcast:"Podcast", nav_bolsa:"Exchange", nav_outdoor:"Outdoor", nav_login:"Login",
     cta_specialist:"Talk to a specialist",
 
     hero_kicker:"Business Architect · Automation · Intelligence",
@@ -323,6 +325,8 @@ ZB.I18N = {
     eco5_d:"We maximize your capital on two fronts: business structuring (buying/selling equity in companies with real cash flow) and execution of strategic financial trades. Focus on assets that deliver tangible returns.",
     eco6_tag:"06 · Sales Structure", eco6_t:"Performance and scalable growth",
     eco6_d:"We build your company's Sales Machine. From strategy to execution, we optimize processes and technology to ensure a constant flow of clients and predictable revenue.",
+    eco7_tag:"07 · Outdoor Media", eco7_t:"Outdoor advertising in Porto Seguro",
+    eco7_d:"We plan, produce and install outdoor campaigns across Porto Seguro, Arraial d'Ajuda, Trancoso and the surrounding region.", eco7_cta:"Discover Outdoor →",
 
     who_kicker:"Who it's for", who_title:"Who benefits most from Zillion",
     who_sub:"The proposition is global, but the focus is always the same: entrepreneurs and teams that want consistency, scale and a vision for the future, without losing control of daily operations.",
@@ -558,7 +562,7 @@ ZB.I18N = {
   /* ---------------- ITALIANO ---------------- */
   it: {
     nav_home:"Home", nav_concept:"Concetto", nav_ecosystem:"Ecosistema", nav_method:"Metodologia",
-    nav_nexus:"Nexus", nav_podcast:"Podcast", nav_bolsa:"Borsa", nav_login:"Login",
+    nav_nexus:"Nexus", nav_podcast:"Podcast", nav_bolsa:"Borsa", nav_outdoor:"Outdoor", nav_login:"Login",
     cta_specialist:"Parla con uno specialista",
 
     hero_kicker:"Business Architect · Automation · Intelligence",
@@ -598,6 +602,8 @@ ZB.I18N = {
     eco5_d:"Massimizziamo il tuo capitale su due fronti: strutturazione di aziende (acquisto/vendita di quote in imprese con cassa reale) ed esecuzione di trade finanziari strategici. Focus su asset che generano un ritorno tangibile.",
     eco6_tag:"06 · Struttura Commerciale", eco6_t:"Performance e crescita scalabile",
     eco6_d:"Costruiamo la Macchina di Vendita della tua azienda. Dalla strategia all'esecuzione, ottimizziamo processi e tecnologia per garantire un flusso costante di clienti e ricavi prevedibili.",
+    eco7_tag:"07 · Media Esterni", eco7_t:"Outdoor a Porto Seguro e regione",
+    eco7_d:"Pianifichiamo, produciamo e installiamo campagne outdoor nei principali corridoi di Porto Seguro, Arraial d'Ajuda, Trancoso e regione.", eco7_cta:"Scopri Outdoor →",
 
     who_kicker:"Per chi è", who_title:"Chi beneficia di più di Zillion",
     who_sub:"La proposta è globale, ma il focus è sempre lo stesso: imprenditori e team che vogliono coerenza, scala e visione del futuro, senza perdere il controllo della quotidianità.",
