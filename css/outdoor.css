@@ -17,7 +17,7 @@
   overflow:hidden;
 }
 .od-hero-bg{
-  position:absolute;inset:0;z-index:-1;background-size:cover;background-position:center;
+  position:absolute;inset:0;z-index:-1;background-size:cover;background-position:center top;
 }
 .od-hero-bg::after{
   content:"";position:absolute;inset:0;
@@ -30,6 +30,16 @@
 .od-proof-row{display:flex;gap:28px;flex-wrap:wrap}
 .od-proof-item{display:flex;align-items:center;gap:.55rem;font-size:.88rem;font-weight:600;color:var(--text)}
 .od-proof-item svg{width:18px;height:18px;color:var(--positive);flex:none}
+
+/* Hero text: slow staggered fade-in on page load */
+.od-hero-content > *{opacity:0;transform:translateY(24px);animation:odHeroIn 1.4s cubic-bezier(.22,.61,.36,1) forwards}
+.od-hero-content > .kicker{animation-delay:.3s}
+.od-hero-content > h1{animation-delay:.6s}
+.od-hero-content > .lead{animation-delay:1s}
+.od-hero-content > .od-hero-ctas{animation-delay:1.4s}
+.od-hero-content > .od-proof-row{animation-delay:1.8s}
+@keyframes odHeroIn{to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.od-hero-content > *{animation:none;opacity:1;transform:none}}
 
 /* ---------- SECTION SCAFFOLDING ---------- */
 .od-section{padding:70px 0}

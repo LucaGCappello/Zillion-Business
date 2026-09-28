@@ -69,9 +69,9 @@
 
 <!-- ============ SECTION 1 — HERO ============ -->
 <section class="od-hero">
-  <div class="od-hero-bg" style="background-image:url('/public/media/outdoor/ponto-02.webp')"></div>
+  <div class="od-hero-bg" style="background-image:url('/public/media/outdoor/hero-zillion-equipa.webp')"></div>
   <div class="wrap od-hero-grid">
-    <div class="reveal">
+    <div class="od-hero-content">
       <span class="kicker">MÍDIA EXTERIOR · PORTO SEGURO E REGIÃO</span>
       <h1>Sua marca no fluxo real de Porto Seguro.</h1>
       <p class="lead">Planejamos, produzimos e instalamos campanhas de mídia exterior nos principais corredores de Porto Seguro, Arraial d'Ajuda, Trancoso e região.</p>
@@ -92,18 +92,21 @@
 
 <div class="divider"></div>
 
-<!-- ============ SECTION 2 — STRATEGIC LOCATIONS ============ -->
+<!-- ============ SECTION 5 — HOW IT WORKS ============ -->
 <section class="od-section">
   <div class="wrap">
     <div class="sec-head od-section-head reveal">
-      <span class="kicker">Locais estratégicos</span>
-      <h2>Escolha onde sua marca precisa estar.</h2>
-      <p>Oito grandes corredores concentram o fluxo de Porto Seguro e região.</p>
+      <span class="kicker">Como funciona</span>
+      <h2>Da escolha do ponto à sua marca na rua.</h2>
     </div>
-    <div class="od-cluster-grid" id="odClusterGrid"></div>
-    <div style="text-align:center;margin-top:28px">
-      <a href="/outdoor/pontos/" class="btn btn-ghost">Ver todos os pontos</a>
+    <div class="steps">
+      <div class="step reveal"><div class="n">1</div><h3>Escolha os pontos</h3><p>Explore o mapa e a lista de pontos disponíveis.</p></div>
+      <div class="step reveal d2"><div class="n">2</div><h3>Defina 15 ou 30 dias</h3><p>Escolha o período de exposição da sua campanha.</p></div>
+      <div class="step reveal d3"><div class="n">3</div><h3>Envie sua arte</h3><p>Ou peça para a equipe da Zillion criar a peça.</p></div>
+      <div class="step reveal d4"><div class="n">4</div><h3>Confirmamos disponibilidade</h3><p>Nossa equipe valida os pontos escolhidos.</p></div>
+      <div class="step reveal d5"><div class="n">5</div><h3>Produção e instalação</h3><p>Cuidamos da impressão e instalação.</p></div>
     </div>
+    <p style="color:var(--muted);font-size:.9rem;margin-top:24px">Prazo operacional de instalação: até 5 dias úteis.</p>
   </div>
 </section>
 
@@ -129,46 +132,6 @@
       <p style="color:var(--muted);font-size:.9rem;margin-bottom:10px">Localização estratégica para este perfil:</p>
       <div class="od-cluster-grid" id="odAudienceClusters"></div>
     </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ============ SECTION 4 — MAP PREVIEW ============ -->
-<section class="od-section">
-  <div class="wrap">
-    <div class="sec-head od-section-head reveal">
-      <span class="kicker">Rede de pontos</span>
-      <h2>Explore nossa rede.</h2>
-      <p>Pontos com localização verificada aparecem no mapa; a lista completa está sempre disponível.</p>
-    </div>
-    <div class="od-map-wrap">
-      <div class="od-map" id="odMapPreview"></div>
-      <div class="od-map-note">
-        <span>Mapa mostra apenas locais com coordenadas verificadas.</span>
-        <a href="/outdoor/pontos/" class="btn btn-ghost btn-sm">Abrir mapa completo</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ============ SECTION 5 — HOW IT WORKS ============ -->
-<section class="od-section">
-  <div class="wrap">
-    <div class="sec-head od-section-head reveal">
-      <span class="kicker">Como funciona</span>
-      <h2>Da escolha do ponto à sua marca na rua.</h2>
-    </div>
-    <div class="steps">
-      <div class="step reveal"><div class="n">1</div><h3>Escolha os pontos</h3><p>Explore o mapa e a lista de pontos disponíveis.</p></div>
-      <div class="step reveal d2"><div class="n">2</div><h3>Defina 15 ou 30 dias</h3><p>Escolha o período de exposição da sua campanha.</p></div>
-      <div class="step reveal d3"><div class="n">3</div><h3>Envie sua arte</h3><p>Ou peça para a equipe da Zillion criar a peça.</p></div>
-      <div class="step reveal d4"><div class="n">4</div><h3>Confirmamos disponibilidade</h3><p>Nossa equipe valida os pontos escolhidos.</p></div>
-      <div class="step reveal d5"><div class="n">5</div><h3>Produção e instalação</h3><p>Cuidamos da impressão e instalação.</p></div>
-    </div>
-    <p style="color:var(--muted);font-size:.9rem;margin-top:24px">Prazo operacional de instalação: até 5 dias úteis.</p>
   </div>
 </section>
 
@@ -206,6 +169,43 @@
       </div>
     </div>
     <p class="od-pricing-note">Sujeito à disponibilidade do ponto. Valores por outdoor individual; a criação de arte é cobrada uma única vez por peça, não por outdoor.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============ SECTION 4 — MAP PREVIEW ============ -->
+<section class="od-section">
+  <div class="wrap">
+    <div class="sec-head od-section-head reveal">
+      <span class="kicker">Rede de pontos</span>
+      <h2>Explore nossa rede.</h2>
+      <p>Pontos com localização verificada aparecem no mapa; a lista completa está sempre disponível.</p>
+    </div>
+    <div class="od-map-wrap">
+      <div class="od-map" id="odMapPreview"></div>
+      <div class="od-map-note">
+        <span>Mapa mostra apenas locais com coordenadas verificadas.</span>
+        <a href="/outdoor/pontos/" class="btn btn-ghost btn-sm">Abrir mapa completo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============ SECTION 2 — STRATEGIC LOCATIONS ============ -->
+<section class="od-section">
+  <div class="wrap">
+    <div class="sec-head od-section-head reveal">
+      <span class="kicker">Locais estratégicos</span>
+      <h2>Escolha onde sua marca precisa estar.</h2>
+      <p>Oito grandes corredores concentram o fluxo de Porto Seguro e região.</p>
+    </div>
+    <div class="od-cluster-grid" id="odClusterGrid"></div>
+    <div style="text-align:center;margin-top:28px">
+      <a href="/outdoor/pontos/" class="btn btn-ghost">Ver todos os pontos</a>
+    </div>
   </div>
 </section>
 
