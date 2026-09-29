@@ -118,55 +118,49 @@
     return true;
   }
 
-  async function submit() {
-    var points = ZB.Outdoor.Cart.getPoints().map(function (p) { return p.pointNumber; });
-    var utm = getStoredUtm();
-    var payload = {
-      points: points,
-      durationDays: state.duration,
-      needsCreative: !!state.needsCreative,
-      requestedStartDate: state.desiredDate,
-      contact: state.contact,
-      website: $("#odWebsite") ? $("#odWebsite").value : "", // honeypot
-      utmSource: utm.utmSource, utmMedium: utm.utmMedium, utmCampaign: utm.utmCampaign,
-      utmContent: utm.utmContent, utmTerm: utm.utmTerm,
-      landingPage: sessionStorage.getItem("zb_outdoor_landing") || window.location.href,
-      referrer: document.referrer
-    };
+  function submit() {
+    var cartPoints = ZB.Outdoor.Cart.getPoints();
+    var totals = ZB.Outdoor.calculateTotal(cartPoints.length, state.duration, state.needsCreative);
+    var msg = ZB.Outdoor.buildWhatsAppMessage({
+      points: cartPoints, durationDays: state.duration, needsCreative: state.needsCreative,
+      estimatedTotal: totals.estimatedTotal, desiredDate: state.desiredDate, contact: state.contact
+    });
+    var waUrl = ZB.Outdoor.buildWhatsAppUrl(msg);
 
-    var btn = $("#odSubmitBtn");
-    if (btn) { btn.disabled = true; btn.textContent = "Enviando..."; }
+    // Open WhatsApp synchronously (first thing, before any async work) so
+    // browsers don't treat it as a blocked popup.
+    window.open(waUrl, "_blank", "noopener");
+    window.dataLayer && window.dataLayer.push({ event: "submit_outdoor_campaign", value: totals.estimatedTotal });
 
-    try {
-      var res = await fetch("/.netlify/functions/outdoor-lead", {
-        method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload)
-      });
-      var data = await res.json();
-      if (!res.ok || !data.ok) throw new Error((data.errors || [data.error]).join(", "));
-
-      window.dataLayer && window.dataLayer.push({ event: "submit_outdoor_campaign", value: data.estimatedTotal });
-      $("#odBuilderForm").style.display = "none";
-      var success = $("#odSuccess");
-      if (success) {
-        success.style.display = "block";
-        var ref = $("#odSuccessRef");
-        if (ref) ref.textContent = data.reference;
-        var wa = $("#odSuccessWhatsapp");
-        if (wa) {
-          var msg = ZB.Outdoor.buildWhatsAppMessage({
-            points: ZB.Outdoor.Cart.getPoints(), durationDays: state.duration,
-            needsCreative: state.needsCreative, estimatedTotal: data.estimatedTotal, desiredDate: state.desiredDate
-          });
-          wa.href = ZB.Outdoor.buildWhatsAppUrl(msg);
-        }
-      }
-      ZB.Outdoor.Cart.clear();
-    } catch (e) {
-      var err = $("#odSubmitErr");
-      if (err) { err.textContent = "Não foi possível enviar agora. Tente novamente ou fale pelo WhatsApp."; err.style.display = "block"; }
-    } finally {
-      if (btn) { btn.disabled = false; btn.textContent = "Solicitar esta campanha"; }
+    $("#odBuilderForm").style.display = "none";
+    var success = $("#odSuccess");
+    if (success) {
+      success.style.display = "block";
+      var wa = $("#odSuccessWhatsapp");
+      if (wa) wa.href = waUrl;
     }
+
+    // Best-effort background log to the Netlify Function (and, once
+    // configured, OUTDOOR_CRM_WEBHOOK_URL) — never blocks or gates the
+    // WhatsApp action above, since that must always work on its own.
+    var utm = getStoredUtm();
+    fetch("/.netlify/functions/outdoor-lead", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        points: cartPoints.map(function (p) { return p.pointNumber; }),
+        durationDays: state.duration,
+        needsCreative: !!state.needsCreative,
+        requestedStartDate: state.desiredDate,
+        contact: state.contact,
+        website: $("#odWebsite") ? $("#odWebsite").value : "", // honeypot
+        utmSource: utm.utmSource, utmMedium: utm.utmMedium, utmCampaign: utm.utmCampaign,
+        utmContent: utm.utmContent, utmTerm: utm.utmTerm,
+        landingPage: sessionStorage.getItem("zb_outdoor_landing") || window.location.href,
+        referrer: document.referrer
+      })
+    }).catch(function () { /* silent — WhatsApp already handled the handoff */ });
+
+    ZB.Outdoor.Cart.clear();
   }
 
   document.addEventListener("DOMContentLoaded", function () {

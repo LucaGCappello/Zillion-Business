@@ -22,6 +22,7 @@
    * @param {Boolean} opts.needsCreative
    * @param {Number} opts.estimatedTotal
    * @param {String} [opts.desiredDate] "DD/MM/AAAA" or empty
+   * @param {Object} [opts.contact]     { name, company, whatsapp, email, objective, segment, notes }
    */
   ZB.Outdoor.buildWhatsAppMessage = function (opts) {
     var lines = [];
@@ -37,6 +38,21 @@
     lines.push("Arte: " + (opts.needsCreative ? "Quero criação pela Zillion" : "Já tenho minha arte"));
     lines.push("Investimento estimado: R$" + opts.estimatedTotal.toLocaleString("pt-BR"));
     if (opts.desiredDate) lines.push("Data desejada: " + opts.desiredDate);
+
+    var c = opts.contact || {};
+    var hasContact = c.name || c.company || c.whatsapp || c.email || c.objective || c.segment || c.notes;
+    if (hasContact) {
+      lines.push("");
+      lines.push("Meus dados:");
+      if (c.name) lines.push("Nome: " + c.name);
+      if (c.company) lines.push("Empresa: " + c.company);
+      if (c.whatsapp) lines.push("WhatsApp: " + c.whatsapp);
+      if (c.email) lines.push("E-mail: " + c.email);
+      if (c.objective) lines.push("Objetivo da campanha: " + c.objective);
+      if (c.segment) lines.push("Segmento da empresa: " + c.segment);
+      if (c.notes) lines.push("Observações: " + c.notes);
+    }
+
     lines.push("");
     lines.push("Gostaria de confirmar a disponibilidade dos pontos.");
     return lines.join("\n");
