@@ -9,5 +9,5 @@ window.ZB.Outdoor = window.ZB.Outdoor || {};
 
 ZB.Outdoor.CONFIG = {
   // Digits only, with country + area code (e.g. "5573999998888").
-  whatsappNumber: "5573900000000"
+  whatsappNumber: "557388334612"
 };
